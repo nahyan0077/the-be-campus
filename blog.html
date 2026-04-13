@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Blog | Be Campus Academy – Career Tips, Industry Trends & Student Stories | Kottakkal</title>
+<meta name="description" content="Explore Be Campus Academy's blog — latest digital marketing trends, graphic design tips, HR career guides, accounting insights, and real student success stories from Kottakkal & Malappuram, Kerala."/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0d0d;--surface:#141414;--surface2:#1c1c1c;
+  --border:rgba(255,255,255,.08);--red:#e8002d;
+  --red-glow:rgba(232,0,45,.25);--red-soft:rgba(232,0,45,.08);
+  --white:#fff;--muted:rgba(255,255,255,.45);--muted2:rgba(255,255,255,.22);
+  --nav-h:72px;--page-gutter:clamp(20px,4vw,72px);--page-max:1280px;
+  --font-body:'Manrope',sans-serif;--font-display:'Sora',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--white);overflow-x:hidden;cursor:none}
+#cursor{position:fixed;width:12px;height:12px;background:var(--red);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%)}
+#cursor-ring{position:fixed;width:40px;height:40px;border:1.5px solid rgba(232,0,45,.5);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:transform .12s ease}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:9998;opacity:.6}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;padding:0 var(--page-gutter);gap:2rem;background:rgba(13,13,13,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo-text{font-family:var(--font-display);font-size:1.2rem;font-weight:800;color:white;text-decoration:none}
+.nav-logo-text span{color:var(--red)}
+.nav-links{display:flex;gap:2rem;list-style:none;margin-left:auto}
+.nav-links a{font-size:.85rem;font-weight:500;text-decoration:none;color:rgba(255,255,255,.6);transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--red);transition:width .3s}
+.nav-links a:hover,.nav-links a.active{color:white}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-cta{background:var(--red);color:white;padding:.55rem 1.4rem;border-radius:100px;font-size:.82rem;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.nav-cta:hover{transform:scale(1.05);box-shadow:0 0 24px var(--red-glow)}
+
+/* ── BLOG LIST VIEW ── */
+#blogListView{}
+.page-hero{min-height:clamp(420px,54vh,700px);display:flex;align-items:center;padding:calc(var(--nav-h)+6.75rem) var(--page-gutter) 4rem;position:relative;overflow:hidden}
+.ph-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:70px 70px;animation:gridMove 22s linear infinite}
+@keyframes gridMove{from{background-position:0 0}to{background-position:70px 70px}}
+.ph-glow{position:absolute;width:700px;height:500px;background:radial-gradient(ellipse,rgba(232,0,45,.11),transparent 70%);top:50%;right:5%;transform:translateY(-50%);animation:gp 5s ease-in-out infinite}
+@keyframes gp{0%,100%{opacity:.5}50%{opacity:.9}}
+.ph-content{position:relative;z-index:1;width:min(100%,760px);margin-inline:auto 0;padding-top:6.5rem;}
+.ph-breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:var(--muted);margin-bottom:1.8rem}
+.ph-breadcrumb a{color:var(--muted);text-decoration:none}
+.ph-breadcrumb a:hover{color:var(--red)}
+.ph-breadcrumb .sep{color:rgba(255,255,255,.2)}
+.ph-tag{display:inline-flex;align-items:center;gap:.6rem;border:1px solid rgba(232,0,45,.4);background:rgba(232,0,45,.07);color:var(--red);font-size:.68rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;padding:.38rem 1rem;border-radius:100px;margin:1rem 0 1.4rem}
+.ph-tag .dot{width:6px;height:6px;background:var(--red);border-radius:50%;animation:blink 1.5s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
+.page-hero h1{font-family:var(--font-display);font-size:clamp(2.2rem,4.5vw,3.9rem);font-weight:800;line-height:.98;letter-spacing:-.04em;margin-bottom:1.3rem;max-width:11ch}
+.page-hero h1 .accent{color:var(--red)}
+.page-hero .sub{font-size:.97rem;color:var(--muted);max-width:560px;line-height:1.82;margin-bottom:2rem}
+.hero-search{display:flex;gap:.7rem;max-width:460px;margin-bottom:2.25rem}
+.hero-search input{flex:1;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:100px;padding:.8rem 1.4rem;color:white;font-family:var(--font-body);font-size:.88rem;outline:none;transition:border-color .2s}
+.hero-search input::placeholder{color:var(--muted)}
+.hero-search input:focus{border-color:rgba(232,0,45,.5)}
+.hero-search button{background:var(--red);color:white;border:none;border-radius:100px;padding:.8rem 1.6rem;font-size:.85rem;font-weight:600;cursor:pointer;transition:transform .2s}
+.hero-search button:hover{transform:scale(1.05)}
+
+.trending-bar{padding:.9rem var(--page-gutter);background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.trending-label{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);flex-shrink:0}
+.trend-pill{padding:.32rem .95rem;border:1px solid var(--border);border-radius:100px;font-size:.75rem;font-weight:500;color:rgba(255,255,255,.6);cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block}
+.trend-pill:hover,.trend-pill.active{background:rgba(232,0,45,.1);border-color:rgba(232,0,45,.4);color:white}
+
+.blog-layout{display:grid;grid-template-columns:1fr 300px;gap:2.5rem;padding:3.5rem var(--page-gutter) 7rem;align-items:start}
+
+.sec-label{font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin-bottom:.6rem}
+h2.sec-title{font-family:var(--font-display);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;letter-spacing:-.03em;margin-bottom:1.6rem;display:flex;align-items:center;gap:.9rem}
+h2.sec-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent)}
+
+/* FEATURED */
+.featured-post{border-radius:22px;overflow:hidden;border:1px solid var(--border);margin-bottom:2.5rem;cursor:pointer;transition:border-color .3s,transform .3s}
+.featured-post:hover{border-color:rgba(232,0,45,.4);transform:translateY(-4px)}
+.fp-visual{height:340px;position:relative;overflow:hidden;display:flex;align-items:flex-end;background:linear-gradient(135deg,#1a0008,#0d0d0d)}
+.fp-emoji{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font-size:7rem;opacity:.4}
+.fp-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,13,13,.96) 0%,rgba(13,13,13,.3) 50%,transparent 100%)}
+.fp-content{position:relative;z-index:1;padding:2.2rem}
+.fp-badge{display:inline-flex;align-items:center;gap:.4rem;background:var(--red);color:white;font-size:.63rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.28rem .8rem;border-radius:100px;margin-bottom:.8rem}
+.fp-title{font-family:var(--font-display);font-size:clamp(1.3rem,2.8vw,2rem);font-weight:800;line-height:1.2;letter-spacing:-.02em;margin-bottom:.7rem}
+.fp-meta{display:flex;align-items:center;gap:1rem;font-size:.77rem;color:var(--muted)}
+.fp-av{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--red),#ff6b47);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700}
+.fp-read{display:inline-flex;align-items:center;gap:.5rem;color:var(--red);font-weight:700;font-size:.83rem;margin-top:1rem;text-decoration:none;border:1px solid rgba(232,0,45,.3);padding:.45rem 1.1rem;border-radius:100px;transition:background .2s}
+.fp-read:hover{background:rgba(232,0,45,.1)}
+
+/* CAT TABS */
+.cat-tabs{display:flex;gap:.55rem;flex-wrap:wrap;margin-bottom:2rem}
+.cat-tab{padding:.4rem 1rem;border:1px solid var(--border);border-radius:100px;font-size:.76rem;font-weight:600;color:rgba(255,255,255,.5);cursor:pointer;transition:all .2s;background:transparent}
+.cat-tab:hover{border-color:rgba(232,0,45,.4);color:white}
+.cat-tab.active{background:var(--red);border-color:var(--red);color:white}
+
+/* BLOG GRID */
+.blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.3rem;margin-bottom:2.5rem}
+.blog-card{border:1px solid var(--border);border-radius:18px;overflow:hidden;background:var(--surface);cursor:pointer;transition:transform .3s,border-color .3s,box-shadow .3s;display:flex;flex-direction:column}
+.blog-card:hover{transform:translateY(-5px);border-color:rgba(232,0,45,.35);box-shadow:0 14px 50px rgba(232,0,45,.07)}
+.bc-visual{height:155px;display:flex;align-items:center;justify-content:center;font-size:3.8rem;flex-shrink:0}
+.bc-body{padding:1.3rem;display:flex;flex-direction:column;flex:1}
+.bc-meta{display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem;flex-wrap:wrap}
+.bc-cat{font-size:.6rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;padding:.2rem .65rem;border-radius:100px;border:1px solid}
+.cat-dm{background:rgba(255,100,50,.07);border-color:rgba(255,100,50,.3);color:#ff8050}
+.cat-design{background:rgba(150,80,255,.07);border-color:rgba(150,80,255,.3);color:#c090ff}
+.cat-hr{background:rgba(50,200,150,.07);border-color:rgba(50,200,150,.3);color:#50d0a0}
+.cat-acc{background:rgba(50,150,255,.07);border-color:rgba(50,150,255,.3);color:#60b0ff}
+.cat-ai{background:rgba(232,0,45,.07);border-color:rgba(232,0,45,.3);color:var(--red)}
+.cat-student{background:rgba(255,200,50,.07);border-color:rgba(255,200,50,.3);color:#ffc030}
+.cat-office{background:rgba(100,200,50,.07);border-color:rgba(100,200,50,.3);color:#80c040}
+.bc-date{font-size:.7rem;color:var(--muted)}
+.bc-read-time{font-size:.7rem;color:var(--muted2);margin-left:auto}
+.bc-title{font-family:var(--font-display);font-size:.95rem;font-weight:700;line-height:1.35;margin-bottom:.55rem;flex:1}
+.bc-excerpt{font-size:.8rem;color:var(--muted);line-height:1.65;margin-bottom:1rem}
+.bc-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto}
+.bc-author{display:flex;align-items:center;gap:.45rem}
+.bc-av{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;color:white;flex-shrink:0}
+.bc-author-name{font-size:.73rem;color:var(--muted)}
+.bc-link{font-size:.76rem;font-weight:700;color:var(--red);text-decoration:none;display:flex;align-items:center;gap:.3rem;transition:gap .2s}
+.bc-link:hover{gap:.6rem}
+
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:1.8rem;position:sticky;top:calc(var(--nav-h)+1.5rem)}
+.sidebar-widget{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:1.4rem}
+.sw-title{font-family:var(--font-display);font-size:.9rem;font-weight:800;margin-bottom:1.1rem;display:flex;align-items:center;gap:.6rem}
+.sw-icon{width:28px;height:28px;border-radius:8px;background:var(--red-soft);border:1px solid rgba(232,0,45,.2);display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0}
+.popular-list{display:flex;flex-direction:column;gap:.9rem}
+.pop-item{display:flex;gap:.8rem;cursor:pointer;transition:opacity .2s}
+.pop-item:hover{opacity:.75}
+.pop-num{font-family:var(--font-display);font-size:1.3rem;font-weight:800;color:rgba(232,0,45,.18);line-height:1;flex-shrink:0;min-width:26px}
+.pop-title{font-size:.8rem;font-weight:600;line-height:1.4;color:rgba(255,255,255,.8)}
+.pop-meta{font-size:.68rem;color:var(--muted);margin-top:.15rem}
+.nl-desc{font-size:.8rem;color:var(--muted);line-height:1.65;margin-bottom:1rem}
+.nl-input{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;padding:.7rem 1rem;color:white;font-family:var(--font-body);font-size:.84rem;outline:none;margin-bottom:.6rem;transition:border-color .2s}
+.nl-input:focus{border-color:rgba(232,0,45,.5)}
+.nl-input::placeholder{color:var(--muted)}
+.nl-btn{width:100%;background:var(--red);color:white;border:none;border-radius:10px;padding:.7rem;font-family:var(--font-body);font-size:.85rem;font-weight:700;cursor:pointer;transition:transform .2s}
+.nl-btn:hover{transform:translateY(-2px)}
+.cat-list{display:flex;flex-direction:column;gap:.5rem}
+.cat-row{display:flex;align-items:center;justify-content:space-between;padding:.55rem .7rem;border-radius:9px;transition:background .2s;cursor:pointer;text-decoration:none}
+.cat-row:hover{background:rgba(232,0,45,.06)}
+.cat-name{font-size:.82rem;font-weight:500;color:rgba(255,255,255,.72);display:flex;align-items:center;gap:.5rem}
+.cat-count{font-size:.68rem;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:100px;padding:.15rem .6rem;color:var(--muted)}
+.tags-cloud{display:flex;flex-wrap:wrap;gap:.45rem}
+.tc-tag{font-size:.7rem;padding:.28rem .75rem;border:1px solid var(--border);border-radius:100px;color:rgba(255,255,255,.5);cursor:pointer;transition:all .2s}
+.tc-tag:hover{border-color:rgba(232,0,45,.4);color:white;background:rgba(232,0,45,.06)}
+.social-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.social-btn{display:flex;align-items:center;gap:.5rem;padding:.7rem .9rem;border-radius:10px;font-size:.78rem;font-weight:600;text-decoration:none;transition:opacity .2s;border:1px solid transparent}
+.social-btn:hover{opacity:.88}
+.sb-ig{background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af);color:white;grid-column:span 2}
+.sb-wa{background:#25D366;color:white;grid-column:span 2}
+
+/* ── ARTICLE READER ── */
+#articleView{display:none;padding-top:var(--nav-h)}
+.article-hero{min-height:50vh;display:flex;align-items:flex-end;padding:5rem var(--page-gutter) 3rem;position:relative;overflow:hidden}
+.article-hero-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:14rem;opacity:.07}
+.article-hero-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,13,13,1) 0%,rgba(13,13,13,.5) 50%,rgba(13,13,13,.3) 100%)}
+.article-hero-glow{position:absolute;width:600px;height:400px;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);animation:gp 5s ease-in-out infinite}
+.article-content-wrap{position:relative;z-index:1}
+.article-back{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:600;color:var(--muted);background:rgba(255,255,255,.06);border:1px solid var(--border);padding:.4rem 1rem;border-radius:100px;cursor:pointer;margin-bottom:1.8rem;transition:color .2s,border-color .2s}
+.article-back:hover{color:white;border-color:rgba(255,255,255,.3)}
+.article-cat-badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.63rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.28rem .8rem;border-radius:100px;border:1px solid;margin-bottom:1rem}
+.article-title{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,3.2rem);font-weight:800;line-height:1.12;letter-spacing:-.035em;margin-bottom:1.2rem;max-width:820px}
+.article-meta-row{display:flex;align-items:center;flex-wrap:wrap;gap:1.2rem;font-size:.8rem;color:var(--muted)}
+.article-author-wrap{display:flex;align-items:center;gap:.6rem}
+.article-av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700;color:white;flex-shrink:0}
+.article-author-name{font-weight:600;color:rgba(255,255,255,.8);font-size:.82rem}
+.article-author-role{font-size:.72rem;color:var(--muted)}
+.article-meta-dot{color:rgba(255,255,255,.18)}
+
+/* ARTICLE BODY */
+.article-body-wrap{display:grid;grid-template-columns:1fr 260px;gap:3.5rem;padding:3.5rem var(--page-gutter) 6rem;align-items:start}
+.article-body{max-width:720px}
+.article-body p{font-size:.97rem;color:rgba(255,255,255,.78);line-height:1.9;margin-bottom:1.5rem}
+.article-body h2{font-family:var(--font-display);font-size:1.45rem;font-weight:800;letter-spacing:-.025em;margin:2.5rem 0 1rem;color:white;position:relative;padding-left:1.2rem}
+.article-body h2::before{content:'';position:absolute;left:0;top:.15em;bottom:.15em;width:4px;background:var(--red);border-radius:4px}
+.article-body h3{font-family:var(--font-display);font-size:1.1rem;font-weight:700;margin:2rem 0 .7rem;color:rgba(255,255,255,.9)}
+.article-body ul,.article-body ol{padding-left:1.4rem;margin-bottom:1.5rem}
+.article-body li{font-size:.95rem;color:rgba(255,255,255,.72);line-height:1.8;margin-bottom:.4rem}
+.article-body strong{color:rgba(255,255,255,.92);font-weight:700}
+.article-body em{color:rgba(255,200,50,.85);font-style:normal;font-weight:600}
+.article-callout{background:linear-gradient(135deg,rgba(232,0,45,.08),rgba(232,0,45,.03));border:1px solid rgba(232,0,45,.2);border-left:4px solid var(--red);border-radius:14px;padding:1.4rem 1.6rem;margin:2rem 0}
+.article-callout p{margin-bottom:0;color:rgba(255,255,255,.82);font-size:.93rem}
+.article-callout .callout-title{font-family:var(--font-display);font-size:.85rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem}
+.article-quote{border-left:3px solid var(--red);padding:1.2rem 1.6rem;margin:2rem 0;background:rgba(255,255,255,.02);border-radius:0 12px 12px 0}
+.article-quote p{font-size:1.05rem;font-style:italic;color:rgba(255,255,255,.75);margin-bottom:.5rem;line-height:1.75}
+.article-quote cite{font-size:.78rem;color:var(--red);font-style:normal;font-weight:700}
+.article-tip-box{background:rgba(255,200,50,.05);border:1px solid rgba(255,200,50,.2);border-radius:14px;padding:1.3rem 1.5rem;margin:2rem 0;display:flex;gap:1rem}
+.tip-icon{font-size:1.4rem;flex-shrink:0}
+.tip-body{}
+.tip-title{font-size:.82rem;font-weight:800;color:#ffc030;text-transform:uppercase;letter-spacing:.07em;margin-bottom:.35rem}
+.tip-text{font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.65}
+.article-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border)}
+.article-tag{font-size:.72rem;padding:.3rem .85rem;border:1px solid var(--border);border-radius:100px;color:rgba(255,255,255,.5);cursor:pointer;transition:all .2s}
+.article-tag:hover{border-color:rgba(232,0,45,.4);color:white}
+.article-share{margin-top:2rem;padding:1.5rem;background:var(--surface);border:1px solid var(--border);border-radius:16px;display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap}
+.share-label{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.08em}
+.share-btn{display:inline-flex;align-items:center;gap:.45rem;padding:.5rem 1.1rem;border-radius:100px;font-size:.78rem;font-weight:600;text-decoration:none;border:1px solid var(--border);color:rgba(255,255,255,.65);transition:all .2s;cursor:pointer}
+.share-btn:hover{border-color:rgba(232,0,45,.4);color:white;background:rgba(232,0,45,.07)}
+
+/* ARTICLE SIDEBAR */
+.article-sidebar{display:flex;flex-direction:column;gap:1.6rem;position:sticky;top:calc(var(--nav-h)+2rem)}
+.toc-widget{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:1.4rem}
+.toc-title{font-family:var(--font-display);font-size:.88rem;font-weight:800;margin-bottom:1rem}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.toc-list li a{font-size:.8rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s;display:flex;gap:.5rem;align-items:flex-start;line-height:1.4}
+.toc-list li a:hover{color:var(--red)}
+.toc-num{font-size:.68rem;color:var(--red);font-weight:700;flex-shrink:0;margin-top:.1rem}
+.related-widget{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:1.4rem}
+.related-title{font-family:var(--font-display);font-size:.88rem;font-weight:800;margin-bottom:1rem}
+.related-list{display:flex;flex-direction:column;gap:.9rem}
+.related-item{display:flex;gap:.8rem;cursor:pointer;transition:opacity .2s}
+.related-item:hover{opacity:.75}
+.related-thumb{width:52px;height:52px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.5rem;border:1px solid var(--border)}
+.related-info{}
+.related-item-title{font-size:.78rem;font-weight:600;line-height:1.4;color:rgba(255,255,255,.8)}
+.related-item-meta{font-size:.68rem;color:var(--muted);margin-top:.2rem}
+.enrol-cta-widget{background:linear-gradient(135deg,rgba(232,0,45,.12),rgba(232,0,45,.04));border:1px solid rgba(232,0,45,.22);border-radius:16px;padding:1.4rem;text-align:center}
+.ecw-icon{font-size:2rem;margin-bottom:.7rem}
+.ecw-title{font-family:var(--font-display);font-size:1rem;font-weight:800;margin-bottom:.4rem}
+.ecw-text{font-size:.8rem;color:var(--muted);line-height:1.6;margin-bottom:1.1rem}
+.ecw-btn{width:100%;background:var(--red);color:white;border:none;border-radius:10px;padding:.75rem;font-family:var(--font-body);font-size:.85rem;font-weight:700;cursor:pointer;transition:transform .2s}
+.ecw-btn:hover{transform:translateY(-2px)}
+
+/* RELATED ARTICLES BOTTOM */
+.related-bottom{padding:0 var(--page-gutter) 5rem}
+.related-bottom-title{font-family:var(--font-display);font-size:1.4rem;font-weight:800;margin-bottom:1.5rem;display:flex;align-items:center;gap:.8rem}
+.related-bottom-title::after{content:'';flex:1;height:1px;background:var(--border)}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(14px);z-index:9999;display:none;align-items:center;justify-content:center;padding:1.5rem}
+.modal-overlay.active{display:flex}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:2.5rem;width:100%;max-width:460px;position:relative;max-height:90vh;overflow-y:auto}
+.modal-close{position:absolute;top:1.1rem;right:1.1rem;background:rgba(255,255,255,.08);border:none;color:white;width:34px;height:34px;border-radius:50%;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.modal-close:hover{background:rgba(232,0,45,.3)}
+.modal h3{font-family:var(--font-display);font-size:1.45rem;font-weight:800;margin-bottom:.4rem}
+.modal-sub{font-size:.84rem;color:var(--muted);margin-bottom:1.6rem}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:.72rem;font-weight:600;letter-spacing:.05em;color:rgba(255,255,255,.55);margin-bottom:.38rem;text-transform:uppercase}
+.form-group input,.form-group select{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:11px;padding:.75rem 1rem;color:white;font-family:var(--font-body);font-size:.87rem;outline:none;transition:border-color .2s}
+.form-group input:focus,.form-group select:focus{border-color:rgba(232,0,45,.5)}
+.form-group select option{background:#1c1c1c}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.form-submit{width:100%;background:var(--red);color:white;border:none;padding:.9rem;border-radius:11px;font-family:var(--font-display);font-size:.92rem;font-weight:700;cursor:pointer;transition:transform .2s;margin-top:.3rem}
+.form-submit:hover{transform:translateY(-2px)}
+.form-success{display:none;text-align:center;padding:1.5rem 0}
+.form-success .fs-icon{font-size:2.8rem;margin-bottom:.8rem}
+.form-success h4{font-family:var(--font-display);font-size:1.3rem;font-weight:800;margin-bottom:.4rem}
+.form-success p{font-size:.86rem;color:var(--muted)}
+
+/* FLOAT */
+.float-actions{position:fixed;bottom:2rem;right:1.8rem;z-index:9000;display:flex;flex-direction:column;gap:.8rem;align-items:flex-end}
+.fab-wrap{position:relative;display:flex;align-items:center}
+.fab{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;text-decoration:none;transition:transform .25s;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+.fab:hover{transform:scale(1.12)}
+.fab-wa{background:#25D366}.fab-ig{background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af)}.fab-call{background:var(--red)}
+.fab-label{position:absolute;right:62px;background:rgba(13,13,13,.92);border:1px solid var(--border);color:white;font-size:.7rem;font-weight:600;padding:.28rem .75rem;border-radius:100px;white-space:nowrap;opacity:0;transition:opacity .2s;pointer-events:none}
+.fab:hover .fab-label{opacity:1}
+
+/* FOOTER */
+footer{background:var(--surface);border-top:1px solid var(--border);padding:2.5rem var(--page-gutter) 1.8rem}
+.ph-content,
+.trending-bar,
+.blog-layout,
+.article-content-wrap,
+.article-body-wrap,
+.related-bottom,
+footer > div{
+  width:min(100%,var(--page-max));
+  margin-inline:auto;
+}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:.76rem;color:var(--muted2)}
+.footer-bottom a{color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-bottom a:hover{color:white}
+
+/* BUTTONS */
+.btn-red{display:inline-flex;align-items:center;gap:.5rem;background:var(--red);color:white;padding:.75rem 1.7rem;border-radius:100px;font-weight:600;font-size:.87rem;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn-red:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,0,45,.35)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.08s}.rd2{transition-delay:.16s}.rd3{transition-delay:.24s}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* READING PROGRESS */
+#readingProgress{position:fixed;top:var(--nav-h);left:0;width:0%;height:3px;background:linear-gradient(90deg,var(--red),#ff6b47);z-index:999;transition:width .1s}
+
+/* RESPONSIVE */
+@media(max-width:1100px){.blog-layout,.article-body-wrap{grid-template-columns:1fr}.sidebar,.article-sidebar{position:static}}
+@media(max-width:768px){
+  .blog-grid,.related-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  #cursor,#cursor-ring{display:none}
+  body{cursor:auto}
+  .hero-search{flex-direction:column}
+  .hero-search input,.hero-search button{width:100%;border-radius:12px}
+  .form-row{grid-template-columns:1fr}
+  .article-hero{padding:4rem 4vw 2.5rem}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<div id="readingProgress"></div>
+
+<!-- ENQUIRY MODAL -->
+<div class="modal-overlay" id="enquiryModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="formContent">
+      <h3>Enquire Now 🚀</h3>
+      <p class="modal-sub">Get free career counselling from Be Campus Academy, Kottakkal.</p>
+      <div class="form-row">
+        <div class="form-group"><label>Name</label><input type="text" placeholder="Your name" id="f-fname"/></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="+91 XXXXX" id="f-phone"/></div>
+      </div>
+      <div class="form-group"><label>Email</label><input type="email" placeholder="you@email.com" id="f-email"/></div>
+      <div class="form-group">
+        <label>Course Interest</label>
+        <select id="f-course">
+          <option value="">Select a course</option>
+          <option>AI-Integrated Advanced Diploma in Digital Marketing</option>
+          <option>Advanced Diploma in Creative Design & Brand Building</option>
+          <option>Advanced Diploma in Office Management & Business Communication</option>
+          <option>Advanced Diploma in Human Resources & Talent Management</option>
+          <option>Diploma in Professional Accounting & Taxation (DPAT)</option>
+          <option>AI-Integrated Advanced Diploma in International Accounting & Taxation (AI-ADIAT)</option>
+          <option>Not Sure – Need Guidance</option>
+        </select>
+      </div>
+      <button class="form-submit" onclick="submitForm()">Get Free Counselling →</button>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <div class="fs-icon">🎉</div>
+      <h4>You're All Set!</h4>
+      <p>Our counsellor will call within 24 hours.</p>
+      <br/><a href="https://www.instagram.com/becampusacademy" target="_blank" class="btn-red" style="display:inline-flex;margin:0 auto;font-size:.82rem">📸 Follow on Instagram</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="./index.html" class="nav-logo-text">Be<span>Campus</span> Academy</a>
+  <ul class="nav-links">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./about.html">About Us</a></li>
+    <li><a href="./courses.html">Courses</a></li>
+    <li><a href="./blog.html" class="active">Blog</a></li>
+    <li><a href="./contact.html">Contact</a></li>
+  </ul>
+  <a href="#" class="nav-cta" onclick="openModal();return false;">Enquire Now</a>
+</nav>
+
+<!-- ══════════════════ BLOG LIST VIEW ══════════════════ -->
+<div id="blogListView">
+
+<header class="page-hero">
+  <div class="ph-grid"></div>
+  <div class="ph-glow"></div>
+  <div class="ph-content">
+    <div class="ph-breadcrumb"><a href="./index.html">Home</a><span class="sep">/</span><span>Blog</span></div>
+    <div class="ph-tag"><span class="dot"></span>Insights · Trends · Student Stories</div>
+    <h1>Learn. Grow.<br/><span class="accent">Stay Ahead.</span></h1>
+    <p class="sub">Career guides, AI & industry trends, and real success stories from Be Campus Academy — Kottakkal & Malappuram's #1 training institute.</p>
+    <div class="hero-search">
+      <input type="text" placeholder="Search articles, topics, careers…" id="searchInput" oninput="searchBlog(this.value)"/>
+      <button onclick="searchBlog(document.getElementById('searchInput').value)">🔍 Search</button>
+    </div>
+  </div>
+</header>
+
+<div class="trending-bar">
+  <span class="trending-label">🔥 Trending:</span>
+  <a class="trend-pill active" href="#">AI in Marketing</a>
+  <a class="trend-pill" href="#">Gulf Careers 2025</a>
+  <a class="trend-pill" href="#">GST Updates</a>
+  <a class="trend-pill" href="#">Freelance Design</a>
+  <a class="trend-pill" href="#">HR Tech</a>
+  <a class="trend-pill" href="#">Be Cubez Stories</a>
+</div>
+
+<div class="blog-layout">
+<main>
+
+  <!-- FEATURED -->
+  <div class="featured-post reveal" onclick="openArticle('ai-careers')">
+    <div class="fp-visual">
+      <div class="fp-emoji">🤖</div>
+      <div class="fp-gradient"></div>
+      <div class="fp-content">
+        <div class="fp-badge">🔥 Featured · AI & Careers</div>
+        <div class="fp-title">How AI Is Reshaping Every Career in Kerala in 2025 — And What Students in Malappuram Must Do Right Now</div>
+        <div class="fp-meta">
+          <div style="display:flex;align-items:center;gap:.5rem"><div class="fp-av">BC</div><span>Be Campus Team</span></div>
+          <span>·</span><span>March 2025</span><span>·</span><span>8 min read</span>
+        </div>
+        <a href="#" class="fp-read" onclick="event.stopPropagation();openArticle('ai-careers');return false;">Read Full Article →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="cat-tabs">
+    <button class="cat-tab active" onclick="filterPosts('all',this)">All</button>
+    <button class="cat-tab" onclick="filterPosts('trends',this)">📊 Trends</button>
+    <button class="cat-tab" onclick="filterPosts('ai',this)">🤖 AI</button>
+    <button class="cat-tab" onclick="filterPosts('career',this)">💼 Career</button>
+    <button class="cat-tab" onclick="filterPosts('student',this)">⭐ Stories</button>
+    <button class="cat-tab" onclick="filterPosts('courses',this)">📚 Courses</button>
+  </div>
+
+  <div class="blog-grid" id="blogGrid">
+    <div class="blog-card reveal" data-cat="trends ai" onclick="openArticle('dm-trends')">
+      <div class="bc-visual" style="background:linear-gradient(135deg,#1a0505,#0d0d0d)">📈</div>
+      <div class="bc-body">
+        <div class="bc-meta"><span class="bc-cat cat-dm">Digital Marketing</span><span class="bc-date">Mar 2025</span><span class="bc-read-time">6 min</span></div>
+        <div class="bc-title">Top 10 Digital Marketing Trends Every Marketer in Kerala Must Know in 2025</div>
+        <div class="bc-excerpt">From AI-generated content to hyper-local SEO — the digital landscape is evolving fast. Here's what Be Campus students are mastering right now.</div>
+        <div class="bc-footer"><div class="bc-author"><div class="bc-av" style="background:linear-gradient(135deg,#e8002d,#ff6b47)">BC</div><span class="bc-author-name">Be Campus Team</span></div><a href="#" class="bc-link" onclick="event.stopPropagation();openArticle('dm-trends');return false;">Read →</a></div>
+      </div>
+    </div>
+
+    <div class="blog-card reveal rd1" data-cat="student" onclick="openArticle('faris-story')">
+      <div class="bc-visual" style="background:linear-gradient(135deg,#0a0a1a,#0d0d0d)">🌟</div>
+      <div class="bc-body">
+        <div class="bc-meta"><span class="bc-cat cat-student">Student Story</span><span class="bc-date">Mar 2025</span><span class="bc-read-time">5 min</span></div>
+        <div class="bc-title">From Plus Two to Dubai Accountant: Faris's Story with Be Campus AI-ADIAT</div>
+        <div class="bc-excerpt">Faris had no accounting background. Eight months after AI-ADIAT, he landed a senior accountant role in Dubai that changed his family's life.</div>
+        <div class="bc-footer"><div class="bc-author"><div class="bc-av" style="background:linear-gradient(135deg,#ffaa00,#ff6600)">FK</div><span class="bc-author-name">Faris Kalathil</span></div><a href="#" class="bc-link" onclick="event.stopPropagation();openArticle('faris-story');return false;">Read →</a></div>
+      </div>
+    </div>
+
+    <div class="blog-card reveal rd2" data-cat="trends ai" onclick="openArticle('ai-design-tools')">
+      <div class="bc-visual" style="background:linear-gradient(135deg,#0d0a1a,#0d0d0d)">🤖</div>
+      <div class="bc-body">
+        <div class="bc-meta"><span class="bc-cat cat-ai">AI & Tech</span><span class="bc-date">Feb 2025</span><span class="bc-read-time">7 min</span></div>
+        <div class="bc-title">7 AI Tools Every Graphic Designer in Kerala Must Master in 2025</div>
+        <div class="bc-excerpt">MidJourney, Adobe Firefly, Canva AI — the design industry has been permanently altered by AI. Here's what our students are mastering.</div>
+        <div class="bc-footer"><div class="bc-author"><div class="bc-av" style="background:linear-gradient(135deg,#9040ff,#4080ff)">DT</div><span class="bc-author-name">Design Faculty</span></div><a href="#" class="bc-link" onclick="event.stopPropagation();openArticle('ai-design-tools');return false;">Read →</a></div>
+      </div>
+    </div>
+
+    <div class="blog-card reveal rd3" data-cat="career courses" onclick="openArticle('hr-career')">
+      <div class="bc-visual" style="background:linear-gradient(135deg,#0a1a0a,#0d0d0d)">💼</div>
+      <div class="bc-body">
+        <div class="bc-meta"><span class="bc-cat cat-hr">HR & Careers</span><span class="bc-date">Feb 2025</span><span class="bc-read-time">5 min</span></div>
+        <div class="bc-title">Why HR Is the Hottest Career in Malappuram Right Now — And How to Break In</div>
+        <div class="bc-excerpt">Factories, hospitals, IT firms across Malappuram are hiring HR professionals at record pace. Our graduates are placed before the course ends.</div>
+        <div class="bc-footer"><div class="bc-author"><div class="bc-av" style="background:linear-gradient(135deg,#00c878,#009060)">HT</div><span class="bc-author-name">HR Faculty</span></div><a href="#" class="bc-link" onclick="event.stopPropagation();openArticle('hr-career');return false;">Read →</a></div>
+      </div>
+    </div>
+
+    <div class="blog-card reveal" data-cat="student courses" onclick="openArticle('asha-story')">
+      <div class="bc-visual" style="background:linear-gradient(135deg,#1a1000,#0d0d0d)">🎨</div>
+      <div class="bc-body">
+        <div class="bc-meta"><span class="bc-cat cat-student">Student Story</span><span class="bc-date">Jan 2025</span><span class="bc-read-time">5 min</span></div>
+        <div class="bc-title">How Asha Went from Homemaker to Freelance Brand Designer Earning ₹60,000/Month</div>
+        <div class="bc-excerpt">Asha joined Be Campus at 32 with zero design experience. Today she runs a thriving freelance practice serving clients across India.</div>
+        <div class="bc-footer"><div class="bc-author"><div class="bc-av" style="background:linear-gradient(135deg,#e8002d,#ff60a0)">AM</div><span class="bc-author-name">Asha Mohammed</span></div><a href="#" class="bc-link" onclick="event.stopPropagation();openArticle('asha-story');return false;">Read →</a></div>
+      </div>
+    </div>
+
+    <div class="blog-card reveal rd1" data-cat="trends career" onclick="openArticle('gulf-accounting')">
+      <div class="bc-visual" style="background:linear-gradient(135deg,#001a10,#0d0d0d)">🌐</div>
+      <div class="bc-body">
+        <div class="bc-meta"><span class="bc-cat cat-acc">Accounting</span><span class="bc-date">Jan 2025</span><span class="bc-read-time">6 min</span></div>
+        <div class="bc-title">Gulf Accounting Jobs 2025: What Kerala Candidates Must Know Before Applying</div>
+        <div class="bc-excerpt">UAE, Saudi, Qatar are hiring IFRS-skilled accountants. Our AI-ADIAT graduates are landing these roles. Here's what you need.</div>
+        <div class="bc-footer"><div class="bc-author"><div class="bc-av" style="background:linear-gradient(135deg,#0080ff,#0040c0)">FT</div><span class="bc-author-name">Finance Faculty</span></div><a href="#" class="bc-link" onclick="event.stopPropagation();openArticle('gulf-accounting');return false;">Read →</a></div>
+      </div>
+    </div>
+
+    <div class="blog-card reveal rd2" data-cat="student" onclick="openArticle('siraj-story')">
+      <div class="bc-visual" style="background:linear-gradient(135deg,#1a0010,#0d0d0d)">🚀</div>
+      <div class="bc-body">
+        <div class="bc-meta"><span class="bc-cat cat-student">Student Story</span><span class="bc-date">Dec 2024</span><span class="bc-read-time">4 min</span></div>
+        <div class="bc-title">"3 Job Offers in One Week" — Siraj's Digital Marketing Journey at Be Campus</div>
+        <div class="bc-excerpt">Sirajudheen ran live Google Ads campaigns through Be Cubez during training. By interview time, he had real ROAS data to show recruiters.</div>
+        <div class="bc-footer"><div class="bc-author"><div class="bc-av" style="background:linear-gradient(135deg,#e8002d,#ff8040)">SR</div><span class="bc-author-name">Sirajudheen R.</span></div><a href="#" class="bc-link" onclick="event.stopPropagation();openArticle('siraj-story');return false;">Read →</a></div>
+      </div>
+    </div>
+
+    <div class="blog-card reveal rd3" data-cat="trends career" onclick="openArticle('gst-2025')">
+      <div class="bc-visual" style="background:linear-gradient(135deg,#001020,#0d0d0d)">📊</div>
+      <div class="bc-body">
+        <div class="bc-meta"><span class="bc-cat cat-acc">Accounting</span><span class="bc-date">Nov 2024</span><span class="bc-read-time">6 min</span></div>
+        <div class="bc-title">GST in 2025: What Every Accountant in Malappuram Must Know About the Latest Updates</div>
+        <div class="bc-excerpt">E-invoicing mandates, new ITC rules, and compliance changes — our DPAT course is fully updated. Here's your complete guide.</div>
+        <div class="bc-footer"><div class="bc-author"><div class="bc-av" style="background:linear-gradient(135deg,#0080ff,#6040ff)">FT</div><span class="bc-author-name">Finance Faculty</span></div><a href="#" class="bc-link" onclick="event.stopPropagation();openArticle('gst-2025');return false;">Read →</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="noResults" style="display:none;text-align:center;padding:3rem;color:var(--muted)">😕 No articles found. Try a different search.</div>
+
+</main>
+
+<aside class="sidebar">
+  <div class="sidebar-widget reveal" style="background:linear-gradient(135deg,rgba(232,0,45,.1),rgba(232,0,45,.03));border-color:rgba(232,0,45,.2)">
+    <div class="sw-title"><span class="sw-icon">📧</span> Weekly Career Tips</div>
+    <p class="nl-desc">Get career trends & student stories straight to your inbox every week.</p>
+    <input class="nl-input" type="email" placeholder="your@email.com" id="nl-email"/>
+    <button class="nl-btn" onclick="subscribeNewsletter()">Subscribe Free →</button>
+  </div>
+  <div class="sidebar-widget reveal rd1">
+    <div class="sw-title"><span class="sw-icon">🔥</span> Most Read</div>
+    <div class="popular-list">
+      <div class="pop-item" onclick="openArticle('ai-careers')"><div class="pop-num">01</div><div><div class="pop-title">How AI Is Reshaping Every Career in Kerala in 2025</div><div class="pop-meta">8 min · 4.2k reads</div></div></div>
+      <div class="pop-item" onclick="openArticle('faris-story')"><div class="pop-num">02</div><div><div class="pop-title">From Plus Two to Dubai Accountant: Faris's Story</div><div class="pop-meta">5 min · 3.8k reads</div></div></div>
+      <div class="pop-item" onclick="openArticle('gulf-accounting')"><div class="pop-num">03</div><div><div class="pop-title">Gulf Accounting Jobs 2025: What Kerala Candidates Must Know</div><div class="pop-meta">6 min · 3.1k reads</div></div></div>
+      <div class="pop-item" onclick="openArticle('asha-story')"><div class="pop-num">04</div><div><div class="pop-title">Homemaker to Freelancer Earning ₹60,000/Month</div><div class="pop-meta">5 min · 2.7k reads</div></div></div>
+      <div class="pop-item" onclick="openArticle('dm-trends')"><div class="pop-num">05</div><div><div class="pop-title">Top 10 Digital Marketing Trends in Kerala 2025</div><div class="pop-meta">6 min · 2.4k reads</div></div></div>
+    </div>
+  </div>
+  <div class="sidebar-widget reveal rd2">
+    <div class="sw-title"><span class="sw-icon">📂</span> Categories</div>
+    <div class="cat-list">
+      <a class="cat-row" href="#"><span class="cat-name">📊 Industry Trends</span><span class="cat-count">14</span></a>
+      <a class="cat-row" href="#"><span class="cat-name">⭐ Student Stories</span><span class="cat-count">12</span></a>
+      <a class="cat-row" href="#"><span class="cat-name">🤖 AI & Tech</span><span class="cat-count">10</span></a>
+      <a class="cat-row" href="#"><span class="cat-name">💼 Career Guides</span><span class="cat-count">9</span></a>
+      <a class="cat-row" href="#"><span class="cat-name">🌐 Gulf Careers</span><span class="cat-count">7</span></a>
+    </div>
+  </div>
+  <div class="sidebar-widget reveal rd3">
+    <div class="sw-title"><span class="sw-icon">📱</span> Follow Us</div>
+    <p style="font-size:.8rem;color:var(--muted);margin-bottom:1rem;line-height:1.6">Daily career tips and student spotlights on our channels.</p>
+    <div class="social-grid">
+      <a href="https://www.instagram.com/becampusacademy" target="_blank" class="social-btn sb-ig">📸 Instagram</a>
+      <a href="https://wa.me/919XXXXXXXXX" target="_blank" class="social-btn sb-wa">💬 WhatsApp</a>
+    </div>
+  </div>
+  <div class="sidebar-widget reveal">
+    <div class="sw-title"><span class="sw-icon">🏷️</span> Topics</div>
+    <div class="tags-cloud">
+      <span class="tc-tag">Digital Marketing</span><span class="tc-tag">AI Tools</span><span class="tc-tag">Gulf Jobs</span>
+      <span class="tc-tag">GST 2025</span><span class="tc-tag">Graphic Design</span><span class="tc-tag">HR Career</span>
+      <span class="tc-tag">Freelancing</span><span class="tc-tag">Be Cubez</span><span class="tc-tag">Accounting</span>
+      <span class="tc-tag">Placement</span><span class="tc-tag">Kottakkal</span><span class="tc-tag">Malappuram</span>
+    </div>
+  </div>
+</aside>
+</div>
+</div><!-- end blogListView -->
+
+<!-- ══════════════════ ARTICLE VIEW ══════════════════ -->
+<div id="articleView">
+  <div id="articleHero" class="article-hero">
+    <div class="article-hero-bg" id="artEmoji"></div>
+    <div class="article-hero-glow" id="artGlow"></div>
+    <div class="article-hero-grad"></div>
+    <div class="article-content-wrap">
+      <div class="article-back" onclick="goBack()">← Back to Blog</div>
+      <div class="article-cat-badge" id="artCatBadge"></div>
+      <div class="article-title" id="artTitle"></div>
+      <div class="article-meta-row">
+        <div class="article-author-wrap">
+          <div class="article-av" id="artAv"></div>
+          <div><div class="article-author-name" id="artAuthor"></div><div class="article-author-role" id="artRole"></div></div>
+        </div>
+        <span class="article-meta-dot">·</span>
+        <span id="artDate"></span>
+        <span class="article-meta-dot">·</span>
+        <span id="artRead"></span>
+      </div>
+    </div>
+  </div>
+  <div class="article-body-wrap">
+    <div class="article-body" id="artBody"></div>
+    <div class="article-sidebar">
+      <div class="toc-widget" id="tocWidget">
+        <div class="toc-title">📋 In This Article</div>
+        <ul class="toc-list" id="tocList"></ul>
+      </div>
+      <div class="enrol-cta-widget">
+        <div class="ecw-icon">🎓</div>
+        <div class="ecw-title">Ready to Start?</div>
+        <p class="ecw-text">Join 500+ successful graduates from Kottakkal & Malappuram. Free career counselling available.</p>
+        <button class="ecw-btn" onclick="openModal()">Enquire Now — Free →</button>
+      </div>
+      <div class="related-widget">
+        <div class="related-title">📚 Related Articles</div>
+        <div class="related-list" id="relatedList"></div>
+      </div>
+    </div>
+  </div>
+  <div class="related-bottom" id="relatedBottom"></div>
+</div>
+
+<footer>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)">
+    <div>
+      <div style="font-family:var(--font-display);font-size:1.1rem;font-weight:800;margin-bottom:.25rem">Be<span style="color:var(--red)">Campus</span> Academy</div>
+      <p style="font-size:.8rem;color:var(--muted)">Kottakkal & Malappuram's #1 AI-integrated training institute.</p>
+    </div>
+    <div style="display:flex;gap:.8rem;flex-wrap:wrap">
+      <a href="./index.html" style="font-size:.8rem;padding:.55rem 1.2rem;border:1px solid rgba(255,255,255,.15);border-radius:100px;color:rgba(255,255,255,.65);text-decoration:none">Home</a>
+      <a href="./courses.html" style="font-size:.8rem;padding:.55rem 1.2rem;border:1px solid rgba(255,255,255,.15);border-radius:100px;color:rgba(255,255,255,.65);text-decoration:none">Courses</a>
+      <a href="#" class="btn-red" style="font-size:.8rem;padding:.55rem 1.2rem" onclick="openModal();return false;">Enquire Now</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Be Campus Academy, Kottakkal, Malappuram, Kerala.</span>
+    <div style="display:flex;gap:1.2rem"><a href="./contact.html">Privacy</a><a href="./contact.html">Terms</a><a href="https://www.instagram.com/becampusacademy" target="_blank">Instagram</a></div>
+  </div>
+</footer>
+
+<div class="float-actions">
+  <div class="fab-wrap"><a href="https://wa.me/919XXXXXXXXX" target="_blank" class="fab fab-wa">💬<span class="fab-label">WhatsApp</span></a></div>
+  <div class="fab-wrap"><a href="https://www.instagram.com/becampusacademy" target="_blank" class="fab fab-ig">📸<span class="fab-label">Instagram</span></a></div>
+  <div class="fab-wrap"><a href="tel:+919XXXXXXXXX" class="fab fab-call">📞<span class="fab-label">Call Us</span></a></div>
+</div>
+
+<script>
+// ── CURSOR ──
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a)})();
+
+// ── REVEAL ──
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}});
+},{threshold:.06});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// ── READING PROGRESS ──
+window.addEventListener('scroll',()=>{
+  const bar=document.getElementById('readingProgress');
+  if(document.getElementById('articleView').style.display!=='none'){
+    const el=document.getElementById('artBody');
+    if(!el)return;
+    const rect=el.getBoundingClientRect();
+    const total=el.offsetHeight;
+    const scrolled=Math.max(0,-rect.top);
+    bar.style.width=Math.min(100,scrolled/total*100)+'%';
+  } else {bar.style.width='0%'}
+});
+
+// ── MODAL ──
+function openModal(){document.getElementById('enquiryModal').classList.add('active')}
+function closeModal(){document.getElementById('enquiryModal').classList.remove('active')}
+document.getElementById('enquiryModal').addEventListener('click',function(e){if(e.target===this)closeModal()});
+function submitForm(){
+  const n=document.getElementById('f-fname').value.trim(),p=document.getElementById('f-phone').value.trim(),c=document.getElementById('f-course').value;
+  if(!n||!p||!c){alert('Please fill in your name, phone, and course.');return;}
+  document.getElementById('formContent').style.display='none';
+  document.getElementById('formSuccess').style.display='block';
+}
+function subscribeNewsletter(){
+  const e=document.getElementById('nl-email').value.trim();
+  if(!e||!e.includes('@')){alert('Please enter a valid email.');return;}
+  document.getElementById('nl-email').value='';
+  alert('🎉 Subscribed! Weekly career tips coming your way.');
+}
+
+// ── FILTER ──
+function filterPosts(cat,btn){
+  document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  let v=0;
+  document.querySelectorAll('.blog-card').forEach(c=>{
+    const s=cat==='all'||c.dataset.cat.includes(cat);
+    c.style.display=s?'flex':'none';if(s)v++;
+  });
+  document.getElementById('noResults').style.display=v?'none':'block';
+}
+function searchBlog(q){
+  q=q.toLowerCase().trim();
+  let v=0;
+  document.querySelectorAll('.blog-card').forEach(c=>{
+    const t=c.querySelector('.bc-title')?.textContent.toLowerCase()||'';
+    const x=c.querySelector('.bc-excerpt')?.textContent.toLowerCase()||'';
+    const s=!q||t.includes(q)||x.includes(q);
+    c.style.display=s?'flex':'none';if(s)v++;
+  });
+  document.getElementById('noResults').style.display=v?'none':'block';
+  document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('active'));
+  document.querySelector('.cat-tab').classList.add('active');
+}
+
+// ── ARTICLE DATA ──
+const ARTICLES={
+  'ai-careers':{
+    emoji:'🤖',
+    glow:'rgba(232,0,45,.15)',
+    catLabel:'AI & Careers',catClass:'cat-ai',
+    title:'How AI Is Reshaping Every Career in Kerala in 2025 — And What Students in Malappuram Must Do Right Now',
+    author:'Be Campus Team',role:'Be Campus Academy, Kottakkal',avColor:'linear-gradient(135deg,#e8002d,#ff6b47)',avInitial:'BC',
+    date:'March 10, 2025',read:'8 min read',
+    tags:['AI Tools','Digital Marketing','Career 2025','Kottakkal','Malappuram','Future of Work'],
+    related:['dm-trends','faris-story','siraj-story'],
+    toc:['The AI Revolution Is Already Here','How AI Is Changing Digital Marketing in Kerala','Design Industry: AI Is a Tool, Not a Threat','HR & Accounting: AI Won\'t Replace You — Unless You Ignore It','What Be Campus Is Doing About It','What You Should Do Right Now'],
+    body:`
+<p>In 2023, when a factory manager in Malappuram asked his newly hired social media executive if she knew how to use ChatGPT for content creation, she had never heard of it. She was replaced within a month by someone who had. That's not a horror story. That's the reality of 2025's job market in Kerala — and across India.</p>
+<p>Artificial intelligence is no longer a concept reserved for tech companies in Bangalore or Silicon Valley boardrooms. It has arrived in the marketing offices of Kottakkal businesses, the accounts departments of Tirur-based firms, the HR cabins of manufacturing plants in Malappuram district. And it is reshaping every single career path our students are walking into.</p>
+<p>At Be Campus Academy, we saw this coming. That's precisely why we became <strong>Malappuram's first AI-integrated training institute</strong> — rebuilding every course from scratch to reflect the workplace of today, not five years ago.</p>
+
+<h2>The AI Revolution Is Already Here</h2>
+<p>Let's be clear about something: the question is no longer <em>whether</em> AI will affect your career. It already has. The question is whether you're going to be the person using AI to do twice the work in half the time — or the person wondering why their application keeps getting rejected.</p>
+<p>A 2024 LinkedIn India report found that job listings mentioning "AI literacy" or "AI tools experience" grew by <strong>over 240% in South India alone</strong> compared to 2022. In the digital marketing sector, companies are now listing ChatGPT, Jasper, and SurferSEO as required skills — not bonus skills.</p>
+
+<div class="article-callout">
+  <div class="callout-title">Be Campus Insight</div>
+  <p>In a survey of our 2024 placement partners across Kerala, <strong>78% said they now screen for AI tool familiarity</strong> during the first interview round for marketing, design, HR, and finance roles — regardless of the candidate's experience level.</p>
+</div>
+
+<p>This isn't a Kochi-only phenomenon. Businesses in Malappuram, Kozhikode, and Thrissur are increasingly hiring through platforms that allow AI-driven skill testing before a human even sees the resume. If your CV doesn't reflect AI competency, it may never reach a human recruiter.</p>
+
+<h2>How AI Is Changing Digital Marketing in Kerala</h2>
+<p>Digital marketing was the first industry to feel the full force of AI — and it's been a tidal wave. The marketers thriving in 2025 are using AI not just for content creation, but for entire campaign architectures.</p>
+<p>They're using <strong>ChatGPT and Jasper</strong> to produce SEO-optimised blog drafts, social captions, and ad copy in minutes. They're running <strong>SurferSEO and Semrush AI</strong> features to build content strategies that rank. They're using <strong>Meta Advantage+ and Google Performance Max</strong> — both AI-driven ad systems — to optimise campaign delivery automatically.</p>
+<p>Our students at Be Campus's AI-Integrated Digital Marketing diploma are trained in all of this. More importantly, they run <strong>live campaigns through Be Cubez</strong>, our in-house agency, giving them real-world ROAS data and campaign reports before they ever enter an interview room.</p>
+
+<div class="article-quote">
+  <p>"When I joined Be Campus, I thought digital marketing was about posting on Instagram. Within three months, I was running live Google Ads campaigns for a real business, analysing the data with GA4, and using ChatGPT to write better ad copy than I ever could manually. That's what got me placed."</p>
+  <cite>— Sirajudheen R., Digital Marketing Executive, Kochi (Be Campus Graduate)</cite>
+</div>
+
+<h2>Design Industry: AI Is a Tool, Not a Threat</h2>
+<p>One of the biggest fears we hear from prospective graphic design students is this: "Will AI replace designers?" The honest answer is: <strong>AI won't replace designers — but designers who know AI will replace those who don't.</strong></p>
+<p>MidJourney, Adobe Firefly, and Canva AI have fundamentally changed the speed at which design work can be produced. A designer who once needed two days to generate a set of brand identity concepts can now generate 50 variations in two hours and refine the best ones. This makes skilled designers <em>more valuable</em> — not less — because the creative direction, judgment, and client management that AI cannot replicate becomes their superpower.</p>
+<p>Our Creative Design & Brand Building program teaches students to leverage AI tools as creative accelerators — while building the foundational skills (typography, brand theory, visual hierarchy) that ensure they always remain in the driver's seat.</p>
+
+<h2>HR & Accounting: AI Won't Replace You — Unless You Ignore It</h2>
+<p>In HR, AI-powered applicant tracking systems (ATS) now screen CVs before any human sees them. HRMS platforms like Zoho People and DarwinBox use AI to flag attendance anomalies, predict attrition risk, and automate payroll calculations. <strong>HR professionals who can operate these systems are getting 30–40% higher starting salaries</strong> than those who cannot.</p>
+<p>In accounting, AI-powered reconciliation tools, automated GST filing assistants, and cloud accounting platforms like QuickBooks and Xero are eliminating repetitive bookkeeping tasks. The accountants in demand are those who understand international accounting standards (IFRS), know how to use cloud tools, and can interpret AI-generated financial reports — exactly what our DPAT and AI-ADIAT programs train for.</p>
+
+<div class="article-tip-box">
+  <div class="tip-icon">💡</div>
+  <div class="tip-body">
+    <div class="tip-title">Action Point</div>
+    <div class="tip-text">If your current qualification doesn't include hands-on AI tool training, you are already behind the curve. The good news: a 4–8 month professional diploma at Be Campus can bring you fully up to speed — and put you ahead of most graduates in Malappuram.</div>
+  </div>
+</div>
+
+<h2>What Be Campus Is Doing About It</h2>
+<p>We don't just add an "AI module" at the end of a course and call ourselves AI-integrated. We have rebuilt our entire curriculum around the tools and workflows that employers in 2025 actually use. Every course at Be Campus now includes:</p>
+<ul>
+  <li><strong>AI tools specific to that field</strong> — ChatGPT for marketers, Adobe Firefly for designers, Zoho AI for HR professionals, QuickBooks AI for accountants</li>
+  <li><strong>Live project work</strong> — Through Be Cubez, our in-house agency, students apply AI tools on real briefs for real clients</li>
+  <li><strong>Placement preparation</strong> — Our placement team trains students to present their AI skills in interviews the right way</li>
+</ul>
+<p>This is why our placement rate remains at <strong>100%</strong> even as the job market becomes increasingly competitive. Our graduates walk in with skills that most degree holders in Malappuram simply don't have.</p>
+
+<h2>What You Should Do Right Now</h2>
+<p>Whether you're a fresh plus-two graduate, a degree holder looking for a career boost, or a working professional who wants to future-proof their skillset — the steps are the same:</p>
+<ol>
+  <li><strong>Acknowledge AI is not optional.</strong> Waiting to see how AI "plays out" is not a strategy. It has already played out. The window to adapt early is still open — but it's closing.</li>
+  <li><strong>Choose training that includes AI tools.</strong> Not a course that mentions AI in its brochure, but one where you're actually using AI tools every single week. Ask specifically: which AI tools will I use, and on what kind of projects?</li>
+  <li><strong>Get real-world experience during training.</strong> This is the Be Campus difference. Be Cubez gives you live campaign and project experience that makes your CV impossible to ignore.</li>
+  <li><strong>Start now, not next semester.</strong> Every batch that passes you by is another group of AI-trained graduates entering the same job market you're targeting.</li>
+</ol>
+<p>Be Campus Academy is running free career counselling sessions every week at our Kottakkal campus. If you're in Malappuram and wondering which path is right for you, walk in or call us. We've helped over 500 students figure this out — and we'll help you too.</p>
+`
+  },
+
+  'dm-trends':{
+    emoji:'📈',glow:'rgba(255,80,0,.12)',catLabel:'Digital Marketing',catClass:'cat-dm',
+    title:'Top 10 Digital Marketing Trends Every Marketer in Kerala Must Know in 2025',
+    author:'Be Campus Marketing Faculty',role:'Be Campus Academy, Kottakkal',avColor:'linear-gradient(135deg,#e8002d,#ff6b47)',avInitial:'MT',
+    date:'March 5, 2025',read:'6 min read',
+    tags:['Digital Marketing','SEO 2025','Meta Ads','AI Marketing','Kerala Marketing','Malappuram'],
+    related:['ai-careers','siraj-story','ai-design-tools'],
+    toc:['AI-Powered Content Creation','Short-Form Video Dominance','Hyper-Local SEO for Kerala Businesses','Performance Max & Smart Bidding','Voice Search Optimisation','Influencer Marketing Goes Micro','Email Marketing Renaissance','First-Party Data Strategy','Social Commerce Explosion','Be Cubez in Action'],
+    body:`
+<p>If you asked a digital marketer in Kerala five years ago what their daily toolkit looked like, they'd probably say — Facebook Page, Canva, and maybe a basic knowledge of Google Analytics. In 2025, that toolkit has exploded into a sophisticated ecosystem of AI tools, multi-platform ad systems, data analytics, and automation workflows. The marketers who've kept up are thriving. The ones who haven't are struggling to get hired.</p>
+<p>As the faculty of Be Campus Academy's AI-Integrated Digital Marketing diploma program — the most advanced digital marketing course in Kottakkal and Malappuram — we track these trends daily, because our students need to graduate into the real industry, not a textbook version of it. Here are the 10 trends shaping digital marketing in Kerala in 2025.</p>
+
+<h2>AI-Powered Content Creation</h2>
+<p>The biggest shift in content marketing over the past two years has been the mainstreaming of AI writing tools. <strong>ChatGPT, Jasper, Copy.ai, and Notion AI</strong> are now standard tools in every serious digital marketing team. They're not replacing writers — they're allowing skilled marketers to produce more, faster, and better.</p>
+<p>In practice, this means a Be Campus graduate using ChatGPT to generate 20 ad copy variations in 10 minutes, then applying human creative judgment to refine the best two. It means using AI to produce a keyword-rich blog draft in 20 minutes that would have taken three hours manually. The skill isn't just knowing how to use ChatGPT — it's knowing <em>how to prompt it well</em> and how to edit AI output to sound genuinely human.</p>
+
+<div class="article-callout">
+  <div class="callout-title">Be Campus Training Note</div>
+  <p>In our AI-Integrated Digital Marketing diploma, students spend an entire module learning prompt engineering for marketing — how to write AI prompts that produce campaign-ready content, not just generic text.</p>
+</div>
+
+<h2>Short-Form Video Dominance</h2>
+<p>Instagram Reels and YouTube Shorts have completely overtaken long-form content in terms of organic reach for most brands in Kerala. Local businesses — from jewellery shops in Kottakkal to restaurants in Malappuram — are seeing 10x the engagement from a well-produced 30-second Reel compared to a standard Facebook post.</p>
+<p>Marketers need to understand <strong>video scripting, caption strategy, audio selection, and platform-specific formatting</strong>. They also need to know how to batch-produce short-form content efficiently — because the volume demanded by these platforms is relentless.</p>
+
+<h2>Hyper-Local SEO for Kerala Businesses</h2>
+<p>"Near me" searches have grown by over 150% in Malappuram and surrounding districts over the past three years. Businesses that appear in Google's local pack for searches like "training institute near Kottakkal" or "accountant near me Malappuram" are getting walk-in customers directly from organic search — without spending a rupee on ads.</p>
+<p>Hyper-local SEO — optimising Google Business Profiles, building local citations, earning location-specific reviews, and creating content targeting local keywords — is now one of the highest-ROI marketing activities for businesses in our district. Our SEO module covers all of this specifically for the Kerala market.</p>
+
+<h2>Performance Max & Smart Bidding</h2>
+<p>Google's Performance Max campaigns have changed how Google Ads works fundamentally. Instead of managing individual campaigns across Search, Display, Shopping, and YouTube separately, PMax uses AI to allocate budget across all channels simultaneously, optimising for conversions in real time. Marketers who understand how to set up PMax correctly — including proper asset groups, audience signals, and conversion tracking — are delivering significantly better results for clients.</p>
+<p>Our students don't just learn about PMax theoretically. They set up and manage real PMax campaigns through <strong>Be Cubez</strong>, our agency, on actual client accounts. This means they graduate with documented campaign results — something no amount of mock exercises can replicate.</p>
+
+<h2>Voice Search Optimisation</h2>
+<p>With the rise of Google Assistant and Siri usage in Kerala — particularly for local business searches in Malayalam and English — voice search optimisation is becoming increasingly important. Voice queries are longer, more conversational, and typically question-based ("Which is the best digital marketing institute near Malappuram?"). Content that answers these questions directly in a conversational tone now ranks better for voice results.</p>
+
+<h2>Influencer Marketing Goes Micro</h2>
+<p>The era of chasing celebrities for brand endorsements is giving way to <strong>micro-influencer marketing</strong> — partnering with local Instagram creators who have 5,000–50,000 highly engaged followers in a specific niche or geography. A Malappuram-based food influencer with 18,000 engaged local followers will drive more footfall for a restaurant than a national celebrity with 2 million followers who don't know where Kottakkal is.</p>
+
+<div class="article-quote">
+  <p>"We ran a micro-influencer campaign for a client through Be Cubez with three local Instagram creators. Total reach was 45,000 people — all in Malappuram district. The client sold out their product launch in 48 hours."</p>
+  <cite>— Be Cubez Campaign Team, Be Campus Agency</cite>
+</div>
+
+<h2>Email Marketing Renaissance</h2>
+<p>Despite being declared "dead" repeatedly over the past decade, email marketing is posting some of its highest engagement rates in years. With social media reach declining for business pages and ad costs rising, email remains the only channel where a brand owns its audience directly. Automated email sequences, behavioural triggers, and personalisation through tools like Mailchimp and Klaviyo are now essential skills for any serious digital marketer.</p>
+
+<h2>First-Party Data Strategy</h2>
+<p>With third-party cookies being phased out and privacy regulations tightening, brands can no longer rely on Facebook Pixel and Google's audience data the way they used to. <strong>First-party data</strong> — data collected directly from customers through lead forms, website behaviour, and purchase history — has become the most valuable marketing asset. Learning how to build, segment, and activate first-party data is now a core digital marketing competency.</p>
+
+<h2>Social Commerce Explosion</h2>
+<p>Instagram Shopping, WhatsApp Business catalogs, and YouTube product links are turning social platforms into direct sales channels. Businesses in Malappuram are now completing transactions entirely within Instagram — from product discovery to payment — without a customer ever visiting a website. Marketers who understand how to set up and optimise social commerce flows are in extremely high demand.</p>
+
+<h2>Be Cubez in Action</h2>
+<p>Everything described in this article isn't what we teach abstractly at Be Campus. It's what our students are <em>doing</em> on live client accounts through Be Cubez, our in-house agency. By the time a Be Campus Digital Marketing graduate walks into an interview in Kochi or Calicut, they have real campaign data, real client testimonials, and a real portfolio — not a mock certificate and a PowerPoint project.</p>
+<p>This is why our AI-Integrated Advanced Diploma in Digital Marketing has a <strong>100% placement record</strong> and is consistently rated the best digital marketing course in Kottakkal and Malappuram. If you want to be a marketer who can do all of the above — not just talk about it — come speak with us.</p>
+`
+  },
+
+  'faris-story':{
+    emoji:'🌟',glow:'rgba(255,170,0,.1)',catLabel:'Student Story',catClass:'cat-student',
+    title:'From Plus Two to Dubai Accountant: How Faris Turned a 2-Year Job Search into a Gulf Career with Be Campus AI-ADIAT',
+    author:'Faris Kalathil',role:'AI-ADIAT Graduate · Senior Accountant, Dubai',avColor:'linear-gradient(135deg,#ffaa00,#ff6600)',avInitial:'FK',
+    date:'March 1, 2025',read:'5 min read',
+    tags:['Gulf Jobs','AI-ADIAT','Accounting','Dubai','Student Story','International Accounting'],
+    related:['gulf-accounting','ai-careers','gst-2025'],
+    toc:['My Life Before Be Campus','Why I Chose AI-ADIAT','The Course: What I Actually Learned','The Be Campus Difference','The Interview That Changed Everything','My Life in Dubai Now','My Advice to Students in Malappuram'],
+    body:`
+<p>My name is Faris Kalathil. I'm from Perinthalmanna in Malappuram district. I completed my BCom from a local college in 2022 and spent almost two years applying for accounting jobs — sending CVs, attending walk-ins, failing interviews. Nothing worked. I had a degree, but I had no practical skills that any employer actually wanted.</p>
+<p>Today, I'm a Senior Accountant at a logistics company in Dubai, earning a package I never imagined possible from my hometown. This is the story of how Be Campus Academy and their AI-ADIAT program changed everything for me.</p>
+
+<h2>My Life Before Be Campus</h2>
+<p>After BCom, I thought getting an accounting job would be straightforward. I knew basic Tally. I understood the theory of accounts. What I didn't know was how completely disconnected my college education was from what employers actually needed.</p>
+<p>The companies I interviewed at wanted GST filing experience. They wanted someone who'd used QuickBooks or Xero. Gulf companies wanted IFRS knowledge and experience with cloud accounting. I had none of it. I was competing against candidates who had done professional diploma courses and had practical experience. I kept losing.</p>
+<p>By mid-2023, I was frustrated and honestly quite lost. A friend who had heard about Be Campus from someone in Malappuram town suggested I look into their AI-ADIAT course. I was sceptical — I'd seen plenty of "computer institutes" in Kottakkal that taught basic Tally and called it accounting training. But the AI-ADIAT was something completely different.</p>
+
+<h2>Why I Chose AI-ADIAT</h2>
+<p>When I visited Be Campus for a counselling session, the first thing that struck me was that the course content reflected what Gulf companies were actually asking for. QuickBooks. Xero. IFRS. UAE VAT and FTA compliance. International taxation fundamentals. And AI-powered accounting tools that big firms in the Gulf were already using.</p>
+<p>The placement team was honest with me. They said: "If you want a job in Kerala, DPAT will get you there. If you want a Gulf accounting career, AI-ADIAT is what you need." They showed me placement records — real names and companies, not just vague claims. I enrolled the next week.</p>
+
+<h2>The Course: What I Actually Learned</h2>
+<p>AI-ADIAT is an 8-month program, and I want to be honest — it is intensive. The first two months cover advanced accounting and the transition from Indian GAAP to IFRS. This alone was something I had never encountered in BCom, and it immediately made me understand why my previous applications were failing.</p>
+<p>Months three and four focused on <strong>QuickBooks Online and Xero</strong> — the two most widely used cloud accounting platforms in the Gulf, UK, and US. I learned everything from setting up a company file to generating financial reports, managing accounts receivable, and doing payroll. The trainers were practicing accountants, not just teachers — and the difference showed in every session.</p>
+<p>UAE VAT was a dedicated module — understanding the FTA regulations, tax registration thresholds, filing GSTR-like returns under UAE law, and handling input tax credits. This module alone made me employable in the UAE in a way that no other course in Malappuram could have.</p>
+<p>The AI module was genuinely fascinating. We learned to use AI-powered reconciliation tools that can match thousands of transactions in seconds. We used AI financial reporting dashboards. We learned how modern finance teams use automation to handle routine bookkeeping — and where human judgment remains irreplaceable. Understanding this distinction — what AI handles and what accountants still manage — is exactly what senior accounting roles require.</p>
+
+<div class="article-callout">
+  <div class="callout-title">Course Highlight</div>
+  <p>The AI-ADIAT course at Be Campus is the only program in Kottakkal and Malappuram that combines IFRS training, QuickBooks, Xero, UAE VAT, and AI accounting tools in a single 8-month diploma. It is built specifically for students targeting Gulf and international accounting careers.</p>
+</div>
+
+<h2>The Be Campus Difference</h2>
+<p>What set Be Campus apart was not just the content — it was the environment. The trainers were available for doubt-clearing beyond class hours. The placement team started working with me from month five onwards — updating my CV, coaching me on how to present my IFRS and cloud accounting skills in interviews, doing mock interviews with real questions from Gulf HR teams.</p>
+
+<div class="article-quote">
+  <p>"The placement team at Be Campus knew exactly what Gulf companies were looking for, because they had placed students there before. They told me which interview questions to expect, how to talk about my QuickBooks experience, and even how to present myself for video interviews with Dubai-based HR managers."</p>
+  <cite>— Faris Kalathil, AI-ADIAT Graduate</cite>
+</div>
+
+<h2>The Interview That Changed Everything</h2>
+<p>Three weeks after completing the AI-ADIAT program, I had my first interview with a logistics company in Dubai — done via video call. The HR manager asked me about UAE VAT returns, QuickBooks reporting, and IFRS 15 revenue recognition. I answered every question with confidence, because I had practiced all of these in class and had actual software experience to draw from.</p>
+<p>I got the offer within 48 hours. My salary was four times what I had been offered in Malappuram-based accounting roles. Within three months of landing, I was promoted from Accountant to Senior Accountant based on my performance. The skills I learned at Be Campus made me one of the most technically capable people on the team from day one.</p>
+
+<h2>My Life in Dubai Now</h2>
+<p>I won't pretend everything has been easy. Moving to a new country is challenging. But professionally, I have never been more confident or more financially stable. I use QuickBooks and Xero every single day at work. I file UAE VAT returns for the company every quarter. The AI tools I learned at Be Campus — particularly the automated reconciliation and AI dashboard tools — have helped me streamline workflows that previously took my team hours.</p>
+<p>My family's life has changed. My parents don't worry about finances anymore. My younger brother has enrolled in Be Campus's DPAT course, inspired by what happened to me. I visit Kottakkal when I can, and every time I do, I make it a point to speak with current Be Campus students.</p>
+
+<h2>My Advice to Students in Malappuram</h2>
+<p>If you're a BCom or commerce student sitting at home in Malappuram right now, unsure why your job applications keep failing — I know exactly how you feel. And I want to tell you: the gap isn't your intelligence. It's the skills gap between college education and what employers actually need.</p>
+<p>Be Campus closes that gap. The AI-ADIAT isn't cheap. It isn't short. It requires real commitment over 8 months. But the return on that investment — for me — was a Gulf career that I couldn't have dreamed of two years earlier. Don't wait. Enquire, speak to the counsellors, and make the decision that changes your story.</p>
+`
+  },
+
+  'ai-design-tools':{
+    emoji:'🤖',glow:'rgba(100,80,255,.12)',catLabel:'AI & Design',catClass:'cat-ai',
+    title:'7 AI Tools Every Graphic Designer in Kerala Must Master in 2025',
+    author:'Be Campus Design Faculty',role:'Creative Design School, Be Campus',avColor:'linear-gradient(135deg,#9040ff,#4080ff)',avInitial:'DT',
+    date:'February 18, 2025',read:'7 min read',
+    tags:['Graphic Design','AI Tools','Adobe Firefly','MidJourney','Canva AI','Design Career','Kerala'],
+    related:['asha-story','ai-careers','dm-trends'],
+    toc:['Why Designers Can\'t Ignore AI Anymore','1. Adobe Firefly','2. MidJourney','3. Canva AI & Magic Studio','4. Stable Diffusion','5. Runway ML','6. Khroma — AI Colour Palette','7. Remove.bg & Cleanup.pictures','How Be Campus Teaches AI Design'],
+    body:`
+<p>Spend five minutes on any graphic design forum in 2025 and you'll find two camps: designers who are terrified AI will take their jobs, and designers who are using AI tools to do three times more work in a fraction of the time. The second group is getting hired. The first group is still debating.</p>
+<p>At Be Campus Academy's Creative Design & Brand Building program, we made the decision early: we are in the second camp. Our students don't just learn Photoshop, Illustrator, and Figma — they learn how to use AI tools as creative amplifiers that make them dramatically more productive and versatile. Here are the 7 AI design tools every designer in Kerala needs to know in 2025.</p>
+
+<h2>Why Designers Can't Ignore AI Anymore</h2>
+<p>The design industry in Kerala has changed more in the last two years than in the previous decade. Clients expect faster turnaround. Social media demands more volume. Brand identity projects that once took weeks are now expected in days. AI tools are the only way to meet this demand without burning out or compromising quality.</p>
+<p>More importantly, employers know this. Design studios in Kochi, Calicut, and even local agencies in Malappuram are now asking interview candidates: <em>"Which AI tools do you use in your workflow?"</em> If your answer is "none," you're immediately at a disadvantage compared to candidates who can show AI-assisted portfolio work.</p>
+
+<h2>1. Adobe Firefly</h2>
+<p>Adobe Firefly is now natively integrated into Photoshop, Illustrator, and Express — which means every Be Campus design student already encounters it within their core software. Firefly's <strong>Generative Fill</strong> in Photoshop is arguably the most useful AI design feature of 2025. Select any area of an image, type a text prompt, and Firefly generates photorealistic fill that matches the lighting, perspective, and texture of the original image.</p>
+<p>Practical use cases: extending image backgrounds for social media formats, removing and replacing unwanted objects, generating texture variations for brand materials, creating realistic product mockups. For designers who do retouching and photo manipulation work, Firefly has genuinely reduced hours of manual cloning and healing to a matter of seconds.</p>
+
+<div class="article-tip-box">
+  <div class="tip-icon">🎨</div>
+  <div class="tip-body">
+    <div class="tip-title">Pro Tip</div>
+    <div class="tip-text">Adobe Firefly is trained only on licensed Adobe Stock images, meaning its outputs are copyright-safe for commercial use — a critical advantage over other AI image generators for professional design work.</div>
+  </div>
+</div>
+
+<h2>2. MidJourney</h2>
+<p>MidJourney remains the gold standard for AI image generation in terms of aesthetic quality. For brand designers in Kerala, its most practical applications are <strong>mood board creation, concept visualisation, and illustration styles</strong> that would otherwise require extensive manual illustration skills.</p>
+<p>A brand designer working on a luxury resort identity can generate 50 different visual mood concepts in MidJourney within an hour, present the best directions to the client, and then execute the chosen direction using Illustrator and Photoshop. This workflow compresses the initial conceptual phase of brand projects from days to hours.</p>
+<p>The learning curve is in prompt engineering — learning to write prompts that produce outputs in specific art styles, with specific colour palettes, lighting conditions, and compositions. Our design students spend a full week on MidJourney prompt technique, because the quality difference between a generic prompt and a well-crafted one is enormous.</p>
+
+<h2>3. Canva AI & Magic Studio</h2>
+<p>Canva's Magic Studio features — Magic Resize, Magic Write, Text to Image, and Background Remover — have made it far more powerful than the basic template tool it once was. For social media designers managing high-volume content production, Canva AI allows a single designer to produce platform-optimised variations of every asset automatically.</p>
+<p>We teach our students to use Canva AI strategically: for client-facing social media work where speed matters, and for initial concept presentation before producing final assets in Adobe tools. Understanding when to use Canva versus when to use professional Adobe software is itself a valuable skill.</p>
+
+<h2>4. Stable Diffusion</h2>
+<p>Stable Diffusion is an open-source AI image generator that gives designers more control and flexibility than cloud-based tools like MidJourney. With local installation, designers can use it for commercial projects without per-generation cost, customise models for specific visual styles, and integrate it into automated design workflows.</p>
+<p>For designers who want deeper technical control over AI image generation — including fine-tuning models on brand-specific visual styles — Stable Diffusion is the professional-grade option. We introduce our advanced students to Stable Diffusion concepts, particularly for building brand-consistent AI image workflows.</p>
+
+<h2>5. Runway ML</h2>
+<p>If Photoshop is for images and MidJourney is for stills, Runway ML is the AI tool for <strong>motion and video</strong>. Its Gen-2 model can generate short video clips from text prompts, apply motion effects to static images, and perform AI-powered video editing tasks like background removal and style transfer on video.</p>
+<p>For designers who are moving into motion graphics and video production — increasingly demanded by social media clients — Runway ML opens creative possibilities that would previously have required expensive After Effects expertise and significantly more production time.</p>
+
+<h2>6. Khroma — AI Colour Palette Generator</h2>
+<p>Khroma is an AI tool that learns your colour preferences and generates infinite, aesthetically harmonious colour palettes tailored to your taste. For brand designers working on identity projects, it's an extraordinary research tool for exploring colour directions quickly. Rather than spending hours manually testing colour combinations, Khroma generates hundreds of palette options that can be explored and refined in minutes.</p>
+
+<h2>7. Remove.bg & Cleanup.pictures</h2>
+<p>These may not be as glamorous as MidJourney, but <strong>Remove.bg</strong> (for background removal) and <strong>Cleanup.pictures</strong> (for removing unwanted elements from images) are the AI tools that save practicing designers the most time on a daily basis. Tasks that once required careful Photoshop masking — separating a product from its background, removing a photobomber from an event photo — now take seconds with AI-powered accuracy that rivals manual masking for most use cases.</p>
+
+<h2>How Be Campus Teaches AI Design</h2>
+<p>At Be Campus's Creative Design & Brand Building diploma, AI tools are not an add-on module. They are woven into every phase of the curriculum. Students learn Adobe Firefly while studying Photoshop. They explore MidJourney during brand identity projects. They use Canva AI in their social media design work.</p>
+<p>More importantly, they learn the <em>judgment</em> to use AI appropriately — knowing when AI speeds up great work and when it produces generic output that will damage a client's brand. That discernment is what separates a skilled designer from someone who just knows how to click buttons.</p>
+<p>If you're in Malappuram and you want to build a design career that's ready for 2025 and beyond, come speak with us. Our Advanced Diploma in Creative Design & Brand Building is the most comprehensive and AI-integrated design course in Kottakkal — and our graduates' portfolios prove it.</p>
+`
+  },
+
+  'hr-career':{
+    emoji:'💼',glow:'rgba(50,200,150,.1)',catLabel:'HR & Careers',catClass:'cat-hr',
+    title:'Why HR Is the Hottest Career in Malappuram Right Now — And How to Break In with No Experience',
+    author:'Be Campus HR Faculty',role:'HR & Talent Management School',avColor:'linear-gradient(135deg,#00c878,#009060)',avInitial:'HT',
+    date:'February 10, 2025',read:'5 min read',
+    tags:['HR Career','HR Management','Malappuram Jobs','Payroll','Labour Law','HRMS'],
+    related:['ai-careers','faris-story','gst-2025'],
+    toc:['The HR Boom in Malappuram','What Has Changed in HR Hiring','The Skills That Actually Get HR Jobs','Why Our Graduates Get Placed Before Graduation','Common Myths About HR Careers','How to Start With No Experience'],
+    body:`
+<p>Walk into any industrial estate in Malappuram district right now and ask the manager what their biggest operational headache is. Chances are, it's not machinery or raw materials. It's people management. The district's booming manufacturing sector — textiles, food processing, construction materials, and logistics — has created a surge in demand for trained Human Resources professionals that local colleges simply aren't producing.</p>
+<p>The result? HR jobs in Malappuram and across Kerala are going unfilled — or being filled by underqualified candidates who've "learned on the job" but lack the compliance knowledge, HRMS skills, and talent management frameworks that modern organisations need. At Be Campus Academy, we recognised this gap years ago. Our Advanced Diploma in Human Resources & Talent Management was built specifically to fill it.</p>
+
+<h2>The HR Boom in Malappuram</h2>
+<p>Malappuram district has been experiencing sustained economic growth, particularly in manufacturing, healthcare, and the growing service sector. With growth comes hiring. With hiring comes the need for structured talent acquisition, onboarding, performance management, and HR compliance.</p>
+<p>Simultaneously, the formalisation of the workforce — driven by ESI, PF, and labour law compliance requirements — has made having a qualified HR professional in the team non-negotiable for any business with more than 20 employees. Smaller businesses that previously had no dedicated HR function are now bringing one in. This is creating entry-level and mid-level HR opportunities across the district at a rate we haven't seen before.</p>
+
+<div class="article-callout">
+  <div class="callout-title">Market Data</div>
+  <p>Our placement partner analysis shows a <strong>65% increase</strong> in HR job openings listed by companies in Malappuram, Kozhikode, and Thrissur over the past 18 months — with entry-level HR executive roles seeing the highest unfilled vacancy rate.</p>
+</div>
+
+<h2>What Has Changed in HR Hiring</h2>
+<p>The HR function has changed dramatically in the past five years. Companies are no longer looking for someone to "manage attendance and process salaries." They want HR professionals who can:</p>
+<ul>
+  <li>Use <strong>HRMS software</strong> (Zoho People, DarwinBox, or equivalent) for end-to-end employee management</li>
+  <li>Handle <strong>payroll compliance</strong> — PF, ESI, professional tax, TDS on salary — with zero errors</li>
+  <li>Navigate <strong>Indian labour laws</strong> — Factories Act, Shops and Establishments Act, Gratuity, Maternity Benefit Act</li>
+  <li>Run structured <strong>recruitment processes</strong> — job posting, ATS management, shortlisting, structured interviews</li>
+  <li>Implement <strong>performance management systems</strong> — KPIs, appraisal cycles, PIP frameworks</li>
+</ul>
+<p>Candidates who can demonstrate software proficiency alongside legal knowledge and soft skills are commanding 30–40% higher starting salaries than those who only know the theoretical HR concepts taught in most college courses.</p>
+
+<h2>The Skills That Actually Get HR Jobs</h2>
+<p>Based on our placement partner feedback and the interview experiences of our graduates, here are the skills that HR interviewers in Kerala and beyond are actually testing in 2025:</p>
+
+<h3>Payroll & Compliance Knowledge</h3>
+<p>The ability to correctly calculate and process monthly payroll — including PF, ESI, professional tax, and income tax deductions — is the single most tested HR skill at entry level. Candidates who can walk through a payroll calculation live in an interview immediately stand out. This is why our HR diploma includes extensive hands-on payroll processing practice, including on Tally and Excel-based payroll formats.</p>
+
+<h3>HRMS Software Proficiency</h3>
+<p>Zoho People, DarwinBox, and similar platforms are now standard in mid-size and large organisations across Kerala. Companies don't want to train a fresh hire on software from scratch — they want someone who can be productive on day one. Our students get certified on Zoho People and spend significant time on HRMS operations during the course.</p>
+
+<h3>Labour Law Fundamentals</h3>
+<p>With increased government scrutiny of labour law compliance post-pandemic, organisations are increasingly requiring HR staff who understand legal obligations — not just HR processes. Knowledge of the Factories Act, Shops and Establishments Act, POSH Act, and Maternity Benefit Act is now screened for at most mid-size company HR interviews.</p>
+
+<div class="article-tip-box">
+  <div class="tip-icon">💡</div>
+  <div class="tip-body">
+    <div class="tip-title">Interview Tip</div>
+    <div class="tip-text">In HR interviews, be ready to explain the difference between PF and ESI, the threshold limits, contribution percentages, and filing deadlines. This question is asked in nearly every HR entry-level interview in Kerala. Our students practice this specifically.</div>
+  </div>
+</div>
+
+<h2>Why Our Graduates Get Placed Before Graduation</h2>
+<p>Be Campus's placement record for the HR diploma isn't accidental. It's the result of a deliberate curriculum design that prioritises practical, interview-ready skills over theory, combined with an active placement cell that begins working with students from the third month of training.</p>
+
+<div class="article-quote">
+  <p>"I was placed before my batch even graduated. The placement team arranged my interview, coached me on every question I might face, and followed up with the HR manager on my behalf. I didn't have to do anything except perform well in the interview — which I did because the training had prepared me thoroughly."</p>
+  <cite>— Nisha A., HR Executive, Logistics MNC, Kochi (Be Campus Graduate)</cite>
+</div>
+
+<h2>Common Myths About HR Careers</h2>
+<p><strong>Myth: You need an MBA to work in HR.</strong> Reality: An MBA in HR is valuable for senior management roles. For executive and manager level roles, a professional diploma with demonstrated skills and software proficiency is often preferred over a theoretical MBA without practical experience.</p>
+<p><strong>Myth: HR is only for Arts graduates.</strong> Reality: HR professionals come from all academic backgrounds — BCom, BSc, BA, BBA. The skills matter, not the degree subject.</p>
+<p><strong>Myth: HR is boring administrative work.</strong> Reality: Modern HR is a strategic business function. HR Business Partners work directly with senior management. Talent Acquisition specialists drive company growth. Training & Development teams shape the future capabilities of the organisation.</p>
+
+<h2>How to Start With No Experience</h2>
+<p>The beauty of the HR field is that practical training can genuinely substitute for work experience at the entry level, if the training is good enough. Be Campus's HR diploma is specifically designed to give you the practical competencies that make you immediately valuable to an employer — even if you're a fresh graduate with no HR work experience.</p>
+<p>The path is clear: complete the diploma, build your skills portfolio during the course, let our placement team connect you with the right companies, and prepare thoroughly for interviews. Every Be Campus HR graduate who has completed the full program and engaged with our placement process has been placed. That's not marketing copy — it's our track record.</p>
+<p>If you're in Malappuram and considering an HR career, speak with us. We'll show you exactly where our graduates are working, what they're earning, and what the next 12 months of training looks like for you.</p>
+`
+  },
+
+  'asha-story':{
+    emoji:'🎨',glow:'rgba(255,80,160,.1)',catLabel:'Student Story',catClass:'cat-student',
+    title:'How Asha Went from Homemaker to Freelance Brand Designer Earning ₹60,000/Month — at 32, with Zero Design Experience',
+    author:'Asha Mohammed',role:'Creative Design Graduate · Freelance Brand Designer',avColor:'linear-gradient(135deg,#e8002d,#ff60a0)',avInitial:'AM',
+    date:'January 25, 2025',read:'5 min read',
+    tags:['Graphic Design','Freelancing','Student Story','Women Career','Kottakkal','Brand Design'],
+    related:['ai-design-tools','ai-careers','siraj-story'],
+    toc:['Before Be Campus: A Life on Hold','Why Design? Why Be Campus?','The First Three Months','The Be Cubez Turning Point','Getting My First Paying Client','Building a Freelance Practice','What I Earn Now','My Message to Women in Malappuram'],
+    body:`
+<p>I want to start with something honest: when I enrolled at Be Campus Academy at 32, I felt like I was too old to start something new. My children were in school. I hadn't worked professionally in six years. I had never used Adobe Photoshop in my life. I cried on the drive home after my first counselling session because I was so scared of failing.</p>
+<p>Fourteen months later, I am a freelance brand designer earning ₹60,000 a month, with clients in Kochi, Bangalore, and even one in Dubai. I work from home, on my own schedule, during my children's school hours. This is my story — and I want every woman in Malappuram who feels like it's too late to read it carefully.</p>
+
+<h2>Before Be Campus: A Life on Hold</h2>
+<p>I did my BA in Malappuram and got married at 24. I stopped working after my first child. By the time my younger child started school and I had time and mental space to think about myself again, I was 31 — and completely uncertain about what I could do professionally. I had a gap in my resume. I didn't have a technical degree. And I felt like the world had moved on without me.</p>
+<p>I knew I was creative. I had always enjoyed designing things at home — birthday invitations for my children's parties, layouts for our building's notice board, decorations. My husband kept saying "you should do something with this." I didn't know what that something was.</p>
+
+<h2>Why Design? Why Be Campus?</h2>
+<p>A neighbour in Kottakkal whose daughter had done a course at Be Campus suggested I visit. I went expecting another basic computer institute that would teach me MS Office. What I found was completely different.</p>
+<p>The counsellor showed me a portfolio of work done by recent students — real brand identities, Instagram pages for businesses, packaging designs. She explained the Creative Design & Brand Building diploma in detail: Adobe suite, Figma, Canva Pro, AI design tools, and most importantly, a <strong>portfolio-based approach where we work on real brand projects</strong> through Be Cubez, the academy's agency.</p>
+<p>She told me something I still remember: "We don't care that you're 32 and haven't worked in six years. We care that you're creative and committed. If you are, this course will give you skills that employers and clients will pay for — regardless of your age or background." I enrolled the following week.</p>
+
+<h2>The First Three Months</h2>
+<p>I won't pretend the beginning was easy. Photoshop has a steep learning curve and the first few weeks felt overwhelming. I was in class with students who were 19 and 20 years old and seemed to pick things up faster than me. There were moments of genuine self-doubt.</p>
+<p>But the trainers at Be Campus were patient in a way I had not expected. They stayed after hours to help me. They explained concepts in multiple ways until I understood. And I started to notice something: while the younger students were faster at following instructions, I had something they didn't — <strong>real-world context</strong>. When we studied brand identity, I understood what it meant for a business because I had lived in the real world longer. That became my advantage.</p>
+<p>By month three, I was producing work I was proud of. I designed a full brand identity for a fictional coffee shop as a class project and my trainer told me it was portfolio-worthy. That was the first moment I thought: maybe I can actually do this.</p>
+
+<h2>The Be Cubez Turning Point</h2>
+<p>The game-changer was Be Cubez — Be Campus's in-house digital marketing and design agency. In month four, our class was assigned to work on a real client project through Be Cubez: a brand refresh for a small clothing boutique in Malappuram. Real client, real brief, real feedback.</p>
+<p>I worked harder on that project than on anything else in the course. I produced three logo concepts, a colour palette, typography guidelines, and mock-ups of the boutique's social media posts. When the client approved my design direction, I genuinely cried. Not because I was sad — because I finally understood that my work had real-world value.</p>
+<p>Over the next two months, I worked on two more Be Cubez projects — a food packaging design for a local brand and social media creatives for a healthcare clinic. By the time I completed the diploma, I had <strong>eight real portfolio pieces</strong> with actual client approval histories. Not mock projects. Not made-up briefs. Real work.</p>
+
+<div class="article-quote">
+  <p>"When I sat down for client meetings and showed my portfolio, the fact that these were real approved projects for real businesses made an enormous difference. Clients could see my work in context. They could see that real clients had trusted me. That is worth more than any certificate."</p>
+  <cite>— Asha Mohammed, Freelance Brand Designer</cite>
+</div>
+
+<h2>Getting My First Paying Client</h2>
+<p>I decided early that I wanted to freelance, not get a corporate job. My family responsibilities meant I needed location flexibility. Be Campus's placement team was supportive of this decision and helped me set up a profile on Behance and reach out to local businesses directly.</p>
+<p>My first paid project came from a bakery in Kottakkal that had seen my work through Be Cubez. They asked me to design their brand identity and packaging. I charged ₹8,000 — my first professional income in six years. It was the most significant ₹8,000 I had ever earned.</p>
+
+<h2>Building a Freelance Practice</h2>
+<p>After that first project, referrals started coming. One satisfied client told another. I joined a few local business WhatsApp groups and shared my work. I built a proper Instagram portfolio account. Within six months, I had a steady flow of projects — mostly brand identity, packaging design, and social media creative packages for local businesses in Malappuram and increasingly from clients in Kochi and Bangalore who found me through Instagram.</p>
+<p>The AI tools I learned at Be Campus — particularly MidJourney for concept generation and Adobe Firefly for image work — allowed me to deliver projects faster without compromising quality. What used to take three days, I can often complete in one. This means I can take on more clients and earn more without working longer hours.</p>
+
+<h2>What I Earn Now</h2>
+<p>I want to be transparent here, because I know it matters to women considering this path. My current monthly income from freelance brand design is between ₹55,000 and ₹70,000 — averaging around ₹60,000. I work roughly 5–6 hours a day, five days a week, during school hours. I haven't missed a single school pickup or parent-teacher meeting.</p>
+<p>I have three retainer clients — businesses that pay me a monthly fee for ongoing creative work — and take on project-based work from new clients as capacity allows. By this time next year, I'm planning to cross ₹1 lakh per month and potentially take on a junior designer to help.</p>
+
+<h2>My Message to Women in Malappuram</h2>
+<p>If you are a woman in Malappuram — a housewife, a career-break returner, a young graduate unsure of your path — and you feel like it's too late, too risky, or too uncertain to try something new, I want you to know: I felt exactly the same way at 32. I was wrong.</p>
+<p>Be Campus will not judge your age, your gap, your background, or your confidence level on day one. They will teach you real skills, give you real project experience, and support you genuinely until you find your footing. What you do with those skills — whether that's a corporate job, freelancing, or something entirely your own — is up to you.</p>
+<p>The only thing I wish I had done differently is start sooner. Don't make the same mistake.</p>
+`
+  },
+
+  'gulf-accounting':{
+    emoji:'🌐',glow:'rgba(50,150,255,.1)',catLabel:'Accounting & Gulf Careers',catClass:'cat-acc',
+    title:'Gulf Accounting Jobs 2025: What Kerala Candidates Must Know Before Applying — and How to Actually Get Hired',
+    author:'Be Campus Finance Faculty',role:'Finance School, Be Campus Academy',avColor:'linear-gradient(135deg,#0080ff,#0040c0)',avInitial:'FT',
+    date:'January 18, 2025',read:'6 min read',
+    tags:['Gulf Jobs','Accounting','IFRS','QuickBooks','UAE VAT','Kerala','International Accounting'],
+    related:['faris-story','gst-2025','ai-careers'],
+    toc:['The Gulf Accounting Opportunity for Kerala Candidates','What Gulf Companies Actually Look For','IFRS: The Most Critical Qualification Gap','Cloud Accounting: QuickBooks & Xero','UAE VAT Knowledge Is Non-Negotiable','AI Accounting Tools in Gulf Firms','Salary Ranges in 2025','How to Position Yourself as a Gulf-Ready Accountant'],
+    body:`
+<p>Every year, thousands of BCom and MBA Finance graduates from Kerala apply for accounting jobs in the UAE, Saudi Arabia, Qatar, and Kuwait. Every year, a significant portion of them fail at the interview stage — not because they're not intelligent or hardworking, but because their qualifications don't match what Gulf employers actually need.</p>
+<p>The gap between Indian accounting education and Gulf employer requirements is specific, identifiable, and — most importantly — bridgeable. At Be Campus Academy, our AI-Integrated Advanced Diploma in International Accounting & Taxation (AI-ADIAT) was built specifically to close that gap. This article explains exactly what Gulf companies are looking for in 2025 and what Kerala candidates must do to qualify.</p>
+
+<h2>The Gulf Accounting Opportunity for Kerala Candidates</h2>
+<p>The Gulf has always been a significant employment destination for Kerala's professional workforce. But the accounting opportunity in 2025 is particularly strong for a specific reason: <strong>the UAE's introduction of corporate tax in June 2023</strong>.</p>
+<p>For the first time in UAE history, most businesses are now subject to a 9% corporate tax and must maintain compliant accounting records, file tax returns, and demonstrate financial reporting standards. This has created an immediate and sustained demand for qualified accountants who understand both Gulf compliance requirements and international accounting standards.</p>
+<p>Saudi Arabia's Vision 2030 transformation, Qatar's post-World Cup economic diversification, and Kuwait's ongoing infrastructure programmes have similarly created accounting demand. The window for Kerala candidates — who have a historical trust relationship with Gulf employers and a strong cultural fit — is wide open right now.</p>
+
+<h2>What Gulf Companies Actually Look For</h2>
+<p>Based on our placement partner network in the Gulf and the interview feedback from our AI-ADIAT graduates, here is what Gulf accounting employers are consistently screening for in 2025:</p>
+<ul>
+  <li><strong>IFRS knowledge</strong> — Not just awareness, but the ability to explain and apply specific standards</li>
+  <li><strong>Cloud accounting software</strong> — QuickBooks Online or Xero proficiency is asked about in nearly every Gulf accounting interview</li>
+  <li><strong>UAE VAT / GCC VAT</strong> — Understanding of VAT registration, filing, and FTA compliance</li>
+  <li><strong>Financial reporting</strong> — Ability to prepare and interpret P&L, Balance Sheet, and Cash Flow Statements under IFRS</li>
+  <li><strong>Advanced Excel</strong> — Financial modelling, pivot tables, VLOOKUP, and dashboard creation are standard expectations</li>
+  <li><strong>Multi-currency accounting</strong> — Understanding of foreign currency transactions, exchange rate treatment</li>
+</ul>
+
+<div class="article-callout">
+  <div class="callout-title">Reality Check</div>
+  <p>A 2024 survey of Gulf-based HR managers with Kerala hiring networks found that <strong>over 70% of Kerala accounting applicants fail</strong> the technical screening stage — primarily due to lack of IFRS knowledge and cloud accounting software experience. This is a skills gap problem, not an intelligence problem.</p>
+</div>
+
+<h2>IFRS: The Most Critical Qualification Gap</h2>
+<p>International Financial Reporting Standards (IFRS) are the accounting language of the Gulf. Every listed company, most large private companies, and increasingly mid-size businesses in the UAE, Saudi Arabia, and Qatar prepare their financial statements under IFRS.</p>
+<p>Indian accounting education teaches Indian Accounting Standards (Ind AS) — which are converged with but not identical to full IFRS. The differences matter in practice: IFRS 16 lease accounting, IFRS 15 revenue recognition from contracts, IFRS 9 financial instruments treatment — these are tested in Gulf accounting interviews and form the basis of day-to-day accounting work at international firms.</p>
+<p>Our AI-ADIAT program dedicates two full months to IFRS — not as a theoretical overview, but as practical application. Students practice preparing IFRS-compliant financial statements, performing IFRS 16 lease calculations, and applying IFRS 15 revenue recognition principles to real scenarios.</p>
+
+<h2>Cloud Accounting: QuickBooks & Xero</h2>
+<p>The Gulf's accounting ecosystem has moved decisively to cloud-based platforms. QuickBooks Online and Xero together account for the majority of cloud accounting deployments across SMEs in the UAE — the sector with the highest volume of accounting job openings for fresh hires from Kerala.</p>
+<p>Candidates who can demonstrate hands-on QuickBooks and Xero proficiency — including setting up company accounts, managing Chart of Accounts, processing payroll, reconciling bank accounts, and generating reports — immediately stand out in Gulf interviews. This software proficiency is the single fastest way to differentiate your CV from the hundreds of other Kerala accounting graduates applying for the same role.</p>
+
+<div class="article-tip-box">
+  <div class="tip-icon">💡</div>
+  <div class="tip-body">
+    <div class="tip-title">Interview Preparation</div>
+    <div class="tip-text">Gulf accounting interviewers frequently ask candidates to walk through how they would set up a new company in QuickBooks, or how they would process a specific VAT transaction. Hands-on software practice — not just theoretical knowledge — is what gets you through these screens.</div>
+  </div>
+</div>
+
+<h2>UAE VAT Knowledge Is Non-Negotiable</h2>
+<p>Since the UAE implemented VAT in January 2018, understanding UAE VAT — registration thresholds, standard and zero-rated supplies, input tax credit claims, and quarterly FTA return filing — has been a basic expectation for any accounting hire in the UAE market.</p>
+<p>Our AI-ADIAT program covers UAE VAT comprehensively — including the nuances of the FTA's tax return process, the treatment of exempt supplies, the documentation requirements for VAT audits, and the specific scenarios (real estate, financial services, healthcare) where VAT treatment differs from standard. Candidates who can speak confidently about UAE VAT in interviews are demonstrating both knowledge and genuine market readiness.</p>
+
+<h2>AI Accounting Tools in Gulf Firms</h2>
+<p>The largest accounting and professional services firms in the Gulf — Big 4, regional audit firms, and large corporate finance functions — are actively implementing AI-powered accounting tools. AI-assisted reconciliation, automated financial report generation, predictive cash flow analysis, and intelligent expense categorisation are all being deployed in Gulf finance departments.</p>
+<p>Our AI-ADIAT program teaches students how these tools work, how to use them, and — critically — how to speak about them in interviews in a way that demonstrates you are a forward-looking accountant, not someone who will be threatened by automation. Being AI-literate is a competitive advantage in Gulf accounting hiring right now.</p>
+
+<h2>Salary Ranges in 2025</h2>
+<p>To give you realistic expectations: entry-level accounting roles in the UAE for Kerala graduates typically start between AED 2,500–3,500 per month (approximately ₹55,000–₹77,000). Mid-level accountants with 2–3 years experience and IFRS/cloud accounting skills can command AED 4,500–7,000 (₹99,000–₹1.55 lakh). Senior accountants and financial controllers in larger firms earn AED 8,000–15,000 and above.</p>
+<p>Be Campus AI-ADIAT graduates entering the Gulf market in 2024–2025 have been starting at AED 2,800–3,500 based on placement feedback — demonstrating that the qualification genuinely positions candidates at the stronger end of the entry-level range.</p>
+
+<h2>How to Position Yourself as a Gulf-Ready Accountant</h2>
+<p>The path is straightforward: build the specific skills Gulf employers are looking for (IFRS, QuickBooks/Xero, UAE VAT, AI tools), get an internationally recognised qualification on your CV (like AI-ADIAT), build a practice portfolio that demonstrates software proficiency, and engage with a placement network that has actual Gulf connections.</p>
+<p>Be Campus Academy's AI-ADIAT program and placement cell provides all of this. If you are a BCom, BBA Finance, or MBA graduate in Malappuram who is serious about a Gulf accounting career — this is the program that closes the qualification gap between where you are and where Gulf employers need you to be. Come speak with us.</p>
+`
+  },
+
+  'siraj-story':{
+    emoji:'🚀',glow:'rgba(232,0,45,.12)',catLabel:'Student Story',catClass:'cat-student',
+    title:'"3 Job Offers in One Week" — How Sirajudheen Turned Be Cubez Agency Training into a Digital Marketing Career',
+    author:'Sirajudheen Rahman',role:'AI Digital Marketing Graduate · Performance Marketing Manager',avColor:'linear-gradient(135deg,#e8002d,#ff8040)',avInitial:'SR',
+    date:'December 15, 2024',read:'4 min read',
+    tags:['Digital Marketing','Student Story','Be Cubez','Google Ads','Meta Ads','Kottakkal','Placement'],
+    related:['dm-trends','ai-careers','asha-story'],
+    toc:['Why I Chose Digital Marketing','What I Expected vs. What I Got','The Be Cubez Experience','Going Into Interviews With Real Data','Three Offers in Seven Days','Lessons for Future Be Campus Students'],
+    body:`
+<p>My name is Sirajudheen Rahman. I'm from Tirur in Malappuram district, and I graduated with a BBA in 2022. Like a lot of commerce graduates in Malappuram, I had a degree but no clear career direction. I knew I was interested in marketing, but I also knew that my college education hadn't given me any practical skills that employers would actually pay for.</p>
+<p>I researched digital marketing courses across Malappuram and Kottakkal for about two months. Most institutes offered similar syllabi — SEO, social media, basic Google Ads — with little evidence of what happened to their graduates. Be Campus was different. They showed me actual placement records. They told me about Be Cubez. And they showed me portfolios of work that previous students had produced on real client accounts.</p>
+<p>That transparency was what convinced me to enrol. What happened over the next six months exceeded everything I expected.</p>
+
+<h2>Why I Chose Digital Marketing</h2>
+<p>I had always been interested in how brands communicated — why certain ads worked and others didn't, why some businesses grew on social media while others languished. I also saw that every business around me in Malappuram was struggling with their digital presence and paying poor money for bad results from unreliable freelancers. The opportunity was obvious: someone who genuinely knew what they were doing could command serious money and serious respect in this market.</p>
+
+<h2>What I Expected vs. What I Got</h2>
+<p>I expected good theoretical training. What I got was a genuinely intensive, practical experience that was unlike any educational environment I had been in before. From day one, the training was tool-based. We weren't being lectured at — we were doing. Opening Google Analytics 4. Setting up Google Search Console. Building Facebook Business Manager accounts. Writing ad copy. By the end of month one, I had already done more hands-on digital marketing work than most people learn in a year of "self-study."</p>
+<p>The AI integration was genuinely impressive. We weren't just taught to use ChatGPT to write captions. We learned <strong>structured AI workflows</strong> — using AI to do keyword research, brief content writers, analyse competitor strategies, and optimise ad targeting. The combination of traditional digital marketing foundations and AI tool fluency made the training feel genuinely ahead of the market.</p>
+
+<h2>The Be Cubez Experience</h2>
+<p>Month four was when everything clicked. Our batch was onboarded into Be Cubez — Be Campus's in-house digital marketing agency — and assigned to a real client project. I was part of the team managing Google Ads and Meta Ads for a local e-commerce business in Malappuram.</p>
+<p>Working on a real account with real money is completely different from any simulation. You feel the weight of responsibility. When the client's ROAS drops, you have to diagnose it and fix it. When an ad set performs well, you scale it — and understand why it worked. I learned more about Google Ads in the two months of Be Cubez work than in the first three months of classroom training combined.</p>
+<p>I kept a detailed record of everything: campaign structures I built, A/B test results, CTR improvements, conversion rate changes. This became my portfolio — documented proof of real campaign management experience.</p>
+
+<div class="article-quote">
+  <p>"When I sat across from the interview panel at the Kochi agency and they asked me about my experience with Performance Max campaigns, I didn't say 'I've learned about it.' I said 'In our last Be Cubez campaign, we transitioned a client from manual CPC to PMax and saw a 34% improvement in conversion volume at the same CPA.' That's the difference Be Cubez makes."</p>
+  <cite>— Sirajudheen Rahman, Performance Marketing Manager</cite>
+</div>
+
+<h2>Going Into Interviews With Real Data</h2>
+<p>The placement team at Be Campus prepared me thoroughly for the interview circuit. We did three rounds of mock interviews. They told me which questions Kochi and Calicut agencies were asking. They coached me on how to present my campaign data — not just showing numbers, but telling the story of what decision I made, why, and what happened as a result.</p>
+<p>That narrative ability — the skill of explaining your marketing thinking, not just your results — is what differentiates a genuinely skilled marketer from someone who got lucky with good numbers. Be Campus's placement team trained me to communicate my thinking, not just my outcomes.</p>
+
+<h2>Three Offers in Seven Days</h2>
+<p>I applied to eight positions over two weeks. I was called for interviews at five. I received three job offers within seven days of starting the process.</p>
+<p>The deciding factor, according to two of the companies who gave me feedback, was my portfolio. Specifically, the fact that I had documented Be Cubez campaign work with real data — not case studies or simulations. One interviewer told me directly: "Most candidates your age either have no experience at all or have vague claims about 'managing social media for a family business.' You came in with actual campaign data and a coherent explanation of your decisions. That's extremely rare at your level."</p>
+<p>I accepted an offer from a performance marketing agency in Kochi — a role as Performance Marketing Executive with a starting salary significantly above market rate for a fresh graduate, specifically because of my demonstrated Be Cubez experience.</p>
+
+<h2>Lessons for Future Be Campus Students</h2>
+<p>If you're considering the AI Digital Marketing diploma at Be Campus, here is my genuine advice based on experience:</p>
+<p><strong>Take Be Cubez seriously.</strong> The classroom learning is valuable, but Be Cubez is where you become a practitioner. Volunteer for every project. Work late on it. Document every result meticulously. That documentation is your portfolio.</p>
+<p><strong>Learn the AI tools properly — not just superficially.</strong> Every digital marketer is now claiming "AI skills." The ones who actually have them — who can show you their prompt library, their AI workflow, their time savings — are the ones getting hired faster. Be specific about which tools you use and for what purpose.</p>
+<p><strong>Let the placement team do their job.</strong> They know the market. They have relationships with hiring companies. Trust their advice on how to present yourself, which roles to target, and how to negotiate. I would not have gotten three offers without their coaching.</p>
+<p>Be Campus is the real deal. If you're in Malappuram and you're serious about digital marketing — not just interested in it, but serious — this is the place.</p>
+`
+  },
+
+  'gst-2025':{
+    emoji:'📊',glow:'rgba(50,150,255,.1)',catLabel:'Accounting & Tax',catClass:'cat-acc',
+    title:'GST in 2025: The Complete Guide for Accountants and Business Owners in Malappuram — Latest Updates, Changes & Compliance',
+    author:'Be Campus Finance Faculty',role:'Finance School, Be Campus Academy',avColor:'linear-gradient(135deg,#0080ff,#6040ff)',avInitial:'FT',
+    date:'November 20, 2024',read:'6 min read',
+    tags:['GST 2025','Accounting','Tax Compliance','GSTR','E-invoicing','Malappuram','DPAT'],
+    related:['gulf-accounting','faris-story','ai-careers'],
+    toc:['Why GST Knowledge Is More Valuable Than Ever','E-Invoicing: What Has Changed','New ITC Matching Rules Under GSTR-2B','The Quarterly GSTR-1 vs Monthly Dilemma','E-Way Bill Updates','GST Audit Trigger Points to Know','How Be Campus DPAT Covers All of This','Action Points for Aspiring Accountants'],
+    body:`
+<p>GST — the Goods and Services Tax that unified India's complex indirect tax structure in 2017 — has never stayed still. Every year brings amendments, new compliance requirements, updated thresholds, and revised procedures. For an accountant or aspiring accountant in Malappuram, staying current with GST is not optional. It is the core of the job.</p>
+<p>At Be Campus Academy, we update our DPAT (Diploma in Professional Accounting & Taxation) curriculum every semester to reflect the latest GST developments — because we are training students for the real workplace, not for an examination that tests 2018 GST knowledge. This article covers the most important GST changes and updates heading into 2025, and what every accountant in our region needs to understand.</p>
+
+<h2>Why GST Knowledge Is More Valuable Than Ever</h2>
+<p>When GST was introduced in 2017, most small and medium businesses in Malappuram district scrambled to find anyone who understood the new system. Eight years later, the system has matured — but it has also grown significantly more complex. The number of returns, the e-invoicing requirements, the ITC matching mechanisms, and the GST audit provisions have all expanded substantially since 2017.</p>
+<p>For accountants, this means two things: the demand for GST expertise has never been higher, and the skill gap between someone with genuine hands-on GST experience and someone with only theoretical knowledge has never been wider. An accountant who can competently handle GST filings, reconcile ITC, and respond to GST notices commands a meaningful salary premium in the Malappuram job market.</p>
+
+<h2>E-Invoicing: What Has Changed</h2>
+<p>E-invoicing — the mandatory generation of IRN (Invoice Reference Number) through the government's IRP (Invoice Registration Portal) — has been progressively extended to smaller businesses. The current threshold as of 2025 stands at <strong>₹5 crore annual turnover</strong>, meaning any business above this threshold must generate IRN for every B2B invoice issued.</p>
+<p>This has significant practical implications for accountants:</p>
+<ul>
+  <li>E-invoices must be generated through IRP before or at the time of invoice issuance — not retrospectively</li>
+  <li>The IRN and QR code must appear on the physical invoice provided to the customer</li>
+  <li>E-invoices auto-populate GSTR-1, reducing manual data entry but requiring that the ERP or accounting software is correctly integrated with the IRP</li>
+  <li>Businesses not complying with e-invoicing requirements face penalty provisions and potential ITC rejection by their customers</li>
+</ul>
+<p>Understanding how to set up Tally Prime or QuickBooks for e-invoice generation, how to handle IRN cancellation and amendment, and how to reconcile e-invoice data with GSTR-1 are now basic accountant skills for any client above the threshold.</p>
+
+<div class="article-callout">
+  <div class="callout-title">Be Campus DPAT Update</div>
+  <p>Our DPAT curriculum includes a dedicated e-invoicing module covering IRP registration, IRN generation in Tally Prime, QR code integration, and reconciliation with GSTR-1. Students practice with real simulation scenarios, not just theory.</p>
+</div>
+
+<h2>New ITC Matching Rules Under GSTR-2B</h2>
+<p>Input Tax Credit (ITC) — the mechanism by which businesses claim credit for GST paid on purchases — has been tightened significantly. GSTR-2B is now the mandatory basis for ITC claims: <strong>businesses can only claim ITC on invoices that appear in their GSTR-2B</strong>, which reflects returns filed by their suppliers.</p>
+<p>This creates a direct dependency between a business's ITC and its suppliers' compliance. If a supplier fails to file GSTR-1 on time, the ITC on that supplier's invoices will not appear in the buyer's GSTR-2B — and the buyer cannot claim it, even if the invoice is genuine and the GST has been paid.</p>
+<p>For accountants, this means:</p>
+<ul>
+  <li>Regularly monitoring GSTR-2B against purchase registers to identify supplier compliance gaps</li>
+  <li>Communicating with suppliers who have not filed their returns to ensure ITC is not lost</li>
+  <li>Making periodic ITC reconciliation a standard month-end procedure, not an annual task</li>
+  <li>Understanding Rule 86B — the provision restricting cash ledger usage when ITC reversal is pending</li>
+</ul>
+
+<h2>The Quarterly GSTR-1 vs Monthly Dilemma</h2>
+<p>Small taxpayers with annual turnover below ₹5 crore have the option of filing GSTR-1 quarterly through the QRMP (Quarterly Return, Monthly Payment) scheme. While this reduces return filing frequency, it comes with nuances that many accountants mishandle:</p>
+<p>Under QRMP, businesses still need to pay tax monthly through PMT-06 challan. They can use the IFF (Invoice Furnishing Facility) to upload B2B invoices in months one and two of the quarter, allowing their customers to get ITC in GSTR-2B without waiting for the quarterly return. Missing IFF deadlines can create ITC delays for customers — which can strain business relationships.</p>
+<p>Understanding when QRMP is beneficial and when monthly filing is better — and managing the compliance requirements of each accurately — is a practical skill that we cover thoroughly in our DPAT program.</p>
+
+<h2>E-Way Bill Updates</h2>
+<p>E-Way Bills — required for movement of goods above ₹50,000 in value — have seen increased integration with e-invoicing and real-time monitoring by GST authorities. The key update for 2025 is the tightening of part-B completion requirements and the consequences of E-Way Bill expiry during transit.</p>
+<p>Understanding when an E-Way Bill is required, how to generate it correctly in Tally Prime or the government portal, how to extend validity when goods are in transit, and the penalty provisions for non-compliance are all part of our practical GST training at Be Campus.</p>
+
+<h2>GST Audit Trigger Points to Know</h2>
+<p>GST department scrutiny has increased significantly in recent years. Understanding the common triggers that lead to GST notices or audit selection helps accountants maintain compliant records and respond appropriately when notices arrive:</p>
+<ul>
+  <li><strong>Mismatch between GSTR-1 and GSTR-3B</strong> — The system automatically flags discrepancies between declared outward supplies and actual tax payment</li>
+  <li><strong>High ITC claims relative to turnover</strong> — Unusually high ITC ratios trigger automated scrutiny</li>
+  <li><strong>E-way bill data vs GSTR-1 mismatches</strong> — Goods movement data that doesn't align with declared supply values</li>
+  <li><strong>NIL returns followed by high-value transactions</strong> — Dormant-then-active filing patterns attract attention</li>
+</ul>
+
+<div class="article-tip-box">
+  <div class="tip-icon">💡</div>
+  <div class="tip-body">
+    <div class="tip-title">Pro Tip for New Accountants</div>
+    <div class="tip-text">When you start working with a new client's GST accounts, always begin with a reconciliation of GSTR-1, GSTR-3B, and the purchase register for the past 12 months before doing any current period work. You need to know what you're inheriting.</div>
+  </div>
+</div>
+
+<h2>How Be Campus DPAT Covers All of This</h2>
+<p>Our Diploma in Professional Accounting & Taxation isn't a textbook course. Every module is built around current, real-world practice. Our GST training includes:</p>
+<ul>
+  <li>Hands-on filing practice on the GST portal using simulation login credentials</li>
+  <li>Tally Prime configuration for e-invoicing and GST compliance</li>
+  <li>ITC reconciliation exercises using realistic sample data</li>
+  <li>E-Way Bill generation and management practice</li>
+  <li>QRMP scheme analysis — when to use it and when not to</li>
+  <li>GST notice response — understanding common notices and how to draft replies</li>
+</ul>
+<p>When our DPAT graduates walk into an accounting interview and are asked about GST, they can speak from practice — not just theory. This is why our graduates consistently outperform candidates from other institutes in interview settings.</p>
+
+<h2>Action Points for Aspiring Accountants</h2>
+<p>If you're studying or planning to study accounting in Malappuram, here's your action checklist for 2025:</p>
+<ol>
+  <li>Ensure your training program covers e-invoicing hands-on — not just the concept</li>
+  <li>Learn ITC reconciliation under GSTR-2B rigorously — this is tested in every accounting interview</li>
+  <li>Practice Tally Prime for GST returns, not just bookkeeping — it's the standard software in Kerala</li>
+  <li>Understand the QRMP scheme and when it applies</li>
+  <li>Familiarise yourself with at least 3 common GST notice types and how to respond</li>
+</ol>
+<p>Our DPAT program covers all of this and more in 4 months. If you're serious about building a GST-competent accounting career in Malappuram, speak with our admissions team this week. We have limited seats in each batch and placements begin from month three of the course.</p>
+`
+  }
+};
+
+// ── OPEN ARTICLE ──
+function openArticle(id){
+  const a=ARTICLES[id];
+  if(!a)return;
+  document.getElementById('blogListView').style.display='none';
+  const av=document.getElementById('articleView');
+  av.style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+
+  document.getElementById('artEmoji').textContent=a.emoji;
+  document.getElementById('artGlow').style.background=`radial-gradient(ellipse,${a.glow},transparent 70%)`;
+  const badge=document.getElementById('artCatBadge');
+  badge.textContent=a.catLabel;
+  badge.className=`article-cat-badge ${a.catClass}`;
+
+  document.getElementById('artTitle').textContent=a.title;
+  const avEl=document.getElementById('artAv');
+  avEl.style.background=a.avColor;avEl.textContent=a.avInitial;
+  document.getElementById('artAuthor').textContent=a.author;
+  document.getElementById('artRole').textContent=a.role;
+  document.getElementById('artDate').textContent=a.date;
+  document.getElementById('artRead').textContent=a.read;
+
+  // BODY
+  const body=document.getElementById('artBody');
+  body.innerHTML=a.body;
+
+  // TAGS
+  const tagsDiv=document.createElement('div');
+  tagsDiv.className='article-tags';
+  a.tags.forEach(t=>{const s=document.createElement('span');s.className='article-tag';s.textContent=t;tagsDiv.appendChild(s);});
+  // share
+  const shareDiv=document.createElement('div');
+  shareDiv.className='article-share';
+  shareDiv.innerHTML=`<span class="share-label">Share:</span>
+    <a href="https://wa.me/?text=${encodeURIComponent(a.title+' – Be Campus Academy Blog')}" target="_blank" class="share-btn">💬 WhatsApp</a>
+    <span class="share-btn" onclick="navigator.clipboard&&navigator.clipboard.writeText(window.location.href).then(()=>alert('Link copied!'))">🔗 Copy Link</span>
+    <a href="#" class="share-btn" onclick="openModal();return false;">🎓 Enquire Now</a>`;
+  body.appendChild(tagsDiv);
+  body.appendChild(shareDiv);
+
+  // TOC
+  const tocList=document.getElementById('tocList');
+  tocList.innerHTML='';
+  a.toc.forEach((item,i)=>{
+    const li=document.createElement('li');
+    li.innerHTML=`<a href="#"><span class="toc-num">${String(i+1).padStart(2,'0')}</span>${item}</a>`;
+    tocList.appendChild(li);
+  });
+
+  // RELATED sidebar
+  const relList=document.getElementById('relatedList');
+  relList.innerHTML='';
+  a.related.slice(0,3).forEach(rid=>{
+    const r=ARTICLES[rid];if(!r)return;
+    const div=document.createElement('div');
+    div.className='related-item';
+    div.onclick=()=>openArticle(rid);
+    div.innerHTML=`<div class="related-thumb">${r.emoji}</div><div class="related-info"><div class="related-item-title">${r.title.substring(0,65)}…</div><div class="related-item-meta">${r.date} · ${r.read}</div></div>`;
+    relList.appendChild(div);
+  });
+
+  // RELATED bottom grid
+  const rb=document.getElementById('relatedBottom');
+  rb.innerHTML=`<div class="related-bottom-title">More Articles You'll Enjoy</div><div class="related-grid">${a.related.slice(0,3).map(rid=>{const r=ARTICLES[rid];if(!r)return'';return`<div class="blog-card" style="cursor:pointer" onclick="openArticle('${rid}')"><div class="bc-visual" style="background:linear-gradient(135deg,#1a0008,#0d0d0d)">${r.emoji}</div><div class="bc-body"><div class="bc-meta"><span class="bc-cat ${r.catClass}">${r.catLabel}</span><span class="bc-date">${r.date}</span></div><div class="bc-title">${r.title}</div><div class="bc-footer"><span class="bc-link">Read →</span></div></div></div>`;}).join('')}</div>`;
+}
+
+function goBack(){
+  document.getElementById('articleView').style.display='none';
+  document.getElementById('blogListView').style.display='block';
+  document.getElementById('readingProgress').style.width='0%';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

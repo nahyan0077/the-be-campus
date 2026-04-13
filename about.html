@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>About Us | Be Campus Academy – Best Training Institute in Kottakkal & Malappuram</title>
+<meta name="description" content="Learn about Be Campus Academy – Kottakkal & Malappuram's #1 AI-integrated training institute. Our story, mission, vision, team, and the Be Cubez agency that gives students real-world experience."/>
+<meta name="keywords" content="about Be Campus Academy, best training institute Kottakkal, top institute Malappuram, AI integrated learning Kerala, Be Cubez agency, digital marketing institute Kerala"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Be Campus Academy","description":"Best AI-integrated training institute in Kottakkal and Malappuram, Kerala","address":{"@type":"PostalAddress","addressLocality":"Kottakkal","addressRegion":"Malappuram, Kerala","addressCountry":"IN"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0d0d;--surface:#141414;--surface2:#1c1c1c;
+  --border:rgba(255,255,255,0.08);--red:#e8002d;
+  --red-glow:rgba(232,0,45,0.25);--red-soft:rgba(232,0,45,0.08);
+  --white:#fff;--muted:rgba(255,255,255,.45);--muted2:rgba(255,255,255,.28);
+  --nav-h:72px;--page-gutter:clamp(20px,4vw,72px);--page-max:1280px;
+  --font-body:'Manrope',sans-serif;--font-display:'Sora',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--white);overflow-x:hidden;cursor:none}
+
+/* CURSOR */
+#cursor{position:fixed;width:12px;height:12px;background:var(--red);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .3s,height .3s}
+#cursor-ring{position:fixed;width:40px;height:40px;border:1.5px solid rgba(232,0,45,.5);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:transform .12s ease,width .3s,height .3s}
+
+/* NOISE */
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:9998;opacity:.6}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;padding:0 var(--page-gutter);gap:2rem;background:rgba(13,13,13,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo-text{font-family:var(--font-display);font-size:1.2rem;font-weight:800;color:white;text-decoration:none}
+.nav-logo-text span{color:var(--red)}
+.nav-links{display:flex;gap:2rem;list-style:none;margin-left:auto}
+.nav-links a{font-size:.85rem;font-weight:500;text-decoration:none;color:rgba(255,255,255,.65);transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--red);transition:width .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-cta{background:var(--red);color:white;padding:.55rem 1.4rem;border-radius:100px;font-size:.82rem;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.nav-cta:hover{transform:scale(1.05);box-shadow:0 0 24px var(--red-glow)}
+
+/* PAGE HERO */
+.page-hero{
+  min-height:clamp(460px,62vh,760px);display:flex;align-items:center;
+  padding:calc(var(--nav-h) + 4.75rem) var(--page-gutter) 5rem;
+  position:relative;overflow:hidden;
+  background:radial-gradient(ellipse 80% 60% at 60% 50%,rgba(232,0,45,.1) 0%,transparent 70%);
+}
+.ph-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:70px 70px;animation:gridMove 22s linear infinite}
+@keyframes gridMove{from{background-position:0 0}to{background-position:70px 70px}}
+.ph-content{position:relative;z-index:1;width:min(100%,760px);margin-inline:auto 0}
+.ph-breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:var(--muted);margin-bottom:2rem}
+.ph-breadcrumb a{color:var(--muted);text-decoration:none;transition:color .2s}
+.ph-breadcrumb a:hover{color:var(--red)}
+.ph-breadcrumb span{color:rgba(255,255,255,.2)}
+.ph-tag{display:inline-flex;align-items:center;gap:.6rem;border:1px solid rgba(232,0,45,.4);background:rgba(232,0,45,.07);color:var(--red);font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin-bottom:1.5rem;animation:fadeUp .7s ease both}
+.ph-tag .dot{width:6px;height:6px;background:var(--red);border-radius:50%;animation:blink 1.5s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.page-hero h1{font-family:var(--font-display);font-size:clamp(2.45rem,4.9vw,4.6rem);font-weight:800;line-height:.98;letter-spacing:-.04em;margin-bottom:1.5rem;animation:fadeUp .8s .1s ease both;max-width:11ch}
+.page-hero h1 .accent{color:var(--red)}
+.page-hero .sub{font-size:1.05rem;color:var(--muted);max-width:560px;line-height:1.8;animation:fadeUp .8s .25s ease both}
+.ph-scroll-line{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);animation:fadeUp 1s .6s ease both}
+.ph-scroll-line .line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(232,0,45,.6),transparent)}
+
+/* SECTION BASE */
+.section{padding:6rem var(--page-gutter)}
+.section-label{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:.8rem}
+h2.sh{font-family:var(--font-display);font-size:clamp(1.8rem,3.8vw,3.2rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:1rem}
+.section-muted{font-size:.95rem;color:var(--muted);line-height:1.8}
+
+/* MISSION VISION */
+.mv-section{background:var(--surface)}
+.mv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem}
+.mv-card{border:1px solid var(--border);border-radius:22px;padding:2.4rem;position:relative;overflow:hidden;transition:transform .35s,border-color .35s;background:var(--bg)}
+.mv-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(232,0,45,.09),transparent 70%);opacity:0;transition:opacity .4s}
+.mv-card:hover{transform:translateY(-7px);border-color:rgba(232,0,45,.4)}
+.mv-card:hover::before{opacity:1}
+.mv-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),transparent);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.mv-card:hover::after{transform:scaleX(1)}
+.mv-num{font-family:var(--font-display);font-size:4rem;font-weight:800;color:rgba(232,0,45,.08);line-height:1;margin-bottom:-.5rem}
+.mv-icon{font-size:2rem;margin-bottom:1.2rem}
+.mv-card h3{font-family:var(--font-display);font-size:1.3rem;font-weight:800;margin-bottom:.7rem}
+.mv-card p{font-size:.87rem;color:var(--muted);line-height:1.75}
+
+/* STORY */
+.story-section{}
+.story-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:6rem;align-items:start}
+.story-sticky{position:sticky;top:calc(var(--nav-h) + 2rem)}
+.story-visual{border:1px solid var(--border);border-radius:24px;background:var(--surface);overflow:hidden}
+.story-visual-top{padding:2.5rem;background:linear-gradient(135deg,rgba(232,0,45,.06),transparent)}
+.story-year-big{font-family:var(--font-display);font-size:6rem;font-weight:800;color:rgba(232,0,45,.12);line-height:1;letter-spacing:-.05em}
+.story-tagline{font-family:var(--font-display);font-size:1.4rem;font-weight:700;line-height:1.3;margin-top:.5rem}
+.story-tagline span{color:var(--red)}
+.story-stats-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--border)}
+.ss-item{padding:1.5rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+.ss-item:nth-child(2){border-right:none}
+.ss-item:nth-child(3){border-bottom:none}
+.ss-item:nth-child(4){border-right:none;border-bottom:none}
+.ss-num{font-family:var(--font-display);font-size:1.9rem;font-weight:800;color:var(--red)}
+.ss-lbl{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-top:.2rem}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:.5rem;top:.5rem;bottom:0;width:2px;background:linear-gradient(to bottom,var(--red),rgba(232,0,45,.05))}
+.tl-item{position:relative;padding-bottom:3rem}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:-1.5rem;top:.4rem;width:14px;height:14px;border-radius:50%;background:var(--red);border:3px solid var(--bg);box-shadow:0 0 0 3px rgba(232,0,45,.25);transition:box-shadow .3s}
+.tl-item:hover .tl-dot{box-shadow:0 0 0 6px rgba(232,0,45,.2)}
+.tl-year-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(232,0,45,.1);border:1px solid rgba(232,0,45,.3);border-radius:100px;padding:.3rem .9rem;font-size:.7rem;font-weight:700;color:var(--red);letter-spacing:.08em;margin-bottom:.8rem}
+.tl-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:1.8rem;transition:border-color .3s}
+.tl-item:hover .tl-card{border-color:rgba(232,0,45,.3)}
+.tl-card h4{font-family:var(--font-display);font-size:1.1rem;font-weight:700;margin-bottom:.6rem}
+.tl-card p{font-size:.87rem;color:var(--muted);line-height:1.7}
+.tl-card .tl-milestone{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.tl-pill{font-size:.7rem;padding:.28rem .75rem;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:100px;color:rgba(255,255,255,.55)}
+
+/* VALUES */
+.values-section{background:var(--surface)}
+.values-wrap{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start}
+.values-intro{}
+.values-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.val-card{background:var(--bg);border:1px solid var(--border);border-radius:18px;padding:1.8rem;transition:transform .3s,border-color .3s;position:relative;overflow:hidden}
+.val-card:hover{transform:translateY(-5px);border-color:rgba(232,0,45,.35)}
+.val-num{font-family:var(--font-display);font-size:2.5rem;font-weight:800;color:rgba(232,0,45,.1);line-height:1;margin-bottom:.2rem}
+.val-icon{font-size:1.4rem;margin-bottom:.9rem}
+.val-card h4{font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.val-card p{font-size:.83rem;color:var(--muted);line-height:1.65}
+
+/* TEAM */
+.team-section{}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3.5rem}
+.team-card{border:1px solid var(--border);border-radius:22px;overflow:hidden;background:var(--surface);transition:transform .3s,border-color .3s;text-align:center}
+.team-card:hover{transform:translateY(-8px);border-color:rgba(232,0,45,.35)}
+.team-avatar{height:200px;display:flex;align-items:center;justify-content:center;font-size:5rem;position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(232,0,45,.06),rgba(0,0,0,.5))}
+.team-avatar-ring{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,rgba(232,0,45,.25),rgba(232,0,45,.05));border:2px solid rgba(232,0,45,.25);display:flex;align-items:center;justify-content:center;font-size:2.8rem}
+.team-body{padding:1.6rem}
+.team-name{font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:.3rem}
+.team-role{font-size:.75rem;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.7rem}
+.team-bio{font-size:.82rem;color:var(--muted);line-height:1.6}
+
+/* CUBEZ */
+.cubez-section{
+  margin:0 var(--page-gutter);border-radius:28px;
+  background:linear-gradient(135deg,#110008 0%,#0d0d0d 40%,#08000d 100%);
+  border:1px solid rgba(232,0,45,.2);
+  padding:5rem;overflow:hidden;position:relative;
+}
+.cubez-section::before{content:'';position:absolute;right:-10%;top:50%;transform:translateY(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(232,0,45,.1),transparent 60%);pointer-events:none}
+.cubez-section::after{content:'CUBEZ';font-family:var(--font-display);font-size:12rem;font-weight:800;position:absolute;bottom:-3rem;right:-1rem;color:rgba(232,0,45,.04);pointer-events:none;letter-spacing:-.05em}
+.cubez-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:center;position:relative;z-index:1}
+.cubez-logo-big{font-family:var(--font-display);font-size:3.5rem;font-weight:800;line-height:1;margin-bottom:1.5rem}
+.cubez-logo-big span{color:var(--red)}
+.cubez-desc{font-size:.95rem;color:var(--muted);line-height:1.8;margin-bottom:2rem}
+.cubez-features{display:flex;flex-direction:column;gap:.9rem}
+.cf-item{display:flex;align-items:flex-start;gap:1rem;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:1rem 1.2rem;transition:border-color .2s}
+.cf-item:hover{border-color:rgba(232,0,45,.35)}
+.cf-icon{width:40px;height:40px;border-radius:12px;background:var(--red-soft);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.cf-text h5{font-size:.9rem;font-weight:700;margin-bottom:.25rem}
+.cf-text p{font-size:.8rem;color:var(--muted);line-height:1.6}
+.cubez-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.cz-stat{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:18px;padding:1.8rem;text-align:center;transition:border-color .2s}
+.cz-stat:hover{border-color:rgba(232,0,45,.3)}
+.cz-num{font-family:var(--font-display);font-size:2.5rem;font-weight:800;color:var(--red);line-height:1}
+.cz-lbl{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-top:.4rem}
+
+/* SEO CONTENT */
+.seo-section{background:var(--surface)}
+.seo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.seo-card{background:var(--bg);border:1px solid var(--border);border-radius:18px;padding:1.8rem;transition:border-color .2s}
+.seo-card:hover{border-color:rgba(232,0,45,.3)}
+.seo-card h3{font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:.7rem;color:var(--red)}
+.seo-card p{font-size:.84rem;color:var(--muted);line-height:1.75}
+
+/* CTA */
+.cta-section{margin:6rem var(--page-gutter);background:var(--red);border-radius:28px;padding:5rem;text-align:center;position:relative;overflow:hidden}
+.ph-content,
+.mv-section > div:first-child,
+.mv-grid,
+.story-wrap,
+.values-wrap,
+.team-grid,
+.cubez-inner,
+.seo-section > div:first-child,
+.seo-grid,
+footer > div:first-child,
+.footer-bottom{
+  width:min(100%,var(--page-max));
+  margin-inline:auto;
+}
+.cta-section::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(255,255,255,.1),transparent 60%)}
+.cta-section::after{content:'Be Campus';font-family:var(--font-display);font-size:11rem;font-weight:800;position:absolute;bottom:-3rem;left:50%;transform:translateX(-50%);white-space:nowrap;color:rgba(255,255,255,.06);pointer-events:none;letter-spacing:-.05em}
+.cta-section h2{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,3.5rem);font-weight:800;color:white;margin-bottom:1rem;position:relative;z-index:1}
+.cta-section p{font-size:1rem;color:rgba(255,255,255,.8);margin-bottom:2.5rem;position:relative;z-index:1}
+.cta-actions{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;position:relative;z-index:1}
+
+/* BUTTONS */
+.btn-red{display:inline-flex;align-items:center;gap:.6rem;background:var(--red);color:white;padding:.85rem 2rem;border-radius:100px;font-weight:600;font-size:.92rem;text-decoration:none;transition:transform .25s,box-shadow .25s;box-shadow:0 4px 30px rgba(232,0,45,.3)}
+.btn-red:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(232,0,45,.45)}
+.btn-ghost{display:inline-flex;align-items:center;gap:.6rem;background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.2);padding:.85rem 2rem;border-radius:100px;font-weight:500;font-size:.92rem;text-decoration:none;transition:border-color .2s,background .2s}
+.btn-ghost:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.05)}
+.btn-white{display:inline-flex;align-items:center;gap:.6rem;background:white;color:var(--red);padding:.85rem 2.2rem;border-radius:100px;font-weight:700;font-size:.92rem;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn-white:hover{transform:scale(1.05);box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.btn-outline-white{display:inline-flex;align-items:center;gap:.6rem;background:transparent;color:white;border:1.5px solid rgba(255,255,255,.5);padding:.85rem 2.2rem;border-radius:100px;font-weight:600;font-size:.92rem;text-decoration:none;transition:background .2s,border-color .2s}
+.btn-outline-white:hover{background:rgba(255,255,255,.1);border-color:white}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(12px);z-index:9999;display:none;align-items:center;justify-content:center;padding:1.5rem}
+.modal-overlay.active{display:flex}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:2.8rem;width:100%;max-width:500px;position:relative;max-height:90vh;overflow-y:auto}
+.modal-close{position:absolute;top:1.2rem;right:1.2rem;background:rgba(255,255,255,.08);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.modal-close:hover{background:rgba(232,0,45,.3)}
+.modal h3{font-family:var(--font-display);font-size:1.6rem;font-weight:800;margin-bottom:.4rem}
+.modal-sub{font-size:.87rem;color:var(--muted);margin-bottom:2rem}
+.form-group{margin-bottom:1.2rem}
+.form-group label{display:block;font-size:.75rem;font-weight:600;letter-spacing:.05em;color:rgba(255,255,255,.65);margin-bottom:.4rem;text-transform:uppercase}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:12px;padding:.8rem 1rem;color:white;font-family:var(--font-body);font-size:.9rem;outline:none;transition:border-color .2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(232,0,45,.5)}
+.form-group select option{background:#1c1c1c}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-submit{width:100%;background:var(--red);color:white;border:none;padding:1rem;border-radius:12px;font-family:var(--font-display);font-size:1rem;font-weight:700;cursor:pointer;transition:transform .2s,box-shadow .2s;margin-top:.5rem}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(232,0,45,.4)}
+.form-success{display:none;text-align:center;padding:2rem 0}
+.form-success .fs-icon{font-size:3rem;margin-bottom:1rem}
+.form-success h4{font-family:var(--font-display);font-size:1.4rem;font-weight:800;margin-bottom:.5rem}
+.form-success p{font-size:.9rem;color:var(--muted)}
+
+/* FLOAT */
+.float-actions{position:fixed;bottom:2rem;right:1.8rem;z-index:9000;display:flex;flex-direction:column;gap:.8rem;align-items:flex-end}
+.fab-wrap{position:relative;display:flex;align-items:center}
+.fab{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;text-decoration:none;transition:transform .25s,box-shadow .25s;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+.fab:hover{transform:scale(1.12)}
+.fab-wa{background:#25D366}.fab-ig{background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4)}.fab-call{background:var(--red)}
+.fab-label{position:absolute;right:62px;background:rgba(13,13,13,.9);border:1px solid var(--border);color:white;font-size:.72rem;font-weight:600;padding:.3rem .8rem;border-radius:100px;white-space:nowrap;opacity:0;transition:opacity .2s;pointer-events:none}
+.fab:hover .fab-label{opacity:1}
+
+/* FOOTER */
+footer{background:var(--surface);border-top:1px solid var(--border);padding:4rem var(--page-gutter) 2rem}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:.8rem;color:var(--muted2)}
+.footer-bottom a{color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-bottom a:hover{color:white}
+.footer-brand-name{font-family:var(--font-display);font-size:1.2rem;font-weight:800;color:white;margin-bottom:.4rem}
+.footer-brand-name span{color:var(--red)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}.reveal-delay-4{transition-delay:.4s}
+.reveal-delay-5{transition-delay:.5s}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .mv-grid{grid-template-columns:1fr 1fr}
+  .story-wrap{grid-template-columns:1fr;gap:3rem}
+  .story-sticky{position:static}
+  .cubez-inner{grid-template-columns:1fr;gap:3rem}
+  .values-wrap{grid-template-columns:1fr;gap:3rem}
+  .team-grid{grid-template-columns:repeat(2,1fr)}
+  .seo-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .mv-grid,.values-grid,.team-grid,.seo-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .cubez-section,.cta-section{padding:3rem 2rem;margin:3rem 4vw}
+  #cursor,#cursor-ring{display:none}
+  body{cursor:auto}
+  .form-row{grid-template-columns:1fr}
+  .cubez-stats{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="enquiryModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="formContent">
+      <h3>Start Your Journey 🚀</h3>
+      <p class="modal-sub">Fill in your details and our career counsellor will reach out within 24 hours — free of charge.</p>
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" placeholder="Arjun" id="f-fname"/></div>
+        <div class="form-group"><label>Last Name</label><input type="text" placeholder="K" id="f-lname"/></div>
+      </div>
+      <div class="form-group"><label>Mobile Number</label><input type="tel" placeholder="+91 XXXXX XXXXX" id="f-phone"/></div>
+      <div class="form-group"><label>Email Address</label><input type="email" placeholder="you@email.com" id="f-email"/></div>
+      <div class="form-group">
+        <label>Course Interested In</label>
+        <select id="f-course">
+          <option value="">Select a course</option>
+          <option>Advanced Diploma in Creative Design & Brand Building</option>
+          <option>AI-Integrated Advanced Diploma in Digital Marketing</option>
+          <option>Advanced Diploma in Office Management & Business Communication</option>
+          <option>Advanced Diploma in Human Resources & Talent Management</option>
+          <option>Diploma in Professional Accounting & Taxation (DPAT)</option>
+          <option>AI-Integrated Advanced Diploma in International Accounting & Taxation (AI-ADIAT)</option>
+          <option>Not Sure – Need Guidance</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Message (Optional)</label><textarea placeholder="Tell us about your goals…" id="f-msg" style="min-height:80px"></textarea></div>
+      <button class="form-submit" onclick="submitForm()">Submit Enquiry →</button>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <div class="fs-icon">🎉</div>
+      <h4>We'll Be In Touch!</h4>
+      <p>Our counsellor will call you within 24 hours. Follow us on Instagram for updates and student stories.</p>
+      <br/>
+      <a href="https://www.instagram.com/becampusacademy" target="_blank" class="btn-red" style="margin:0 auto;display:inline-flex">Follow on Instagram</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="./index.html" class="nav-logo-text">Be<span>Campus</span> Academy</a>
+  <ul class="nav-links">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./about.html" class="active">About Us</a></li>
+    <li><a href="./courses.html">Courses</a></li>
+    <li><a href="./blog.html">Blog</a></li>
+    <li><a href="./contact.html">Contact</a></li>
+  </ul>
+  <a href="#" class="nav-cta" onclick="openModal();return false;">Enquire Now</a>
+</nav>
+
+<!-- PAGE HERO -->
+<header class="page-hero">
+  <div class="ph-grid"></div>
+  <div class="ph-content">
+    <div class="ph-breadcrumb">
+      <a href="./index.html">Home</a><span>/</span><span style="color:rgba(255,255,255,.55)">About Us</span>
+    </div>
+    <div class="ph-tag"><span class="dot"></span>Our Story — Kottakkal to Kerala's Best</div>
+    <h1>We Don't Just<br/>Teach. We <span class="accent">Build</span><br/>Careers.</h1>
+    <p class="sub">Be Campus Academy is Kottakkal and Malappuram's most trusted AI-integrated career training institute — born from a simple belief: every student in our district deserves world-class professional education that actually leads to a job.</p>
+  </div>
+  <div class="ph-scroll-line"><span>Scroll</span><div class="line"></div></div>
+</header>
+
+<!-- MISSION VISION VALUES -->
+<section class="section mv-section" aria-labelledby="mv-heading">
+  <div style="text-align:center;max-width:640px;margin:0 auto" class="reveal">
+    <div class="section-label">What Drives Us</div>
+    <h2 class="sh" id="mv-heading">Our Mission, Vision<br/>& Purpose</h2>
+    <p class="section-muted" style="margin:0 auto">Three pillars that guide every course we design, every mentor we hire, and every student we train at Be Campus Academy.</p>
+  </div>
+  <div class="mv-grid">
+    <div class="mv-card reveal reveal-delay-1">
+      <div class="mv-num">01</div>
+      <div class="mv-icon">🎯</div>
+      <h3>Our Mission</h3>
+      <p>To make world-class, AI-integrated professional training accessible to every aspiring student in Kottakkal, Malappuram, and Kerala — at affordable fees, with 100% placement commitment. We close the gap between education and employment.</p>
+    </div>
+    <div class="mv-card reveal reveal-delay-2">
+      <div class="mv-num">02</div>
+      <div class="mv-icon">🔭</div>
+      <h3>Our Vision</h3>
+      <p>To be Kerala's #1 AI-integrated career training hub by 2027 — producing graduates who are not just employed, but who lead teams, launch businesses, and redefine industries. Be Campus students don't follow trends. They set them.</p>
+    </div>
+    <div class="mv-card reveal reveal-delay-3">
+      <div class="mv-num">03</div>
+      <div class="mv-icon">💡</div>
+      <h3>Our Purpose</h3>
+      <p>To prove that a student from Kottakkal can compete with — and outperform — graduates from anywhere in India. Through AI tools, real agency experience via Be Cubez, and relentless placement support, we make this happen every day.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OUR STORY TIMELINE -->
+<section class="section story-section" id="story" aria-labelledby="story-heading">
+  <div class="story-wrap">
+    <div class="story-sticky reveal">
+      <div class="section-label">Our Journey</div>
+      <h2 class="sh" id="story-heading">From a Bold Idea<br/>in Kottakkal to<br/><span style="color:var(--red)">Malappuram's Best</span></h2>
+      <p class="section-muted" style="margin-bottom:2rem">What began as a vision to revolutionise career education in Malappuram district has grown into the region's most respected and results-driven professional training institution.</p>
+      <div class="story-visual">
+        <div class="story-visual-top">
+          <div class="story-year-big">2021</div>
+          <div class="story-tagline">Where it all <span>began.</span></div>
+        </div>
+        <div class="story-stats-grid">
+          <div class="ss-item"><div class="ss-num">500+</div><div class="ss-lbl">Graduates</div></div>
+          <div class="ss-item"><div class="ss-num">100%</div><div class="ss-lbl">Placed</div></div>
+          <div class="ss-item"><div class="ss-num">6</div><div class="ss-lbl">Diplomas</div></div>
+          <div class="ss-item"><div class="ss-num">5★</div><div class="ss-lbl">Google</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline reveal reveal-delay-2">
+      <div class="tl-item">
+        <div class="tl-year-badge">📅 2021 — The Beginning</div>
+        <div class="tl-card">
+          <h4>Founded with a Mission to Change Kottakkal</h4>
+          <p>Be Campus Academy was founded in Kottakkal, Malappuram with one unwavering goal — to give students in our district access to career-changing professional training. The founders saw a massive gap: students were graduating with degrees but no employable skills. Be Campus was built to fix that.</p>
+          <div class="tl-milestone">
+            <span class="tl-pill">✦ Founded in Kottakkal</span>
+            <span class="tl-pill">✦ First Batch Enrolled</span>
+            <span class="tl-pill">✦ Career-First Curriculum</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year-badge">📅 2022 — Expansion</div>
+        <div class="tl-card">
+          <h4>Launched 6 Advanced Diploma Programs</h4>
+          <p>Responding to overwhelming demand and listening closely to industry hiring managers, Be Campus expanded to 6 professional diploma programs — covering Digital Marketing, Graphic Design, Office Management, HR, and Accounting. Suddenly, students from across Malappuram were making the journey to Kottakkal.</p>
+          <div class="tl-milestone">
+            <span class="tl-pill">✦ 6 Diploma Courses</span>
+            <span class="tl-pill">✦ Industry Tie-Ups</span>
+            <span class="tl-pill">✦ Placement Cell</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year-badge">📅 2023 — The Game-Changer</div>
+        <div class="tl-card">
+          <h4>Launched Be Cubez — Our Own Marketing Agency</h4>
+          <p>This was the moment Be Campus became truly unique. We launched Be Cubez — our in-house digital marketing agency — giving Be Campus students the once-in-a-career opportunity to work on real client campaigns, real briefs, and real results while still in training. No other training institute in Malappuram offers this. Be Cubez turned our students from learners into practitioners.</p>
+          <div class="tl-milestone">
+            <span class="tl-pill">✦ Be Cubez Agency Born</span>
+            <span class="tl-pill">✦ Live Client Projects</span>
+            <span class="tl-pill">✦ Real Portfolios Built</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year-badge">📅 2024 — AI Revolution</div>
+        <div class="tl-card">
+          <h4>Became Malappuram's First AI-Integrated Training Centre</h4>
+          <p>As AI began reshaping every industry, Be Campus acted fast. We rebuilt our curriculum from the ground up, integrating AI tools into every single program — from AI-powered SEO and ad tools in Digital Marketing, to AI accounting software in our finance courses. We became the first and only AI-integrated training institute in Malappuram district.</p>
+          <div class="tl-milestone">
+            <span class="tl-pill">✦ AI Tools in All Courses</span>
+            <span class="tl-pill">✦ First in Malappuram</span>
+            <span class="tl-pill">✦ Future-Ready Training</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year-badge">📅 2025 — Recognition</div>
+        <div class="tl-card">
+          <h4>500+ Students Placed. 5-Star Google Rating Achieved.</h4>
+          <p>2025 marked the moment Be Campus became undeniably the best training institute in Kottakkal and Malappuram. Over 500 graduates placed across Kerala, India, and Gulf countries. A perfect 5-star Google rating built on genuine student reviews. And an ever-growing waiting list of students who want nothing else but Be Campus.</p>
+          <div class="tl-milestone">
+            <span class="tl-pill">✦ 500+ Placed</span>
+            <span class="tl-pill">✦ 5★ Google</span>
+            <span class="tl-pill">✦ Gulf Placements</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year-badge">📅 2026 & Beyond — The Future</div>
+        <div class="tl-card">
+          <h4>Building Kerala's #1 AI Career Training Hub</h4>
+          <p>Our journey is nowhere near over. We're expanding programs, onboarding more industry partners, growing Be Cubez into a full-scale agency, and building toward our vision of being Kerala's most recognised career training institution. Every student we place is a chapter in this story — and we're just getting started.</p>
+          <div class="tl-milestone">
+            <span class="tl-pill">✦ Kerala Expansion</span>
+            <span class="tl-pill">✦ New Programs</span>
+            <span class="tl-pill">✦ Be Cubez Scale-Up</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section values-section" aria-labelledby="values-heading">
+  <div class="values-wrap">
+    <div class="reveal">
+      <div class="section-label">What We Stand For</div>
+      <h2 class="sh" id="values-heading">The Values That<br/>Shape Every<br/>Lesson We Teach</h2>
+      <p class="section-muted" style="margin-bottom:2rem">These aren't just words on a wall. These are the principles our trainers teach by, our placement team works by, and our students grow by.</p>
+      <a href="#" class="btn-red" onclick="openModal();return false;">Join Our Community →</a>
+    </div>
+    <div class="values-grid reveal reveal-delay-2">
+      <div class="val-card">
+        <div class="val-num">01</div>
+        <div class="val-icon">⚡</div>
+        <h4>Practice Over Theory</h4>
+        <p>90% of every course is hands-on. We believe you learn marketing by doing marketing, not by reading about it. Every session involves tools, tasks, or real projects.</p>
+      </div>
+      <div class="val-card">
+        <div class="val-num">02</div>
+        <div class="val-icon">🤖</div>
+        <h4>AI-First Mindset</h4>
+        <p>AI isn't the future — it's the present. We embed AI tools into every course so students graduate ready for how industries actually work today, not five years ago.</p>
+      </div>
+      <div class="val-card">
+        <div class="val-num">03</div>
+        <div class="val-icon">🤝</div>
+        <h4>Student-First Always</h4>
+        <p>From flexible fees to personalised mentoring to post-placement follow-ups — every decision we make starts and ends with what's best for our students.</p>
+      </div>
+      <div class="val-card">
+        <div class="val-num">04</div>
+        <div class="val-icon">🏆</div>
+        <h4>Relentless Placement Drive</h4>
+        <p>We don't rest until every student is placed. Our placement cell works harder than any other in Malappuram — mock interviews, direct referrals, and regular follow-ups.</p>
+      </div>
+      <div class="val-card">
+        <div class="val-num">05</div>
+        <div class="val-icon">🌐</div>
+        <h4>Real Industry Exposure</h4>
+        <p>Through Be Cubez, our in-house agency, students work on real brands and real campaigns. This is real-world experience that no classroom exercise can replicate.</p>
+      </div>
+      <div class="val-card">
+        <div class="val-num">06</div>
+        <div class="val-icon">💰</div>
+        <h4>Affordable Excellence</h4>
+        <p>Premium AI-integrated education shouldn't be a luxury. We keep our fees the most accessible in Malappuram without ever compromising on training quality.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section" aria-labelledby="team-heading">
+  <div style="text-align:center;max-width:600px;margin:0 auto" class="reveal">
+    <div class="section-label">The People Behind It</div>
+    <h2 class="sh" id="team-heading">Meet the Team That<br/>Builds Careers Daily</h2>
+    <p class="section-muted" style="margin:0 auto">Practitioners, not just professors. Every Be Campus trainer is an active industry professional who brings real-world knowledge into every session.</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-card reveal reveal-delay-1">
+      <div class="team-avatar"><div class="team-avatar-ring">👨‍💼</div></div>
+      <div class="team-body">
+        <div class="team-name">Founder & Director</div>
+        <div class="team-role">Be Campus Academy</div>
+        <p class="team-bio">Visionary behind Be Campus and Be Cubez. Built the institute from the ground up with a mission to transform career education in Malappuram district.</p>
+      </div>
+    </div>
+    <div class="team-card reveal reveal-delay-2">
+      <div class="team-avatar"><div class="team-avatar-ring">📊</div></div>
+      <div class="team-body">
+        <div class="team-name">Head of Digital Marketing</div>
+        <div class="team-role">Marketing & AI School</div>
+        <p class="team-bio">10+ years in digital marketing across agencies and MNCs. Leads the AI-Integrated Digital Marketing diploma and manages live campaigns at Be Cubez.</p>
+      </div>
+    </div>
+    <div class="team-card reveal reveal-delay-3">
+      <div class="team-avatar"><div class="team-avatar-ring">🎨</div></div>
+      <div class="team-body">
+        <div class="team-name">Head of Design</div>
+        <div class="team-role">Creative Design School</div>
+        <p class="team-bio">Senior brand designer with portfolio spanning FMCG, hospitality, and tech brands. Leads the Creative Design & Brand Building diploma program.</p>
+      </div>
+    </div>
+    <div class="team-card reveal reveal-delay-4">
+      <div class="team-avatar"><div class="team-avatar-ring">💼</div></div>
+      <div class="team-body">
+        <div class="team-name">Head of Finance & HR</div>
+        <div class="team-role">Accounting & HR Schools</div>
+        <p class="team-bio">Certified accountant and HR professional with Gulf experience. Leads DPAT, AI-ADIAT, and the HR & Talent Management diploma programs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BE CUBEZ -->
+<div class="cubez-section reveal" aria-labelledby="cubez-heading">
+  <div class="cubez-inner">
+    <div>
+      <div class="section-label">Our Secret Weapon</div>
+      <div class="cubez-logo-big">Be <span>Cubez</span><br/>Agency</div>
+      <p class="cubez-desc">Be Cubez is our in-house digital marketing agency — and it's the single biggest differentiator that makes Be Campus the best training institute in Kottakkal and Malappuram. While other institutes give you theoretical exercises, <strong>we give you real clients, real campaigns, and real results</strong> — before you even graduate.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="#" class="btn-red" onclick="openModal();return false;">Learn with Be Cubez →</a>
+        <a href="https://www.instagram.com/becampusacademy" target="_blank" class="btn-ghost">📸 Follow Us</a>
+      </div>
+    </div>
+    <div>
+      <div class="cubez-features" style="margin-bottom:1.5rem">
+        <div class="cf-item"><div class="cf-icon">🚀</div><div class="cf-text"><h5>Live Client Projects</h5><p>Work on real campaigns for actual businesses during your course — not simulations</p></div></div>
+        <div class="cf-item"><div class="cf-icon">📁</div><div class="cf-text"><h5>Portfolio That Impresses</h5><p>Graduate with a professional portfolio of real work that no other Malappuram graduate can match</p></div></div>
+        <div class="cf-item"><div class="cf-icon">💰</div><div class="cf-text"><h5>Earn While You Learn</h5><p>Top students get opportunities to work on agency projects and build income even before placement</p></div></div>
+      </div>
+      <div class="cubez-stats">
+        <div class="cz-stat"><div class="cz-num">50+</div><div class="cz-lbl">Clients Served</div></div>
+        <div class="cz-stat"><div class="cz-num">100+</div><div class="cz-lbl">Live Campaigns</div></div>
+        <div class="cz-stat"><div class="cz-num">3+</div><div class="cz-lbl">Years Active</div></div>
+        <div class="cz-stat"><div class="cz-num">∞</div><div class="cz-lbl">Student Advantage</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SEO CONTENT BLOCK -->
+<section class="section seo-section" aria-labelledby="seo-heading">
+  <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto">
+    <div class="section-label">Why Students Choose Us</div>
+    <h2 class="sh" id="seo-heading">The Best Training Institute<br/>in Kottakkal & Malappuram</h2>
+    <p class="section-muted" style="margin:0 auto">Be Campus Academy is consistently rated the top professional training centre across all major courses in Malappuram district.</p>
+  </div>
+  <div class="seo-grid">
+    <div class="seo-card reveal reveal-delay-1">
+      <h3>Best Digital Marketing Course in Malappuram</h3>
+      <p>Our AI-Integrated Advanced Diploma in Digital Marketing is the most comprehensive digital marketing program available in Kottakkal and Malappuram. Students learn SEO, Google Ads, Meta Ads, content marketing, email marketing, and AI-powered tools — and apply them on live campaigns through Be Cubez. No other institute in the district offers this level of practical training.</p>
+    </div>
+    <div class="seo-card reveal reveal-delay-2">
+      <h3>Top Graphic Design Institute in Kottakkal</h3>
+      <p>Our Advanced Diploma in Creative Design & Brand Building is the highest-rated graphic design course in Kottakkal. Using Adobe Photoshop, Illustrator, Figma, and Canva Pro, students build complete brand identities for real clients. Graduates from our design school are working at top studios, agencies, and as successful freelancers across Kerala and beyond.</p>
+    </div>
+    <div class="seo-card reveal reveal-delay-3">
+      <h3>Best HR & Accounting Courses in Malappuram</h3>
+      <p>Be Campus offers Malappuram's most in-demand HR and accounting courses — including the Advanced Diploma in HR & Talent Management, DPAT, and the AI-ADIAT for international accounting. Students from our finance programs are placed in CA firms, banks, MNCs, and Gulf companies. Our DPAT is the best accounting course in Kottakkal for fresh graduates and career switchers alike.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section reveal">
+  <h2>Ready to Write<br/>Your Own Story?</h2>
+  <p>Join 500+ Be Campus graduates who transformed their careers in Kottakkal. Free counselling. 100% placement commitment.</p>
+  <div class="cta-actions">
+    <a href="#" class="btn-white" onclick="openModal();return false;">Enquire Now — Free Counselling →</a>
+    <a href="https://wa.me/919XXXXXXXXX" target="_blank" class="btn-outline-white">💬 WhatsApp Us</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border)">
+    <div>
+      <div class="footer-brand-name">Be<span>Campus</span> Academy</div>
+      <p style="font-size:.82rem;color:var(--muted);max-width:320px">Kottakkal & Malappuram's #1 AI-integrated training institute. 100% placement assistance across all programs.</p>
+    </div>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <a href="./index.html" class="btn-ghost" style="font-size:.82rem;padding:.6rem 1.4rem">← Back to Home</a>
+      <a href="./courses.html" class="btn-ghost" style="font-size:.82rem;padding:.6rem 1.4rem">View Courses</a>
+      <a href="#" class="btn-red" style="font-size:.82rem;padding:.6rem 1.4rem" onclick="openModal();return false;">Enquire Now</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Be Campus Academy, Kottakkal, Malappuram, Kerala. All rights reserved.</span>
+    <div style="display:flex;gap:1.5rem">
+      <a href="./contact.html">Privacy Policy</a>
+      <a href="./contact.html">Terms</a>
+      <a href="https://www.instagram.com/becampusacademy" target="_blank">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOAT -->
+<div class="float-actions">
+  <div class="fab-wrap"><a href="https://wa.me/919XXXXXXXXX" target="_blank" class="fab fab-wa" aria-label="WhatsApp">💬<span class="fab-label">Chat on WhatsApp</span></a></div>
+  <div class="fab-wrap"><a href="https://www.instagram.com/becampusacademy" target="_blank" class="fab fab-ig" aria-label="Instagram">📸<span class="fab-label">Follow on Instagram</span></a></div>
+  <div class="fab-wrap"><a href="tel:+919XXXXXXXXX" class="fab fab-call" aria-label="Call">📞<span class="fab-label">Call Us Now</span></a></div>
+</div>
+
+<script>
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a)})();
+
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+function openModal(){document.getElementById('enquiryModal').classList.add('active')}
+function closeModal(){document.getElementById('enquiryModal').classList.remove('active')}
+document.getElementById('enquiryModal').addEventListener('click',function(e){if(e.target===this)closeModal()});
+function submitForm(){
+  const n=document.getElementById('f-fname').value.trim(),p=document.getElementById('f-phone').value.trim(),c=document.getElementById('f-course').value;
+  if(!n||!p||!c){alert('Please fill in your name, phone, and course.');return;}
+  document.getElementById('formContent').style.display='none';
+  document.getElementById('formSuccess').style.display='block';
+}
+</script>
+</body>
+</html>

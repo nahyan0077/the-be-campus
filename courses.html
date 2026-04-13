@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Courses | Be Campus Academy – Best Diploma Courses in Kottakkal & Malappuram</title>
+<meta name="description" content="Explore Be Campus Academy's 6 AI-integrated professional diploma courses — Digital Marketing, Graphic Design, HR Management, Accounting, Office Administration in Kottakkal & Malappuram, Kerala."/>
+<meta name="keywords" content="diploma courses Kottakkal, digital marketing course Malappuram, graphic design course Kerala, HR management diploma, accounting course Kottakkal, office management course Malappuram, AI integrated courses Kerala"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0d0d;--surface:#141414;--surface2:#1c1c1c;
+  --border:rgba(255,255,255,.08);--red:#e8002d;
+  --red-glow:rgba(232,0,45,.25);--red-soft:rgba(232,0,45,.08);
+  --white:#fff;--muted:rgba(255,255,255,.45);--muted2:rgba(255,255,255,.25);
+  --nav-h:72px;--page-gutter:clamp(20px,4vw,72px);--page-max:1280px;
+  --font-body:'Manrope',sans-serif;--font-display:'Sora',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--white);overflow-x:hidden;cursor:none}
+#cursor{position:fixed;width:12px;height:12px;background:var(--red);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .3s,height .3s}
+#cursor-ring{position:fixed;width:40px;height:40px;border:1.5px solid rgba(232,0,45,.5);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:transform .12s ease,width .3s,height .3s}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:9998;opacity:.6}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;padding:0 var(--page-gutter);gap:2rem;background:rgba(13,13,13,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo-text{font-family:var(--font-display);font-size:1.2rem;font-weight:800;color:white;text-decoration:none}
+.nav-logo-text span{color:var(--red)}
+.nav-links{display:flex;gap:2rem;list-style:none;margin-left:auto}
+.nav-links a{font-size:.85rem;font-weight:500;text-decoration:none;color:rgba(255,255,255,.6);transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--red);transition:width .3s}
+.nav-links a:hover,.nav-links a.active{color:white}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-cta{background:var(--red);color:white;padding:.55rem 1.4rem;border-radius:100px;font-size:.82rem;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.nav-cta:hover{transform:scale(1.05);box-shadow:0 0 24px var(--red-glow)}
+
+/* NOISE */
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9997}
+
+/* PAGE HERO */
+.page-hero{min-height:clamp(440px,58vh,720px);display:flex;align-items:center;padding:calc(var(--nav-h)+6.75rem) var(--page-gutter) 5rem;position:relative;overflow:hidden}
+.ph-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:70px 70px;animation:gridMove 22s linear infinite}
+@keyframes gridMove{from{background-position:0 0}to{background-position:70px 70px}}
+.ph-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(232,0,45,.12),transparent 70%);top:50%;left:55%;transform:translate(-50%,-50%);animation:gp 4s ease-in-out infinite}
+@keyframes gp{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.1)}}
+.ph-content{position:relative;z-index:1;width:min(100%,820px);margin-inline:auto 0;padding-top:6.5rem}
+.ph-breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:var(--muted);margin-bottom:2rem}
+.ph-breadcrumb a{color:var(--muted);text-decoration:none;transition:color .2s}
+.ph-breadcrumb a:hover{color:var(--red)}
+.ph-breadcrumb span{color:rgba(255,255,255,.2)}
+.ph-tag{display:inline-flex;align-items:center;gap:.6rem;border:1px solid rgba(232,0,45,.4);background:rgba(232,0,45,.07);color:var(--red);font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin:1rem 0 1.5rem;animation:fadeUp .7s ease both}
+.ph-tag .dot{width:6px;height:6px;background:var(--red);border-radius:50%;animation:blink 1.5s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.page-hero h1{font-family:var(--font-display);font-size:clamp(2.35rem,4.7vw,4.25rem);font-weight:800;line-height:.98;letter-spacing:-.04em;margin-bottom:1.4rem;animation:fadeUp .8s .1s ease both;max-width:12ch}
+.page-hero h1 .accent{color:var(--red)}
+.page-hero .sub{font-size:1rem;color:var(--muted);max-width:580px;line-height:1.8;animation:fadeUp .8s .25s ease both}
+
+/* FILTER BAR */
+.filter-bar{padding:0 var(--page-gutter);margin-bottom:-.5rem;position:sticky;top:var(--nav-h);z-index:900;background:var(--bg);border-bottom:1px solid var(--border);padding-top:1rem;padding-bottom:1rem}
+.filter-inner{display:flex;gap:.7rem;flex-wrap:wrap;align-items:center}
+.filter-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-right:.3rem}
+.filter-btn{padding:.45rem 1.2rem;border-radius:100px;border:1px solid var(--border);background:transparent;color:rgba(255,255,255,.55);font-family:var(--font-body);font-size:.78rem;font-weight:600;cursor:pointer;transition:all .2s}
+.filter-btn:hover{border-color:rgba(232,0,45,.4);color:white}
+.filter-btn.active{background:var(--red);border-color:var(--red);color:white}
+
+/* COURSES LAYOUT */
+.courses-section{padding:4rem var(--page-gutter) 7rem}
+
+/* COURSE BLOCK — full-width detailed card */
+.course-block{
+  display:grid;grid-template-columns:1fr 1.55fr;
+  border:1px solid var(--border);border-radius:28px;
+  overflow:hidden;margin-bottom:2.5rem;
+  background:var(--surface);
+  transition:border-color .4s,box-shadow .4s;
+  position:relative;
+}
+.course-block:hover{border-color:rgba(232,0,45,.35);box-shadow:0 20px 80px rgba(232,0,45,.07)}
+.course-block.reverse{grid-template-columns:1.55fr 1fr}
+
+/* LEFT PANEL */
+.cb-left{
+  padding:3.2rem;
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
+  background:linear-gradient(145deg,rgba(232,0,45,.04),transparent 70%);
+  border-right:1px solid var(--border);
+}
+.course-block.reverse .cb-left{border-right:none;border-left:1px solid var(--border);order:2}
+.cb-number{font-family:var(--font-display);font-size:7rem;font-weight:800;color:rgba(232,0,45,.06);line-height:1;position:absolute;top:1.5rem;right:2rem;letter-spacing:-.05em}
+.cb-icon-wrap{width:72px;height:72px;border-radius:20px;background:var(--red-soft);border:1px solid rgba(232,0,45,.2);display:flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:1.8rem;transition:background .3s}
+.course-block:hover .cb-icon-wrap{background:rgba(232,0,45,.15)}
+.cb-school{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:.6rem}
+.cb-title{font-family:var(--font-display);font-size:1.45rem;font-weight:800;line-height:1.25;margin-bottom:1rem;letter-spacing:-.02em}
+.cb-desc{font-size:.88rem;color:var(--muted);line-height:1.78;margin-bottom:2rem;flex:1}
+.cb-meta{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:2rem}
+.cb-meta-pill{display:flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:100px;padding:.38rem .95rem;font-size:.75rem;font-weight:600;color:rgba(255,255,255,.7)}
+.cb-meta-pill .icon{font-size:.85rem}
+.cb-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.2rem}
+.cb-badge{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .85rem;border-radius:100px;border:1px solid}
+.badge-hot{background:rgba(255,80,0,.1);border-color:rgba(255,80,0,.35);color:#ff8040}
+.badge-ai{background:rgba(100,80,255,.1);border-color:rgba(100,80,255,.35);color:#a090ff}
+.badge-new{background:rgba(0,200,100,.1);border-color:rgba(0,200,100,.35);color:#40d090}
+.badge-gulf{background:rgba(0,160,255,.1);border-color:rgba(0,160,255,.35);color:#40b0ff}
+.badge-popular{background:rgba(232,0,45,.1);border-color:rgba(232,0,45,.35);color:var(--red)}
+.cb-actions{display:flex;gap:.8rem;flex-wrap:wrap}
+
+/* RIGHT PANEL */
+.cb-right{padding:3.2rem;display:flex;flex-direction:column;gap:2rem}
+.course-block.reverse .cb-right{order:1}
+
+/* CURRICULUM */
+.cb-section-title{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}
+.cb-section-title::after{content:'';flex:1;height:1px;background:var(--border)}
+
+.curriculum-list{display:flex;flex-direction:column;gap:.55rem}
+.curr-item{display:flex;align-items:center;gap:.9rem;padding:.7rem 1rem;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;transition:border-color .2s,background .2s}
+.curr-item:hover{border-color:rgba(232,0,45,.3);background:rgba(232,0,45,.04)}
+.curr-num{width:24px;height:24px;border-radius:8px;background:var(--red-soft);border:1px solid rgba(232,0,45,.2);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;color:var(--red);flex-shrink:0}
+.curr-text{font-size:.84rem;font-weight:500;color:rgba(255,255,255,.8)}
+.curr-tag{margin-left:auto;font-size:.62rem;padding:.18rem .6rem;border-radius:100px;background:rgba(232,0,45,.1);color:rgba(232,0,45,.8);border:1px solid rgba(232,0,45,.2);white-space:nowrap;flex-shrink:0}
+
+/* OUTCOMES */
+.outcomes-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.outcome-item{display:flex;align-items:flex-start;gap:.7rem;padding:.85rem;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;transition:border-color .2s}
+.outcome-item:hover{border-color:rgba(232,0,45,.25)}
+.out-check{width:20px;height:20px;border-radius:6px;background:rgba(232,0,45,.12);display:flex;align-items:center;justify-content:center;font-size:.65rem;flex-shrink:0;margin-top:.1rem}
+.out-text{font-size:.8rem;color:rgba(255,255,255,.75);line-height:1.5}
+
+/* TOOLS */
+.tools-wrap{display:flex;flex-wrap:wrap;gap:.5rem}
+.tool-pill{display:flex;align-items:center;gap:.4rem;padding:.35rem .85rem;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:100px;font-size:.75rem;font-weight:600;color:rgba(255,255,255,.65);transition:all .2s}
+.tool-pill:hover{border-color:rgba(232,0,45,.35);color:white;background:rgba(232,0,45,.06)}
+.tool-icon{font-size:.9rem}
+
+/* CAREER PATHS */
+.career-grid{display:flex;flex-wrap:wrap;gap:.5rem}
+.career-pill{padding:.38rem .9rem;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:100px;font-size:.75rem;color:rgba(255,255,255,.6);transition:all .2s}
+.career-pill:hover{border-color:rgba(232,0,45,.3);color:white}
+
+/* DIVIDER */
+.section-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(232,0,45,.2),transparent);margin:1rem 0}
+
+/* STATS ROW inside card */
+.cb-stats{display:flex;gap:0;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.02)}
+.cb-stat{flex:1;padding:1rem;text-align:center;border-right:1px solid var(--border)}
+.cb-stat:last-child{border-right:none}
+.cb-stat-num{font-family:var(--font-display);font-size:1.3rem;font-weight:800;color:var(--red);line-height:1}
+.cb-stat-lbl{font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-top:.2rem}
+
+/* HIGHLIGHT BOX */
+.highlight-box{background:linear-gradient(135deg,rgba(232,0,45,.08),rgba(232,0,45,.03));border:1px solid rgba(232,0,45,.2);border-radius:16px;padding:1.3rem 1.5rem;display:flex;gap:1rem;align-items:flex-start}
+.hb-icon{font-size:1.4rem;flex-shrink:0;margin-top:.1rem}
+.hb-title{font-size:.85rem;font-weight:700;margin-bottom:.3rem}
+.hb-text{font-size:.8rem;color:var(--muted);line-height:1.6}
+
+/* BUTTONS */
+.btn-red{display:inline-flex;align-items:center;gap:.55rem;background:var(--red);color:white;padding:.8rem 1.8rem;border-radius:100px;font-weight:600;font-size:.88rem;text-decoration:none;transition:transform .25s,box-shadow .25s;box-shadow:0 4px 24px rgba(232,0,45,.25);white-space:nowrap}
+.btn-red:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(232,0,45,.4)}
+.btn-ghost{display:inline-flex;align-items:center;gap:.55rem;background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.18);padding:.8rem 1.8rem;border-radius:100px;font-weight:500;font-size:.88rem;text-decoration:none;transition:border-color .2s,background .2s;white-space:nowrap}
+.btn-ghost:hover{border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.05)}
+.btn-white{display:inline-flex;align-items:center;gap:.55rem;background:white;color:var(--red);padding:.85rem 2.2rem;border-radius:100px;font-weight:700;font-size:.9rem;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn-white:hover{transform:scale(1.05);box-shadow:0 8px 28px rgba(0,0,0,.25)}
+.btn-outline-white{display:inline-flex;align-items:center;gap:.55rem;background:transparent;color:white;border:1.5px solid rgba(255,255,255,.45);padding:.85rem 2.2rem;border-radius:100px;font-weight:600;font-size:.9rem;text-decoration:none;transition:background .2s,border-color .2s}
+.btn-outline-white:hover{background:rgba(255,255,255,.1);border-color:white}
+
+/* COMPARE TABLE */
+.compare-section{padding:0 var(--page-gutter) 7rem}
+.compare-table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden;margin-top:3rem}
+.compare-table th{background:rgba(232,0,45,.08);border-bottom:1px solid var(--border);padding:1.1rem 1.4rem;text-align:left;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.compare-table td{padding:1rem 1.4rem;border-bottom:1px solid var(--border);font-size:.85rem;color:rgba(255,255,255,.8);vertical-align:middle}
+.compare-table tr:last-child td{border-bottom:none}
+.compare-table tr:hover td{background:rgba(255,255,255,.02)}
+.ct-name{font-weight:700;color:white;font-size:.9rem}
+.ct-icon{font-size:1.2rem;margin-right:.5rem}
+.ct-dur{font-size:.8rem;color:var(--muted)}
+.ct-badge{font-size:.65rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.25rem .7rem;border-radius:100px}
+.check{color:#40d090;font-size:1rem}
+.partial{color:#ffaa40;font-size:1rem}
+
+/* CTA */
+.cta-section{margin:0 var(--page-gutter) 6rem;background:var(--red);border-radius:28px;padding:5rem;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(255,255,255,.1),transparent 60%)}
+.cta-section::after{content:'Be Campus';font-family:var(--font-display);font-size:11rem;font-weight:800;position:absolute;bottom:-3rem;left:50%;transform:translateX(-50%);white-space:nowrap;color:rgba(255,255,255,.06);pointer-events:none;letter-spacing:-.05em}
+.cta-section h2{font-family:var(--font-display);font-size:clamp(1.9rem,4vw,3.2rem);font-weight:800;color:white;margin-bottom:1rem;position:relative;z-index:1}
+.cta-section p{font-size:1rem;color:rgba(255,255,255,.8);margin-bottom:2.5rem;position:relative;z-index:1}
+.cta-actions{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;position:relative;z-index:1}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(14px);z-index:9999;display:none;align-items:center;justify-content:center;padding:1.5rem}
+.modal-overlay.active{display:flex}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:2.8rem;width:100%;max-width:500px;position:relative;max-height:90vh;overflow-y:auto}
+.modal-close{position:absolute;top:1.2rem;right:1.2rem;background:rgba(255,255,255,.08);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.modal-close:hover{background:rgba(232,0,45,.3)}
+.modal h3{font-family:var(--font-display);font-size:1.5rem;font-weight:800;margin-bottom:.4rem}
+.modal-sub{font-size:.86rem;color:var(--muted);margin-bottom:1.8rem}
+.form-group{margin-bottom:1.1rem}
+.form-group label{display:block;font-size:.73rem;font-weight:600;letter-spacing:.05em;color:rgba(255,255,255,.6);margin-bottom:.4rem;text-transform:uppercase}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:12px;padding:.8rem 1rem;color:white;font-family:var(--font-body);font-size:.88rem;outline:none;transition:border-color .2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(232,0,45,.5)}
+.form-group select option{background:#1c1c1c}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-submit{width:100%;background:var(--red);color:white;border:none;padding:1rem;border-radius:12px;font-family:var(--font-display);font-size:.95rem;font-weight:700;cursor:pointer;transition:transform .2s,box-shadow .2s;margin-top:.4rem}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,0,45,.4)}
+.form-success{display:none;text-align:center;padding:2rem 0}
+.form-success .fs-icon{font-size:3rem;margin-bottom:1rem}
+.form-success h4{font-family:var(--font-display);font-size:1.4rem;font-weight:800;margin-bottom:.5rem}
+.form-success p{font-size:.88rem;color:var(--muted)}
+
+/* FLOAT */
+.float-actions{position:fixed;bottom:2rem;right:1.8rem;z-index:9000;display:flex;flex-direction:column;gap:.8rem;align-items:flex-end}
+.fab-wrap{position:relative;display:flex;align-items:center}
+.fab{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;text-decoration:none;transition:transform .25s,box-shadow .25s;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+.fab:hover{transform:scale(1.12)}
+.fab-wa{background:#25D366}.fab-ig{background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4)}.fab-call{background:var(--red)}
+.fab-label{position:absolute;right:62px;background:rgba(13,13,13,.9);border:1px solid var(--border);color:white;font-size:.72rem;font-weight:600;padding:.3rem .8rem;border-radius:100px;white-space:nowrap;opacity:0;transition:opacity .2s;pointer-events:none}
+.fab:hover .fab-label{opacity:1}
+
+/* FOOTER */
+footer{background:var(--surface);border-top:1px solid var(--border);padding:3.5rem var(--page-gutter) 2rem}
+.ph-content,
+.filter-inner,
+.courses-section > .course-block,
+.compare-section > div:first-child,
+.compare-section > div:last-child,
+footer > div:first-child,
+.footer-bottom{
+  width:min(100%,var(--page-max));
+  margin-inline:auto;
+}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:.78rem;color:var(--muted2)}
+.footer-bottom a{color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-bottom a:hover{color:white}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.08s}.rd2{transition-delay:.16s}.rd3{transition-delay:.24s}.rd4{transition-delay:.32s}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .course-block,.course-block.reverse{grid-template-columns:1fr}
+  .cb-left{border-right:none;border-bottom:1px solid var(--border)}
+  .course-block.reverse .cb-left{border-left:none;border-bottom:1px solid var(--border);order:0}
+  .course-block.reverse .cb-right{order:0}
+  .outcomes-grid{grid-template-columns:1fr}
+  .cb-number{font-size:4rem;top:1rem;right:1rem}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  #cursor,#cursor-ring{display:none}
+  body{cursor:auto}
+  .cta-section{padding:3rem 2rem;margin:0 4vw 5rem}
+  .compare-section{overflow-x:auto}
+  .form-row{grid-template-columns:1fr}
+  .course-block{border-radius:20px}
+  .cb-left,.cb-right{padding:2rem}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="enquiryModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="formContent">
+      <h3>Enrol Now 🚀</h3>
+      <p class="modal-sub">Fill in your details — our counsellor will call within 24 hours with a free career guidance session.</p>
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" placeholder="Arjun" id="f-fname"/></div>
+        <div class="form-group"><label>Last Name</label><input type="text" placeholder="K" id="f-lname"/></div>
+      </div>
+      <div class="form-group"><label>Mobile Number</label><input type="tel" placeholder="+91 XXXXX XXXXX" id="f-phone"/></div>
+      <div class="form-group"><label>Email Address</label><input type="email" placeholder="you@email.com" id="f-email"/></div>
+      <div class="form-group">
+        <label>Course Interested In</label>
+        <select id="f-course">
+          <option value="">Select a course</option>
+          <option>Advanced Diploma in Creative Design & Brand Building</option>
+          <option>AI-Integrated Advanced Diploma in Digital Marketing</option>
+          <option>Advanced Diploma in Office Management & Business Communication</option>
+          <option>Advanced Diploma in Human Resources & Talent Management</option>
+          <option>Diploma in Professional Accounting & Taxation (DPAT)</option>
+          <option>AI-Integrated Advanced Diploma in International Accounting & Taxation (AI-ADIAT)</option>
+          <option>Not Sure – Need Career Guidance</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Qualification</label>
+        <select id="f-qual">
+          <option value="">Select</option>
+          <option>10th Pass</option><option>12th / Plus Two</option>
+          <option>Degree / Graduation</option><option>Post Graduation</option><option>Other</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Message (Optional)</label><textarea placeholder="Your career goals or questions…" id="f-msg" style="min-height:75px"></textarea></div>
+      <button class="form-submit" onclick="submitForm()">Submit Enquiry →</button>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <div class="fs-icon">🎉</div>
+      <h4>Enquiry Received!</h4>
+      <p>Our counsellor will call you within 24 hours. Follow us on Instagram for student stories and updates.</p>
+      <br/>
+      <a href="https://www.instagram.com/becampusacademy" target="_blank" class="btn-red" style="display:inline-flex;margin:0 auto">Follow on Instagram</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="./index.html" class="nav-logo-text">Be<span>Campus</span> Academy</a>
+  <ul class="nav-links">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./about.html">About Us</a></li>
+    <li><a href="./courses.html" class="active">Courses</a></li>
+    <li><a href="./blog.html">Blog</a></li>
+    <li><a href="./contact.html">Contact</a></li>
+  </ul>
+  <a href="#" class="nav-cta" onclick="openModal();return false;">Enquire Now</a>
+</nav>
+
+<!-- PAGE HERO -->
+<header class="page-hero">
+  <div class="ph-grid"></div>
+  <div class="ph-glow"></div>
+  <div class="ph-content">
+    <div class="ph-breadcrumb"><a href="./index.html">Home</a><span>/</span><span style="color:rgba(255,255,255,.55)">Courses</span></div>
+    <div class="ph-tag"><span class="dot"></span>AI-Integrated Campus — Kottakkal & Malappuram</div>
+    <h1>Professional Diplomas<br/>Built to Get You <span class="accent">Hired.</span></h1>
+    <p class="sub">6 industry-aligned, AI-integrated diploma programs designed specifically for students in Kottakkal and Malappuram — with real agency training through Be Cubez and 100% placement assistance.</p>
+  </div>
+</header>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <span class="filter-label">Filter:</span>
+    <button class="filter-btn active" onclick="filterCourses('all',this)">All Courses</button>
+    <button class="filter-btn" onclick="filterCourses('creative',this)">🎨 Creative</button>
+    <button class="filter-btn" onclick="filterCourses('marketing',this)">📈 Marketing</button>
+    <button class="filter-btn" onclick="filterCourses('business',this)">🗂️ Business</button>
+    <button class="filter-btn" onclick="filterCourses('hr',this)">👥 HR</button>
+    <button class="filter-btn" onclick="filterCourses('finance',this)">📊 Finance</button>
+    <button class="filter-btn" onclick="filterCourses('ai',this)">🤖 AI Courses</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ COURSES ═══════ -->
+<section class="courses-section">
+
+  <!-- ① CREATIVE DESIGN -->
+  <div class="course-block reveal" data-cat="creative" id="course-design">
+    <div class="cb-left">
+      <div class="cb-number">01</div>
+      <div class="cb-icon-wrap">🎨</div>
+      <div class="cb-school">Creative School · Be Campus Academy</div>
+      <h2 class="cb-title">Advanced Diploma in<br/>Creative Design &<br/>Brand Building</h2>
+      <p class="cb-desc">Master the art and business of visual communication at Malappuram's best graphic design institute. This program takes you from design fundamentals to advanced brand strategy — building a professional portfolio through real brand projects with Be Cubez. Graduates work at top design studios, agencies, and as successful freelancers.</p>
+      <div class="cb-badges">
+        <span class="cb-badge badge-popular">🔥 Most Popular</span>
+        <span class="cb-badge badge-new">✦ Portfolio-Based</span>
+      </div>
+      <div class="cb-meta">
+        <span class="cb-meta-pill"><span class="icon">⏱️</span> 6 Months</span>
+        <span class="cb-meta-pill"><span class="icon">📅</span> Flexible Batches</span>
+        <span class="cb-meta-pill"><span class="icon">🏅</span> Certified</span>
+        <span class="cb-meta-pill"><span class="icon">💼</span> 100% Placement</span>
+      </div>
+      <div class="cb-stats">
+        <div class="cb-stat"><div class="cb-stat-num">6</div><div class="cb-stat-lbl">Months</div></div>
+        <div class="cb-stat"><div class="cb-stat-num">12+</div><div class="cb-stat-lbl">Modules</div></div>
+        <div class="cb-stat"><div class="cb-stat-num">100%</div><div class="cb-stat-lbl">Placed</div></div>
+        <div class="cb-stat"><div class="cb-stat-num">5★</div><div class="cb-stat-lbl">Rated</div></div>
+      </div>
+      <br/>
+      <div class="cb-actions">
+        <a href="#" class="btn-red" onclick="openModal();return false;">Enrol Now →</a>
+        <a href="https://wa.me/919XXXXXXXXX" target="_blank" class="btn-ghost">💬 WhatsApp</a>
+      </div>
+    </div>
+    <div class="cb-right">
+      <div>
+        <div class="cb-section-title">Curriculum Highlights</div>
+        <div class="curriculum-list">
+          <div class="curr-item"><div class="curr-num">01</div><span class="curr-text">Design Fundamentals — Principles, Typography & Color Theory</span></div>
+          <div class="curr-item"><div class="curr-num">02</div><span class="curr-text">Adobe Photoshop — Photo Editing, Retouching & Compositing</span><span class="curr-tag">Core</span></div>
+          <div class="curr-item"><div class="curr-num">03</div><span class="curr-text">Adobe Illustrator — Vector Graphics, Icons & Illustration</span><span class="curr-tag">Core</span></div>
+          <div class="curr-item"><div class="curr-num">04</div><span class="curr-text">Figma — UI/UX Design, Wireframing & Prototyping</span><span class="curr-tag">Advanced</span></div>
+          <div class="curr-item"><div class="curr-num">05</div><span class="curr-text">Canva Pro — Social Media & Marketing Creatives</span></div>
+          <div class="curr-item"><div class="curr-num">06</div><span class="curr-text">Brand Identity Design — Logos, Style Guides & Brand Systems</span><span class="curr-tag">Key Module</span></div>
+          <div class="curr-item"><div class="curr-num">07</div><span class="curr-text">Print Design — Brochures, Packaging, Hoardings & Flyers</span></div>
+          <div class="curr-item"><div class="curr-num">08</div><span class="curr-text">Motion Graphics & Basic Video Editing</span><span class="curr-tag">Advanced</span></div>
+          <div class="curr-item"><div class="curr-num">09</div><span class="curr-text">AI Design Tools — MidJourney, Adobe Firefly, Canva AI</span><span class="curr-tag">🤖 AI</span></div>
+          <div class="curr-item"><div class="curr-num">10</div><span class="curr-text">Live Brand Project via Be Cubez Agency</span><span class="curr-tag">🚀 Agency</span></div>
+        </div>
+      </div>
+      <div class="section-divider"></div>
+      <div>
+        <div class="cb-section-title">Career Outcomes</div>
+        <div class="outcomes-grid">
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Graphic Designer at agencies & studios</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Brand Identity Designer</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Social Media Creative Executive</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Freelance Designer (high-income)</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">UI/UX Designer (junior)</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Art Director (with experience)</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="cb-section-title">Tools You'll Master</div>
+        <div class="tools-wrap">
+          <span class="tool-pill"><span class="tool-icon">🅿️</span>Photoshop</span>
+          <span class="tool-pill"><span class="tool-icon">🔷</span>Illustrator</span>
+          <span class="tool-pill"><span class="tool-icon">🖼️</span>Figma</span>
+          <span class="tool-pill"><span class="tool-icon">🎨</span>Canva Pro</span>
+          <span class="tool-pill"><span class="tool-icon">🎬</span>Premiere Pro</span>
+          <span class="tool-pill"><span class="tool-icon">🤖</span>Adobe Firefly</span>
+          <span class="tool-pill"><span class="tool-icon">✨</span>MidJourney</span>
+          <span class="tool-pill"><span class="tool-icon">📐</span>InDesign</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ② DIGITAL MARKETING -->
+  <div class="course-block reverse reveal rd1" data-cat="marketing ai" id="course-dm">
+    <div class="cb-left">
+      <div class="cb-number">02</div>
+      <div class="cb-icon-wrap">📈</div>
+      <div class="cb-school">Marketing School · Be Campus Academy</div>
+      <h2 class="cb-title">AI-Integrated Advanced<br/>Diploma in<br/>Digital Marketing</h2>
+      <p class="cb-desc">The best and most advanced digital marketing course in Kottakkal and Malappuram. This AI-powered program covers every pillar of modern digital marketing — with students running live campaigns through Be Cubez agency before they graduate. If you want to work in digital marketing in Kerala or beyond, this is the only course you need.</p>
+      <div class="cb-badges">
+        <span class="cb-badge badge-hot">🔥 #1 In Demand</span>
+        <span class="cb-badge badge-ai">🤖 AI-Integrated</span>
+      </div>
+      <div class="cb-meta">
+        <span class="cb-meta-pill"><span class="icon">⏱️</span> 6 Months</span>
+        <span class="cb-meta-pill"><span class="icon">🚀</span> Live Campaigns</span>
+        <span class="cb-meta-pill"><span class="icon">🏅</span> Google Certified</span>
+        <span class="cb-meta-pill"><span class="icon">💼</span> 100% Placement</span>
+      </div>
+      <div class="cb-stats">
+        <div class="cb-stat"><div class="cb-stat-num">6</div><div class="cb-stat-lbl">Months</div></div>
+        <div class="cb-stat"><div class="cb-stat-num">15+</div><div class="cb-stat-lbl">Modules</div></div>
+        <div class="cb-stat"><div class="cb-stat-num">100%</div><div class="cb-stat-lbl">Placed</div></div>
+        <div class="cb-stat"><div class="cb-stat-num">AI+</div><div class="cb-stat-lbl">Tools</div></div>
+      </div>
+      <br/>
+      <div class="highlight-box" style="margin-bottom:1.8rem">
+        <div class="hb-icon">🚀</div>
+        <div><div class="hb-title">Be Cubez Advantage</div><div class="hb-text">Run real ad campaigns on Google & Meta for actual clients through our agency. Graduate with a live portfolio — not just a certificate.</div></div>
+      </div>
+      <div class="cb-actions">
+        <a href="#" class="btn-red" onclick="openModal();return false;">Enrol Now →</a>
+        <a href="https://wa.me/919XXXXXXXXX" target="_blank" class="btn-ghost">💬 WhatsApp</a>
+      </div>
+    </div>
+    <div class="cb-right">
+      <div>
+        <div class="cb-section-title">Curriculum Highlights</div>
+        <div class="curriculum-list">
+          <div class="curr-item"><div class="curr-num">01</div><span class="curr-text">Digital Marketing Fundamentals & Strategy</span></div>
+          <div class="curr-item"><div class="curr-num">02</div><span class="curr-text">Search Engine Optimisation (SEO) — On-page, Off-page & Technical</span><span class="curr-tag">Core</span></div>
+          <div class="curr-item"><div class="curr-num">03</div><span class="curr-text">Google Ads — Search, Display, Shopping & YouTube Campaigns</span><span class="curr-tag">Core</span></div>
+          <div class="curr-item"><div class="curr-num">04</div><span class="curr-text">Meta Ads — Facebook & Instagram Campaign Management</span><span class="curr-tag">Core</span></div>
+          <div class="curr-item"><div class="curr-num">05</div><span class="curr-text">Social Media Marketing — Strategy, Content & Growth</span></div>
+          <div class="curr-item"><div class="curr-num">06</div><span class="curr-text">Content Marketing & Copywriting</span></div>
+          <div class="curr-item"><div class="curr-num">07</div><span class="curr-text">Email Marketing — Campaigns, Automation & Analytics</span></div>
+          <div class="curr-item"><div class="curr-num">08</div><span class="curr-text">Analytics — Google Analytics 4, Search Console & Data Studio</span><span class="curr-tag">Key Module</span></div>
+          <div class="curr-item"><div class="curr-num">09</div><span class="curr-text">AI Marketing Tools — ChatGPT, Jasper, SurferSEO, Canva AI</span><span class="curr-tag">🤖 AI</span></div>
+          <div class="curr-item"><div class="curr-num">10</div><span class="curr-text">E-Commerce Marketing, Affiliate & Influencer Marketing</span></div>
+          <div class="curr-item"><div class="curr-num">11</div><span class="curr-text">Live Campaign Execution via Be Cubez Agency</span><span class="curr-tag">🚀 Agency</span></div>
+        </div>
+      </div>
+      <div class="section-divider"></div>
+      <div>
+        <div class="cb-section-title">Career Outcomes</div>
+        <div class="outcomes-grid">
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Digital Marketing Executive / Manager</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">SEO Specialist</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Performance Marketing Manager</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Social Media Manager</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Content Strategist</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Freelance Digital Marketer</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="cb-section-title">Tools & Platforms</div>
+        <div class="tools-wrap">
+          <span class="tool-pill"><span class="tool-icon">🔍</span>Google Ads</span>
+          <span class="tool-pill"><span class="tool-icon">📘</span>Meta Ads</span>
+          <span class="tool-pill"><span class="tool-icon">📊</span>GA4</span>
+          <span class="tool-pill"><span class="tool-icon">🔎</span>SEMrush</span>
+          <span class="tool-pill"><span class="tool-icon">🌊</span>SurferSEO</span>
+          <span class="tool-pill"><span class="tool-icon">🤖</span>ChatGPT</span>
+          <span class="tool-pill"><span class="tool-icon">📧</span>Mailchimp</span>
+          <span class="tool-pill"><span class="tool-icon">📌</span>Hootsuite</span>
+          <span class="tool-pill"><span class="tool-icon">🛍️</span>Shopify</span>
+          <span class="tool-pill"><span class="tool-icon">💡</span>Jasper AI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ③ OFFICE MANAGEMENT -->
+  <div class="course-block reveal rd2" data-cat="business" id="course-office">
+    <div class="cb-left">
+      <div class="cb-number">03</div>
+      <div class="cb-icon-wrap">🗂️</div>
+      <div class="cb-school">Business School · Be Campus Academy</div>
+      <h2 class="cb-title">Advanced Diploma in<br/>Office Management &<br/>Business Communication</h2>
+      <p class="cb-desc">The top office administration and business communication course in Kottakkal and Malappuram. This program builds the complete professional skill set demanded by corporate offices, government departments, hospitals, and businesses across Kerala and the Gulf. From advanced MS Office to professional English communication — graduate fully job-ready.</p>
+      <div class="cb-badges">
+        <span class="cb-badge badge-new">⚡ Career Accelerator</span>
+        <span class="cb-badge badge-gulf">✈️ Gulf Friendly</span>
+      </div>
+      <div class="cb-meta">
+        <span class="cb-meta-pill"><span class="icon">⏱️</span> 4 Months</span>
+        <span class="cb-meta-pill"><span class="icon">🏢</span> Corporate Ready</span>
+        <span class="cb-meta-pill"><span class="icon">🏅</span> Certified</span>
+        <span class="cb-meta-pill"><span class="icon">💼</span> 100% Placement</span>
+      </div>
+      <div class="cb-stats">
+        <div class="cb-stat"><div class="cb-stat-num">4</div><div class="cb-stat-lbl">Months</div></div>
+        <div class="cb-stat"><div class="cb-stat-num">10+</div><div class="cb-stat-lbl">Modules</div></div>
+        <div class="cb-stat"><div class="cb-stat-num">100%</div><div class="cb-stat-lbl">Placed</div></div>
+        <div class="cb-stat"><div class="cb-stat-num">Gulf</div><div class="cb-stat-lbl">Ready</div></div>
+      </div>
+      <br/>
+      <div class="cb-actions">
+        <a href="#" class="btn-red" onclick="openModal();return false;">Enrol Now →</a>
+        <a href="https://wa.me/919XXXXXXXXX" target="_blank" class="btn-ghost">💬 WhatsApp</a>
+      </div>
+    </div>
+    <div class="cb-right">
+      <div>
+        <div class="cb-section-title">Curriculum Highlights</div>
+        <div class="curriculum-list">
+          <div class="curr-item"><div class="curr-num">01</div><span class="curr-text">Office Administration & Management Principles</span></div>
+          <div class="curr-item"><div class="curr-num">02</div><span class="curr-text">Advanced MS Word — Professional Documents & Reports</span><span class="curr-tag">Core</span></div>
+          <div class="curr-item"><div class="curr-num">03</div><span class="curr-text">Advanced MS Excel — Data, Formulas, Pivot Tables & Dashboards</span><span class="curr-tag">Core</span></div>
+          <div class="curr-item"><div class="curr-num">04</div><span class="curr-text">MS PowerPoint — Professional Presentations & Slide Design</span></div>
+          <div class="curr-item"><div class="curr-num">05</div><span class="curr-text">Business English Communication — Writing, Speaking & Emails</span><span class="curr-tag">Key Module</span></div>
+          <div class="curr-item"><div class="curr-num">06</div><span class="curr-text">Professional Email & Business Correspondence</span></div>
+          <div class="curr-item"><div class="curr-num">07</div><span class="curr-text">Office Management — Filing, Scheduling & Resource Coordination</span></div>
+          <div class="curr-item"><div class="curr-num">08</div><span class="curr-text">Tally Basic & Accounting Fundamentals for Admin</span></div>
+          <div class="curr-item"><div class="curr-num">09</div><span class="curr-text">Soft Skills, Personality Development & Interview Prep</span></div>
+          <div class="curr-item"><div class="curr-num">10</div><span class="curr-text">AI Productivity Tools — ChatGPT for Office Tasks</span><span class="curr-tag">🤖 AI</span></div>
+        </div>
+      </div>
+      <div class="section-divider"></div>
+      <div>
+        <div class="cb-section-title">Career Outcomes</div>
+        <div class="outcomes-grid">
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Office Administrator / Manager</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Executive Assistant / PA</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Front Office Executive</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Data Entry & MIS Executive</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Operations Coordinator</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Gulf Office / Admin Roles</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="cb-section-title">Tools You'll Master</div>
+        <div class="tools-wrap">
+          <span class="tool-pill"><span class="tool-icon">📄</span>MS Word</span>
+          <span class="tool-pill"><span class="tool-icon">📊</span>MS Excel</span>
+          <span class="tool-pill"><span class="tool-icon">📽️</span>PowerPoint</span>
+          <span class="tool-pill"><span class="tool-icon">📧</span>Outlook</span>
+          <span class="tool-pill"><span class="tool-icon">☁️</span>Google Workspace</span>
+          <span class="tool-pill"><span class="tool-icon">🤖</span>ChatGPT</span>
+          <span class="tool-pill"><span class="tool-icon">📒</span>Tally Basic</span>
+          <span class="tool-pill"><span class="tool-icon">🗓️</span>MS Teams</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ④ HR -->
+  <div class="course-block reverse reveal rd3" data-cat="hr business" id="course-hr">
+    <div class="cb-left">
+      <div class="cb-number">04</div>
+      <div class="cb-icon-wrap">👥</div>
+      <div class="cb-school">HR School · Be Campus Academy</div>
+      <h2 class="cb-title">Advanced Diploma in<br/>Human Resources &<br/>Talent Management</h2>
+      <p class="cb-desc">The most comprehensive HR management diploma in Malappuram and Kottakkal. This program covers the complete HR lifecycle — from talent acquisition and onboarding to payroll, performance management, and labour law compliance. Graduates work as HR professionals at MNCs, manufacturing firms, hospitals, IT companies, and Gulf organisations.</p>
+      <div class="cb-badges">
+        <span class="cb-badge badge-popular">🏢 Corporate Ready</span>
+        <span class="cb-badge badge-gulf">✈️ Gulf Ready</span>
+      </div>
+      <div class="cb-meta">
+        <span class="cb-meta-pill"><span class="icon">⏱️</span> 6 Months</span>
+        <span class="cb-meta-pill"><span class="icon">📋</span> Labour Law</span>
+        <span class="cb-meta-pill"><span class="icon">🏅</span> HR Certified</span>
+        <span class="cb-meta-pill"><span class="icon">💼</span> 100% Placement</span>
+      </div>
+      <div class="cb-stats">
+        <div class="cb-stat"><div class="cb-stat-num">6</div><div class="cb-stat-lbl">Months</div></div>
+        <div class="cb-stat"><div class="cb-stat-num">12+</div><div class="cb-stat-lbl">Modules</div></div>
+        <div class="cb-stat"><div class="cb-stat-num">100%</div><div class="cb-stat-lbl">Placed</div></div>
+        <div class="cb-stat"><div class="cb-stat-num">MNC</div><div class="cb-stat-lbl">Level</div></div>
+      </div>
+      <br/>
+      <div class="cb-actions">
+        <a href="#" class="btn-red" onclick="openModal();return false;">Enrol Now →</a>
+        <a href="https://wa.me/919XXXXXXXXX" target="_blank" class="btn-ghost">💬 WhatsApp</a>
+      </div>
+    </div>
+    <div class="cb-right">
+      <div>
+        <div class="cb-section-title">Curriculum Highlights</div>
+        <div class="curriculum-list">
+          <div class="curr-item"><div class="curr-num">01</div><span class="curr-text">HR Management Fundamentals & Organisational Behaviour</span></div>
+          <div class="curr-item"><div class="curr-num">02</div><span class="curr-text">Talent Acquisition — Job Posting, Screening & Interviewing</span><span class="curr-tag">Core</span></div>
+          <div class="curr-item"><div class="curr-num">03</div><span class="curr-text">Onboarding, Induction & Employee Lifecycle Management</span></div>
+          <div class="curr-item"><div class="curr-num">04</div><span class="curr-text">Payroll Management — Salary Processing, PF, ESI & TDS</span><span class="curr-tag">Key Module</span></div>
+          <div class="curr-item"><div class="curr-num">05</div><span class="curr-text">Indian Labour Laws — Factories Act, Shops Act, Gratuity</span><span class="curr-tag">Core</span></div>
+          <div class="curr-item"><div class="curr-num">06</div><span class="curr-text">Performance Management — KPIs, Appraisals & Reviews</span></div>
+          <div class="curr-item"><div class="curr-num">07</div><span class="curr-text">Training & Development — L&D Planning</span></div>
+          <div class="curr-item"><div class="curr-num">08</div><span class="curr-text">HRMS Software — Zoho People, Darwin Box</span><span class="curr-tag">Practical</span></div>
+          <div class="curr-item"><div class="curr-num">09</div><span class="curr-text">Employee Relations, POSH & Grievance Handling</span></div>
+          <div class="curr-item"><div class="curr-num">10</div><span class="curr-text">AI in HR — Smart Screening, AI JD Writing & Analytics</span><span class="curr-tag">🤖 AI</span></div>
+        </div>
+      </div>
+      <div class="section-divider"></div>
+      <div>
+        <div class="cb-section-title">Career Outcomes</div>
+        <div class="outcomes-grid">
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">HR Executive / HR Manager</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Recruitment / Talent Acquisition Specialist</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Payroll Executive</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">HR Business Partner</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Training & Development Executive</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">HR Generalist (Gulf & India)</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="cb-section-title">Tools You'll Master</div>
+        <div class="tools-wrap">
+          <span class="tool-pill"><span class="tool-icon">🏢</span>Zoho People</span>
+          <span class="tool-pill"><span class="tool-icon">🦁</span>DarwinBox</span>
+          <span class="tool-pill"><span class="tool-icon">📊</span>MS Excel HR</span>
+          <span class="tool-pill"><span class="tool-icon">📒</span>Tally (Payroll)</span>
+          <span class="tool-pill"><span class="tool-icon">🤖</span>AI Screening</span>
+          <span class="tool-pill"><span class="tool-icon">💼</span>LinkedIn Recruiter</span>
+          <span class="tool-pill"><span class="tool-icon">📋</span>Google Forms</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑤ DPAT -->
+  <div class="course-block reveal rd1" data-cat="finance" id="course-dpat">
+    <div class="cb-left">
+      <div class="cb-number">05</div>
+      <div class="cb-icon-wrap">📊</div>
+      <div class="cb-school">Finance School · Be Campus Academy</div>
+      <h2 class="cb-title">Diploma in Professional<br/>Accounting &<br/>Taxation (DPAT)</h2>
+      <p class="cb-desc">The best accounting course in Kottakkal for fresh graduates, plus-two students, and career-changers. DPAT gives you complete mastery of practical accounting — from Tally Prime to GST filing, Income Tax, and TDS. This diploma is the fastest route to a stable, well-paying accounting career at CA firms, businesses, and financial organisations across Kerala.</p>
+      <div class="cb-badges">
+        <span class="cb-badge badge-popular">💰 High Demand</span>
+        <span class="cb-badge badge-new">✦ Plus Two Eligible</span>
+      </div>
+      <div class="cb-meta">
+        <span class="cb-meta-pill"><span class="icon">⏱️</span> 4 Months</span>
+        <span class="cb-meta-pill"><span class="icon">📒</span> Tally Prime</span>
+        <span class="cb-meta-pill"><span class="icon">🏅</span> Certified</span>
+        <span class="cb-meta-pill"><span class="icon">💼</span> 100% Placement</span>
+      </div>
+      <div class="cb-stats">
+        <div class="cb-stat"><div class="cb-stat-num">4</div><div class="cb-stat-lbl">Months</div></div>
+        <div class="cb-stat"><div class="cb-stat-num">10+</div><div class="cb-stat-lbl">Modules</div></div>
+        <div class="cb-stat"><div class="cb-stat-num">100%</div><div class="cb-stat-lbl">Placed</div></div>
+        <div class="cb-stat"><div class="cb-stat-num">GST</div><div class="cb-stat-lbl">Expert</div></div>
+      </div>
+      <br/>
+      <div class="highlight-box" style="margin-bottom:1.8rem">
+        <div class="hb-icon">⭐</div>
+        <div><div class="hb-title">Perfect for Plus Two / Fresh Graduates</div><div class="hb-text">No prior accounting knowledge needed. DPAT builds from fundamentals to professional job-ready skills in just 4 months.</div></div>
+      </div>
+      <div class="cb-actions">
+        <a href="#" class="btn-red" onclick="openModal();return false;">Enrol Now →</a>
+        <a href="https://wa.me/919XXXXXXXXX" target="_blank" class="btn-ghost">💬 WhatsApp</a>
+      </div>
+    </div>
+    <div class="cb-right">
+      <div>
+        <div class="cb-section-title">Curriculum Highlights</div>
+        <div class="curriculum-list">
+          <div class="curr-item"><div class="curr-num">01</div><span class="curr-text">Accounting Fundamentals — Concepts, Principles & Double Entry</span></div>
+          <div class="curr-item"><div class="curr-num">02</div><span class="curr-text">Tally Prime — Complete Mastery from Basic to Advanced</span><span class="curr-tag">Core</span></div>
+          <div class="curr-item"><div class="curr-num">03</div><span class="curr-text">GST — Registration, Returns (GSTR1, 3B, 9) & Filing</span><span class="curr-tag">Key Module</span></div>
+          <div class="curr-item"><div class="curr-num">04</div><span class="curr-text">Income Tax — ITR Filing, Tax Planning & Deductions</span><span class="curr-tag">Core</span></div>
+          <div class="curr-item"><div class="curr-num">05</div><span class="curr-text">TDS / TCS — Deductions, Certificates & Returns</span></div>
+          <div class="curr-item"><div class="curr-num">06</div><span class="curr-text">Payroll Accounting — PF, ESI, Salary & Compliance</span></div>
+          <div class="curr-item"><div class="curr-num">07</div><span class="curr-text">Bank Reconciliation & Financial Statement Preparation</span></div>
+          <div class="curr-item"><div class="curr-num">08</div><span class="curr-text">MS Excel for Accounting — Financial Modelling & MIS Reports</span></div>
+          <div class="curr-item"><div class="curr-num">09</div><span class="curr-text">E-Filing Portals — Income Tax, GST, MCA & TRACES</span><span class="curr-tag">Practical</span></div>
+          <div class="curr-item"><div class="curr-num">10</div><span class="curr-text">AI Accounting Basics — Automated Bookkeeping Tools</span><span class="curr-tag">🤖 AI</span></div>
+        </div>
+      </div>
+      <div class="section-divider"></div>
+      <div>
+        <div class="cb-section-title">Career Outcomes</div>
+        <div class="outcomes-grid">
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Accounts Executive / Accountant</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Tally Operator</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Tax / GST Consultant (Own Practice)</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">CA Firm Assistant</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Payroll Executive</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Finance Assistant at MNC</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="cb-section-title">Tools You'll Master</div>
+        <div class="tools-wrap">
+          <span class="tool-pill"><span class="tool-icon">📒</span>Tally Prime</span>
+          <span class="tool-pill"><span class="tool-icon">🧾</span>GST Portal</span>
+          <span class="tool-pill"><span class="tool-icon">🏛️</span>Income Tax Portal</span>
+          <span class="tool-pill"><span class="tool-icon">📊</span>MS Excel</span>
+          <span class="tool-pill"><span class="tool-icon">🏦</span>TRACES</span>
+          <span class="tool-pill"><span class="tool-icon">🏢</span>MCA Portal</span>
+          <span class="tool-pill"><span class="tool-icon">🤖</span>AI Bookkeeping</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑥ AI-ADIAT -->
+  <div class="course-block reverse reveal rd2" data-cat="finance ai" id="course-adiat">
+    <div class="cb-left">
+      <div class="cb-number">06</div>
+      <div class="cb-icon-wrap">🌐</div>
+      <div class="cb-school">International Finance School · Be Campus Academy</div>
+      <h2 class="cb-title">AI-Integrated Advanced<br/>Diploma in International<br/>Accounting & Taxation <span style="font-size:.85em;color:var(--red)">(AI-ADIAT)</span></h2>
+      <p class="cb-desc">The most advanced and prestigious accounting qualification available in Malappuram — and the only AI-integrated international accounting course in Kottakkal. AI-ADIAT is built for students targeting high-earning accounting careers in the Gulf, UAE, UK, and international markets. Master IFRS, QuickBooks, Xero, and AI-powered accounting tools that global firms demand.</p>
+      <div class="cb-badges">
+        <span class="cb-badge badge-ai">🤖 AI-Integrated</span>
+        <span class="cb-badge badge-gulf">✈️ Gulf / International</span>
+        <span class="cb-badge badge-hot">🔥 Premium</span>
+      </div>
+      <div class="cb-meta">
+        <span class="cb-meta-pill"><span class="icon">⏱️</span> 8 Months</span>
+        <span class="cb-meta-pill"><span class="icon">🌐</span> International</span>
+        <span class="cb-meta-pill"><span class="icon">🏅</span> IFRS Certified</span>
+        <span class="cb-meta-pill"><span class="icon">💼</span> 100% Placement</span>
+      </div>
+      <div class="cb-stats">
+        <div class="cb-stat"><div class="cb-stat-num">8</div><div class="cb-stat-lbl">Months</div></div>
+        <div class="cb-stat"><div class="cb-stat-num">16+</div><div class="cb-stat-lbl">Modules</div></div>
+        <div class="cb-stat"><div class="cb-stat-num">100%</div><div class="cb-stat-lbl">Placed</div></div>
+        <div class="cb-stat"><div class="cb-stat-num">Gulf</div><div class="cb-stat-lbl">Ready</div></div>
+      </div>
+      <br/>
+      <div class="highlight-box" style="margin-bottom:1.8rem">
+        <div class="hb-icon">🌍</div>
+        <div><div class="hb-title">Kerala's Only AI-Integrated International Accounting Diploma</div><div class="hb-text">Combining IFRS, QuickBooks, Xero, UAE VAT, and AI accounting automation — this is the ultimate qualification for Gulf and global career aspirants from Malappuram.</div></div>
+      </div>
+      <div class="cb-actions">
+        <a href="#" class="btn-red" onclick="openModal();return false;">Enrol Now →</a>
+        <a href="https://wa.me/919XXXXXXXXX" target="_blank" class="btn-ghost">💬 WhatsApp</a>
+      </div>
+    </div>
+    <div class="cb-right">
+      <div>
+        <div class="cb-section-title">Curriculum Highlights</div>
+        <div class="curriculum-list">
+          <div class="curr-item"><div class="curr-num">01</div><span class="curr-text">Advanced Accounting — GAAP & Transition to IFRS</span><span class="curr-tag">Core</span></div>
+          <div class="curr-item"><div class="curr-num">02</div><span class="curr-text">IFRS Standards — Financial Instruments, Leases & Revenue</span><span class="curr-tag">Key Module</span></div>
+          <div class="curr-item"><div class="curr-num">03</div><span class="curr-text">QuickBooks Online — Complete Accounting & Reporting</span><span class="curr-tag">Core</span></div>
+          <div class="curr-item"><div class="curr-num">04</div><span class="curr-text">Xero Accounting — Cloud Bookkeeping & Payroll</span><span class="curr-tag">Core</span></div>
+          <div class="curr-item"><div class="curr-num">05</div><span class="curr-text">UAE VAT — Registration, Filing & FTA Compliance</span></div>
+          <div class="curr-item"><div class="curr-num">06</div><span class="curr-text">International Taxation — DTAA, Transfer Pricing & Withholding Tax</span></div>
+          <div class="curr-item"><div class="curr-num">07</div><span class="curr-text">US & UK Taxation Fundamentals</span></div>
+          <div class="curr-item"><div class="curr-num">08</div><span class="curr-text">Financial Reporting & Consolidation</span></div>
+          <div class="curr-item"><div class="curr-num">09</div><span class="curr-text">Management Accounting — Costing, Budgeting & Variance Analysis</span></div>
+          <div class="curr-item"><div class="curr-num">10</div><span class="curr-text">Advanced MS Excel — Financial Models, Dashboards & Macros</span></div>
+          <div class="curr-item"><div class="curr-num">11</div><span class="curr-text">AI Accounting Tools — Automated Reconciliation & Reporting</span><span class="curr-tag">🤖 AI</span></div>
+          <div class="curr-item"><div class="curr-num">12</div><span class="curr-text">Indian GST, Income Tax & Tally Prime (Complete)</span></div>
+        </div>
+      </div>
+      <div class="section-divider"></div>
+      <div>
+        <div class="cb-section-title">Career Outcomes</div>
+        <div class="outcomes-grid">
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Accountant / Senior Accountant (Gulf)</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Finance Manager / Controller</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Management Accountant</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">International Tax Consultant</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Audit Assistant at Big 4 Firms</div></div>
+          <div class="outcome-item"><div class="out-check">✓</div><div class="out-text">Cloud Accounting Freelancer</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="cb-section-title">Tools You'll Master</div>
+        <div class="tools-wrap">
+          <span class="tool-pill"><span class="tool-icon">📗</span>QuickBooks</span>
+          <span class="tool-pill"><span class="tool-icon">🔵</span>Xero</span>
+          <span class="tool-pill"><span class="tool-icon">📒</span>Tally Prime</span>
+          <span class="tool-pill"><span class="tool-icon">🌍</span>IFRS Tools</span>
+          <span class="tool-pill"><span class="tool-icon">🇦🇪</span>UAE VAT / FTA</span>
+          <span class="tool-pill"><span class="tool-icon">📊</span>Excel Advanced</span>
+          <span class="tool-pill"><span class="tool-icon">🤖</span>AI Accounting</span>
+          <span class="tool-pill"><span class="tool-icon">⚡</span>Power BI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="compare-section">
+  <div style="text-align:center;max-width:600px;margin:0 auto 0" class="reveal">
+    <div style="display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:.8rem">Quick Compare</div>
+    <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,3rem);font-weight:800;letter-spacing:-.03em;margin-bottom:.8rem">Find the Right Course<br/>for Your Career</h2>
+    <p style="font-size:.92rem;color:var(--muted);line-height:1.75">Compare all 6 programs at a glance and choose the diploma that fits your goals, background, and career aspirations.</p>
+  </div>
+  <div style="overflow-x:auto">
+  <table class="compare-table reveal" style="min-width:860px">
+    <thead>
+      <tr>
+        <th>Course</th>
+        <th>Duration</th>
+        <th>AI Tools</th>
+        <th>Agency Work</th>
+        <th>Gulf Ready</th>
+        <th>Best For</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="ct-icon">🎨</span><span class="ct-name">Creative Design & Brand Building</span></td>
+        <td><span class="ct-dur">6 Months</span></td>
+        <td><span class="check">✓</span></td>
+        <td><span class="check">✓</span></td>
+        <td><span class="partial">◑</span></td>
+        <td style="font-size:.8rem;color:var(--muted)">Creative minds, freelancers</td>
+        <td><a href="#" onclick="openModal();return false;" style="color:var(--red);font-weight:700;font-size:.82rem;text-decoration:none">Enrol →</a></td>
+      </tr>
+      <tr>
+        <td><span class="ct-icon">📈</span><span class="ct-name">AI Digital Marketing</span></td>
+        <td><span class="ct-dur">6 Months</span></td>
+        <td><span class="check">✓✓</span></td>
+        <td><span class="check">✓</span></td>
+        <td><span class="check">✓</span></td>
+        <td style="font-size:.8rem;color:var(--muted)">All backgrounds, entrepreneurs</td>
+        <td><a href="#" onclick="openModal();return false;" style="color:var(--red);font-weight:700;font-size:.82rem;text-decoration:none">Enrol →</a></td>
+      </tr>
+      <tr>
+        <td><span class="ct-icon">🗂️</span><span class="ct-name">Office Management & Business Comm.</span></td>
+        <td><span class="ct-dur">4 Months</span></td>
+        <td><span class="check">✓</span></td>
+        <td><span class="partial">—</span></td>
+        <td><span class="check">✓</span></td>
+        <td style="font-size:.8rem;color:var(--muted)">Plus Two, admin aspirants</td>
+        <td><a href="#" onclick="openModal();return false;" style="color:var(--red);font-weight:700;font-size:.82rem;text-decoration:none">Enrol →</a></td>
+      </tr>
+      <tr>
+        <td><span class="ct-icon">👥</span><span class="ct-name">HR & Talent Management</span></td>
+        <td><span class="ct-dur">6 Months</span></td>
+        <td><span class="check">✓</span></td>
+        <td><span class="partial">—</span></td>
+        <td><span class="check">✓</span></td>
+        <td style="font-size:.8rem;color:var(--muted)">Degree holders, HR aspirants</td>
+        <td><a href="#" onclick="openModal();return false;" style="color:var(--red);font-weight:700;font-size:.82rem;text-decoration:none">Enrol →</a></td>
+      </tr>
+      <tr>
+        <td><span class="ct-icon">📊</span><span class="ct-name">DPAT — Accounting & Taxation</span></td>
+        <td><span class="ct-dur">4 Months</span></td>
+        <td><span class="check">✓</span></td>
+        <td><span class="partial">—</span></td>
+        <td><span class="partial">◑</span></td>
+        <td style="font-size:.8rem;color:var(--muted)">Plus Two, Commerce students</td>
+        <td><a href="#" onclick="openModal();return false;" style="color:var(--red);font-weight:700;font-size:.82rem;text-decoration:none">Enrol →</a></td>
+      </tr>
+      <tr>
+        <td><span class="ct-icon">🌐</span><span class="ct-name">AI-ADIAT — International Accounting</span></td>
+        <td><span class="ct-dur">8 Months</span></td>
+        <td><span class="check">✓✓</span></td>
+        <td><span class="partial">—</span></td>
+        <td><span class="check">✓✓</span></td>
+        <td style="font-size:.8rem;color:var(--muted)">Gulf aspirants, finance grads</td>
+        <td><a href="#" onclick="openModal();return false;" style="color:var(--red);font-weight:700;font-size:.82rem;text-decoration:none">Enrol →</a></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section reveal">
+  <h2>Not Sure Which<br/>Course Is Right for You?</h2>
+  <p>Our career counsellors in Kottakkal will guide you to the perfect program — completely free of charge. No pressure, just honest advice.</p>
+  <div class="cta-actions">
+    <a href="#" class="btn-white" onclick="openModal();return false;">Get Free Counselling →</a>
+    <a href="https://wa.me/919XXXXXXXXX" target="_blank" class="btn-outline-white">💬 WhatsApp Us Now</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border)">
+    <div>
+      <div style="font-family:var(--font-display);font-size:1.2rem;font-weight:800;margin-bottom:.3rem">Be<span style="color:var(--red)">Campus</span> Academy</div>
+      <p style="font-size:.82rem;color:var(--muted)">Kottakkal & Malappuram's #1 AI-integrated professional training institute.</p>
+    </div>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <a href="./index.html" class="btn-ghost" style="font-size:.82rem;padding:.6rem 1.4rem">← Home</a>
+      <a href="./about.html" class="btn-ghost" style="font-size:.82rem;padding:.6rem 1.4rem">About Us</a>
+      <a href="#" class="btn-red" style="font-size:.82rem;padding:.6rem 1.4rem" onclick="openModal();return false;">Enquire Now</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Be Campus Academy, Kottakkal, Malappuram, Kerala. All rights reserved.</span>
+    <div style="display:flex;gap:1.5rem">
+      <a href="./contact.html">Privacy Policy</a><a href="./contact.html">Terms</a>
+      <a href="https://www.instagram.com/becampusacademy" target="_blank">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOAT -->
+<div class="float-actions">
+  <div class="fab-wrap"><a href="https://wa.me/919XXXXXXXXX" target="_blank" class="fab fab-wa">💬<span class="fab-label">Chat on WhatsApp</span></a></div>
+  <div class="fab-wrap"><a href="https://www.instagram.com/becampusacademy" target="_blank" class="fab fab-ig">📸<span class="fab-label">Instagram</span></a></div>
+  <div class="fab-wrap"><a href="tel:+919XXXXXXXXX" class="fab fab-call">📞<span class="fab-label">Call Us</span></a></div>
+</div>
+
+<script>
+// CURSOR
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a)})();
+
+// REVEAL
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}});
+},{threshold:.05});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// FILTER
+function filterCourses(cat,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.course-block').forEach(card=>{
+    const cats=card.dataset.cat||'';
+    const show=cat==='all'||cats.includes(cat);
+    card.style.display=show?'grid':'none';
+    card.style.opacity=show?'1':'0';
+  });
+}
+
+// MODAL
+function openModal(course){
+  document.getElementById('enquiryModal').classList.add('active');
+  if(course){
+    const sel=document.getElementById('f-course');
+    for(let i=0;i<sel.options.length;i++){
+      if(sel.options[i].value===course||sel.options[i].text.toLowerCase().includes(course.toLowerCase())){
+        sel.selectedIndex=i;break;
+      }
+    }
+  }
+}
+function closeModal(){document.getElementById('enquiryModal').classList.remove('active')}
+document.getElementById('enquiryModal').addEventListener('click',function(e){if(e.target===this)closeModal()});
+function submitForm(){
+  const n=document.getElementById('f-fname').value.trim();
+  const p=document.getElementById('f-phone').value.trim();
+  const c=document.getElementById('f-course').value;
+  if(!n||!p||!c){alert('Please fill in your name, phone number, and select a course.');return;}
+  document.getElementById('formContent').style.display='none';
+  document.getElementById('formSuccess').style.display='block';
+}
+</script>
+</body>
+</html>

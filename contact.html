@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contact Us | Be Campus Academy – Kottakkal, Malappuram</title>
+<meta name="description" content="Contact Be Campus Academy, Kottakkal. Call +917025900048 or +917025900049. Visit us at 2nd Floor, near Almas Hospital, Kottakkal, Kerala 676503."/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0d0d;--surface:#141414;--surface2:#1c1c1c;
+  --border:rgba(255,255,255,0.08);--red:#e8002d;
+  --red-glow:rgba(232,0,45,0.25);--red-soft:rgba(232,0,45,0.08);
+  --white:#ffffff;--muted:rgba(255,255,255,0.45);--muted2:rgba(255,255,255,0.28);
+  --nav-h:72px;--page-gutter:clamp(20px,4vw,72px);--page-max:1280px;
+  --font-body:'Manrope',sans-serif;--font-display:'Sora',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--white);overflow-x:hidden;cursor:none}
+
+/* CURSOR */
+#cursor{position:fixed;width:12px;height:12px;background:var(--red);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .3s,height .3s}
+#cursor-ring{position:fixed;width:40px;height:40px;border:1.5px solid rgba(232,0,45,.5);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:transform .12s ease,width .3s,height .3s}
+
+/* NOISE */
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:9998;opacity:.6}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;padding:0 var(--page-gutter);gap:2rem;background:rgba(13,13,13,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.nav-logo-text{font-family:var(--font-display);font-size:1.2rem;font-weight:800;color:white}
+.nav-logo-text span{color:var(--red)}
+.nav-links{display:flex;gap:2rem;list-style:none;margin-left:auto}
+.nav-links a{font-size:.85rem;font-weight:500;text-decoration:none;color:rgba(255,255,255,.65);letter-spacing:.02em;transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--red);transition:width .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-links a.active::after,.nav-links a:hover::after{width:100%}
+.nav-cta{margin-left:.5rem;background:var(--red);color:white;padding:.55rem 1.4rem;border-radius:100px;font-size:.82rem;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.nav-cta:hover{transform:scale(1.05);box-shadow:0 0 24px var(--red-glow)}
+
+/* HERO BANNER */
+.contact-hero{min-height:clamp(420px,56vh,700px);padding:calc(var(--nav-h) + 4.75rem) var(--page-gutter) 5rem;position:relative;overflow:hidden;display:flex;align-items:center}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:80px 80px;pointer-events:none}
+.hero-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(232,0,45,.15) 0%,transparent 70%);top:50%;left:30%;transform:translate(-50%,-50%);pointer-events:none;animation:glowPulse 4s ease-in-out infinite}
+@keyframes glowPulse{0%,100%{opacity:.6;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.1)}}
+.contact-hero-inner{position:relative;z-index:1;width:min(100%,680px);margin-inline:auto 0}
+.hero-tag{display:inline-flex;align-items:center;gap:.6rem;border:1px solid rgba(232,0,45,.4);background:rgba(232,0,45,.07);color:var(--red);font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin-bottom:1.6rem}
+.hero-tag .dot{width:6px;height:6px;background:var(--red);border-radius:50%;animation:blink 1.5s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.contact-hero h1{font-family:var(--font-display);font-size:clamp(2.35rem,4.6vw,4.2rem);font-weight:800;line-height:.98;letter-spacing:-0.04em;margin-bottom:1.2rem;max-width:10ch}
+.contact-hero h1 span{color:var(--red)}
+.contact-hero p{font-size:1rem;color:var(--muted);line-height:1.8;max-width:500px}
+
+/* QUICK CONTACT STRIP */
+.quick-strip{display:flex;flex-wrap:wrap;gap:1rem;padding:0 var(--page-gutter) 5rem;position:relative;z-index:1}
+.qs-card{flex:1;min-width:220px;display:flex;align-items:center;gap:1rem;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:1.4rem 1.6rem;text-decoration:none;color:var(--white);transition:transform .3s,border-color .3s,box-shadow .3s;position:relative;overflow:hidden}
+.qs-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 50%,rgba(232,0,45,.08),transparent 70%);opacity:0;transition:opacity .3s}
+.qs-card:hover{transform:translateY(-6px);border-color:rgba(232,0,45,.4);box-shadow:0 16px 40px rgba(0,0,0,.3)}
+.qs-card:hover::before{opacity:1}
+.qs-icon{width:50px;height:50px;border-radius:14px;background:var(--red-soft);border:1px solid rgba(232,0,45,.25);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;transition:background .3s}
+.qs-card:hover .qs-icon{background:rgba(232,0,45,.2)}
+.qs-label{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem}
+.qs-val{font-size:.92rem;font-weight:600;color:var(--white)}
+.qs-val small{font-size:.8rem;font-weight:400;color:var(--muted);display:block;margin-top:.1rem}
+
+/* MAIN GRID */
+.contact-main{display:grid;grid-template-columns:1fr 1.1fr;gap:2rem;padding:0 var(--page-gutter) 6rem}
+
+/* FORM CARD */
+.form-card{background:var(--surface);border:1px solid var(--border);border-radius:26px;padding:3rem;position:relative;overflow:hidden}
+.form-card::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(232,0,45,.1),transparent 70%);pointer-events:none}
+.fc-label{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:.7rem}
+.fc-heading{font-family:var(--font-display);font-size:1.8rem;font-weight:800;margin-bottom:.4rem}
+.fc-sub{font-size:.87rem;color:var(--muted);margin-bottom:2.2rem;line-height:1.6}
+.form-group{margin-bottom:1.2rem}
+.form-group label{display:block;font-size:.73rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.45rem}
+.form-group input,.form-group select,.form-group textarea{
+  width:100%;background:rgba(255,255,255,.04);border:1px solid var(--border);
+  border-radius:12px;padding:.85rem 1.1rem;color:white;
+  font-family:var(--font-body);font-size:.9rem;outline:none;
+  transition:border-color .25s,background .25s
+}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,.22)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(232,0,45,.55);background:rgba(232,0,45,.04)}
+.form-group select option{background:#1c1c1c;color:white}
+.form-group textarea{resize:vertical;min-height:110px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-submit{
+  width:100%;background:var(--red);color:white;border:none;
+  padding:1rem 2rem;border-radius:12px;
+  font-family:var(--font-display);font-size:1rem;font-weight:700;
+  cursor:pointer;transition:transform .2s,box-shadow .2s;
+  margin-top:.5rem;display:flex;align-items:center;justify-content:center;gap:.6rem
+}
+.form-submit:hover{transform:translateY(-3px);box-shadow:0 10px 34px rgba(232,0,45,.4)}
+.form-success{display:none;text-align:center;padding:3rem 0}
+.fs-icon{font-size:3.5rem;margin-bottom:1rem}
+.form-success h4{font-family:var(--font-display);font-size:1.5rem;font-weight:800;margin-bottom:.5rem}
+.form-success p{font-size:.9rem;color:var(--muted);line-height:1.7}
+
+/* INFO CARD */
+.info-col{display:flex;flex-direction:column;gap:1.5rem}
+.info-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:2.2rem;transition:border-color .3s}
+.info-card:hover{border-color:rgba(232,0,45,.3)}
+.ic-top{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem}
+.ic-icon{width:48px;height:48px;border-radius:14px;background:var(--red-soft);border:1px solid rgba(232,0,45,.25);display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
+.ic-title{font-family:var(--font-display);font-size:1rem;font-weight:700}
+.ic-sub{font-size:.78rem;color:var(--muted)}
+
+/* PHONE NUMBERS */
+.phone-list{display:flex;flex-direction:column;gap:.8rem}
+.phone-item{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.2rem;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;transition:border-color .2s,background .2s}
+.phone-item:hover{border-color:rgba(232,0,45,.35);background:rgba(232,0,45,.04)}
+.ph-left{display:flex;align-items:center;gap:.8rem}
+.ph-num{font-size:1rem;font-weight:600;color:white;letter-spacing:.02em}
+.ph-badge{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(232,0,45,.12);border:1px solid rgba(232,0,45,.25);color:var(--red);padding:.2rem .65rem;border-radius:100px}
+.ph-call{display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:600;color:var(--red);text-decoration:none;border:1px solid rgba(232,0,45,.3);padding:.35rem .9rem;border-radius:100px;transition:background .2s}
+.ph-call:hover{background:rgba(232,0,45,.15)}
+
+/* ADDRESS */
+.addr-block{font-size:.9rem;color:rgba(255,255,255,.72);line-height:1.85}
+.addr-block strong{color:white;display:block;margin-bottom:.2rem}
+
+/* LINKS */
+.contact-link{display:flex;align-items:center;gap:.7rem;padding:.8rem 1rem;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;text-decoration:none;color:var(--white);font-size:.88rem;font-weight:500;transition:border-color .2s,background .2s,transform .2s}
+.contact-link:hover{border-color:rgba(232,0,45,.35);background:rgba(232,0,45,.05);transform:translateX(4px)}
+.contact-link .cl-icon{width:36px;height:36px;border-radius:10px;background:var(--red-soft);border:1px solid rgba(232,0,45,.2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.contact-link .cl-val{font-size:.83rem;font-weight:600;color:white}
+.contact-link .cl-lbl{font-size:.7rem;color:var(--muted)}
+.cl-arrow{margin-left:auto;font-size:.7rem;color:var(--muted);transition:transform .2s}
+.contact-link:hover .cl-arrow{transform:translateX(4px)}
+
+/* MAP CARD */
+.map-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;overflow:hidden}
+.map-header{padding:1.4rem 1.8rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.8rem}
+.map-header-icon{font-size:1.1rem}
+.map-header-text{font-size:.9rem;font-weight:600}
+.map-header-sub{font-size:.75rem;color:var(--muted)}
+.map-embed{width:100%;height:280px;border:none;filter:grayscale(80%) invert(90%) contrast(90%);display:block}
+.map-footer{padding:1rem 1.8rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.map-addr-mini{font-size:.8rem;color:var(--muted);line-height:1.5;max-width:260px}
+.map-dir-btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--red);color:white;padding:.55rem 1.3rem;border-radius:100px;font-size:.78rem;font-weight:700;text-decoration:none;white-space:nowrap;transition:transform .2s,box-shadow .2s;flex-shrink:0}
+.map-dir-btn:hover{transform:scale(1.05);box-shadow:0 6px 24px rgba(232,0,45,.4)}
+
+/* SOCIALS */
+.social-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.soc-card{display:flex;align-items:center;gap:.8rem;padding:.9rem 1.1rem;border-radius:14px;text-decoration:none;color:white;font-size:.85rem;font-weight:600;transition:transform .25s,box-shadow .25s;border:1px solid transparent}
+.soc-card:hover{transform:translateY(-3px)}
+.soc-card.wa{background:rgba(37,211,102,.12);border-color:rgba(37,211,102,.25)}
+.soc-card.wa:hover{box-shadow:0 8px 28px rgba(37,211,102,.2)}
+.soc-card.ig{background:rgba(221,42,123,.12);border-color:rgba(221,42,123,.25)}
+.soc-card.ig:hover{box-shadow:0 8px 28px rgba(221,42,123,.2)}
+.soc-card.web{background:rgba(232,0,45,.1);border-color:rgba(232,0,45,.25)}
+.soc-card.web:hover{box-shadow:0 8px 28px rgba(232,0,45,.2)}
+.soc-card.mail{background:rgba(100,149,237,.1);border-color:rgba(100,149,237,.25)}
+.soc-card.mail:hover{box-shadow:0 8px 28px rgba(100,149,237,.2)}
+.soc-icon{font-size:1.2rem;flex-shrink:0}
+.soc-label{font-size:.68rem;color:var(--muted);display:block;font-weight:400}
+
+/* HOURS */
+.hours-grid{display:flex;flex-direction:column;gap:.6rem}
+.hour-row{display:flex;justify-content:space-between;align-items:center;font-size:.87rem;padding:.6rem 0;border-bottom:1px solid var(--border)}
+.hour-row:last-child{border-bottom:none}
+.hr-day{color:rgba(255,255,255,.7);font-weight:500}
+.hr-time{font-weight:600;color:white}
+.hr-badge{font-size:.65rem;font-weight:700;padding:.18rem .6rem;border-radius:100px;letter-spacing:.06em}
+.hr-badge.open{background:rgba(0,200,100,.15);border:1px solid rgba(0,200,100,.3);color:#00c864}
+.hr-badge.closed{background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--muted)}
+
+/* BOTTOM CTA */
+.bottom-cta{margin:0 var(--page-gutter) 6rem;background:var(--red);border-radius:26px;padding:4rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;position:relative;overflow:hidden}
+.bottom-cta::before{content:'';position:absolute;right:-5%;top:50%;transform:translateY(-50%);width:400px;height:400px;background:radial-gradient(circle,rgba(255,255,255,.12),transparent 60%);pointer-events:none}
+.bottom-cta::after{content:'Contact';font-family:var(--font-display);font-size:9rem;font-weight:800;position:absolute;right:2rem;top:50%;transform:translateY(-50%);white-space:nowrap;color:rgba(255,255,255,.07);pointer-events:none;letter-spacing:-.05em}
+.cta-left{position:relative;z-index:1}
+.cta-left h3{font-family:var(--font-display);font-size:clamp(1.6rem,3vw,2.5rem);font-weight:800;color:white;margin-bottom:.5rem}
+.cta-left p{color:rgba(255,255,255,.8);font-size:.95rem}
+.cta-btns{display:flex;gap:1rem;flex-wrap:wrap;position:relative;z-index:1}
+.btn-white{display:inline-flex;align-items:center;gap:.6rem;background:white;color:var(--red);padding:.85rem 2rem;border-radius:100px;font-weight:700;font-size:.9rem;text-decoration:none;transition:transform .2s,box-shadow .2s;white-space:nowrap}
+.btn-white:hover{transform:scale(1.05);box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.btn-outline-w{display:inline-flex;align-items:center;gap:.6rem;background:transparent;color:white;border:1.5px solid rgba(255,255,255,.5);padding:.85rem 2rem;border-radius:100px;font-weight:600;font-size:.9rem;text-decoration:none;transition:background .2s;white-space:nowrap}
+.btn-outline-w:hover{background:rgba(255,255,255,.12)}
+
+/* FOOTER */
+footer{background:var(--surface);border-top:1px solid var(--border);padding:3rem var(--page-gutter);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.contact-hero-inner,
+.quick-strip,
+.contact-main,
+.bottom-cta,
+footer{
+  width:min(100%,var(--page-max));
+  margin-inline:auto;
+}
+.foot-logo{font-family:var(--font-display);font-size:1.1rem;font-weight:800}
+.foot-logo span{color:var(--red)}
+footer p{font-size:.8rem;color:var(--muted)}
+.foot-links{display:flex;gap:1.5rem}
+.foot-links a{font-size:.8rem;color:var(--muted);text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:white}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}.reveal-d4{transition-delay:.4s}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .contact-main{grid-template-columns:1fr}
+  .bottom-cta{flex-direction:column;align-items:flex-start;padding:3rem}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .contact-hero h1{font-size:2.6rem}
+  .quick-strip{flex-direction:column}
+  .form-row{grid-template-columns:1fr}
+  .social-row{grid-template-columns:1fr}
+  #cursor,#cursor-ring{display:none}
+  body{cursor:auto}
+  footer{flex-direction:column;align-items:flex-start}
+  .bottom-cta::after{display:none}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="./index.html" class="nav-logo">
+    <div class="nav-logo-text">Be<span>Campus</span> Academy</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./about.html">About Us</a></li>
+    <li><a href="./courses.html">Courses</a></li>
+    <li><a href="./blog.html">Blog</a></li>
+    <li><a href="./contact.html" class="active">Contact</a></li>
+  </ul>
+  <a href="tel:+917025900048" class="nav-cta">📞 Call Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="contact-hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="contact-hero-inner">
+    <div class="hero-tag"><span class="dot"></span>Kottakkal, Malappuram, Kerala</div>
+    <h1>Get in <span>Touch</span><br/>With Us</h1>
+    <p>Have questions about our courses, admissions, or placements? We're here to help. Reach us by phone, email, WhatsApp, or walk into our campus in Kottakkal.</p>
+  </div>
+</section>
+
+<!-- QUICK CONTACT STRIP -->
+<div class="quick-strip">
+  <a href="tel:+917025900048" class="qs-card reveal">
+    <div class="qs-icon">📞</div>
+    <div>
+      <div class="qs-label">Primary Phone</div>
+      <div class="qs-val">+91 70259 00048<small>Mon–Sat, 9 AM – 6 PM</small></div>
+    </div>
+  </a>
+  <a href="tel:+917025900049" class="qs-card reveal reveal-d1">
+    <div class="qs-icon">📲</div>
+    <div>
+      <div class="qs-label">Secondary Phone</div>
+      <div class="qs-val">+91 70259 00049<small>Mon–Sat, 9 AM – 6 PM</small></div>
+    </div>
+  </a>
+  <a href="mailto:info@becampus.org" class="qs-card reveal reveal-d2">
+    <div class="qs-icon">✉️</div>
+    <div>
+      <div class="qs-label">Email Us</div>
+      <div class="qs-val">info@becampus.org<small>We reply within 24 hrs</small></div>
+    </div>
+  </a>
+  <a href="./index.html" class="qs-card reveal reveal-d3">
+    <div class="qs-icon">🌐</div>
+    <div>
+      <div class="qs-label">Website</div>
+      <div class="qs-val">www.becampus.org<small>Explore courses & admissions</small></div>
+    </div>
+  </a>
+</div>
+
+<!-- MAIN GRID -->
+<div class="contact-main">
+
+  <!-- FORM -->
+  <div class="form-card reveal">
+    <div id="formContent">
+      <div class="fc-label">Send a Message</div>
+      <h2 class="fc-heading">Enquire About Our Courses</h2>
+      <p class="fc-sub">Fill in the form below and our counsellor will contact you within 24 hours with a free career guidance session.</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" id="f-fname" placeholder="Arjun"/>
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" id="f-lname" placeholder="K"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Mobile Number</label>
+        <input type="tel" id="f-phone" placeholder="+91 XXXXX XXXXX"/>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="f-email" placeholder="you@email.com"/>
+      </div>
+      <div class="form-group">
+        <label>Qualification</label>
+        <select id="f-qual">
+          <option value="">Select your qualification</option>
+          <option>10th Pass</option>
+          <option>12th / Plus Two</option>
+          <option>Degree / Graduation</option>
+          <option>Post Graduation</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Course Interested In</label>
+        <select id="f-course">
+          <option value="">Select a course</option>
+          <option>Advanced Diploma in Creative Design & Brand Building</option>
+          <option>AI-Integrated Advanced Diploma in Digital Marketing</option>
+          <option>Advanced Diploma in Office Management & Business Communication</option>
+          <option>Advanced Diploma in HR & Talent Management</option>
+          <option>Diploma in Professional Accounting & Taxation (DPAT)</option>
+          <option>AI-Integrated Advanced Diploma in International Accounting & Taxation (AI-ADIAT)</option>
+          <option>Not Sure – Need Career Guidance</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Your Message</label>
+        <textarea id="f-msg" placeholder="Tell us about your goals or any questions you have…"></textarea>
+      </div>
+      <button class="form-submit" onclick="submitForm()">Send Enquiry →</button>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <div class="fs-icon">🎉</div>
+      <h4>Message Sent!</h4>
+      <p>Thank you for reaching out! Our counsellor will call you at your number within 24 hours.<br/>You can also reach us directly at <a href="tel:+917025900048" style="color:var(--red)">+91 70259 00048</a>.</p>
+    </div>
+  </div>
+
+  <!-- INFO COLUMN -->
+  <div class="info-col">
+
+    <!-- PHONE -->
+    <div class="info-card reveal reveal-d1">
+      <div class="ic-top">
+        <div class="ic-icon">📞</div>
+        <div><div class="ic-title">Phone Numbers</div><div class="ic-sub">Call us Monday to Saturday, 9 AM – 6 PM</div></div>
+      </div>
+      <div class="phone-list">
+        <div class="phone-item">
+          <div class="ph-left">
+            <div>
+              <div class="ph-num">+91 70259 00048</div>
+              <div class="ph-badge">Primary</div>
+            </div>
+          </div>
+          <a href="tel:+917025900048" class="ph-call">📞 Call</a>
+        </div>
+        <div class="phone-item">
+          <div class="ph-left">
+            <div>
+              <div class="ph-num">+91 70259 00049</div>
+              <div class="ph-badge">Secondary</div>
+            </div>
+          </div>
+          <a href="tel:+917025900049" class="ph-call">📞 Call</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADDRESS + MAP -->
+    <div class="map-card reveal reveal-d2">
+      <div class="map-header">
+        <div class="map-header-icon">📍</div>
+        <div>
+          <div class="map-header-text">Campus Location</div>
+          <div class="map-header-sub">Kottakkal, Malappuram, Kerala</div>
+        </div>
+      </div>
+      <iframe
+        class="map-embed"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.6!2d76.0000!3d10.9833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7d4d4a4e4e4e5%3A0x1234567890abcdef!2sAlmas%20Hospital%2C%20Kottakkal%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Be Campus Academy Location Map">
+      </iframe>
+      <div class="map-footer">
+        <div class="map-addr-mini">2nd Floor, Near Almas Hospital, Tirur–Malappuram–Manjeri Rd, Changuvetty, Kottakkal, Kerala 676503</div>
+        <a href="https://maps.google.com/?q=Almas+Hospital+Kottakkal+Kerala" target="_blank" class="map-dir-btn">📍 Get Directions</a>
+      </div>
+    </div>
+
+    <!-- CONTACT LINKS -->
+    <div class="info-card reveal reveal-d2">
+      <div class="ic-top">
+        <div class="ic-icon">🔗</div>
+        <div><div class="ic-title">Reach Us Online</div><div class="ic-sub">Email, website & social channels</div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.7rem">
+        <a href="mailto:info@becampus.org" class="contact-link">
+          <div class="cl-icon">✉️</div>
+          <div><div class="cl-lbl">Email</div><div class="cl-val">info@becampus.org</div></div>
+          <span class="cl-arrow">→</span>
+        </a>
+        <a href="./index.html" class="contact-link">
+          <div class="cl-icon">🌐</div>
+          <div><div class="cl-lbl">Website</div><div class="cl-val">www.becampus.org</div></div>
+          <span class="cl-arrow">→</span>
+        </a>
+        <a href="https://wa.me/917025900048" target="_blank" class="contact-link">
+          <div class="cl-icon">💬</div>
+          <div><div class="cl-lbl">WhatsApp</div><div class="cl-val">+91 70259 00048</div></div>
+          <span class="cl-arrow">→</span>
+        </a>
+        <a href="https://www.instagram.com/becampusacademy" target="_blank" class="contact-link">
+          <div class="cl-icon">📸</div>
+          <div><div class="cl-lbl">Instagram</div><div class="cl-val">@becampusacademy</div></div>
+          <span class="cl-arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- OFFICE HOURS -->
+    <div class="info-card reveal reveal-d3">
+      <div class="ic-top">
+        <div class="ic-icon">🕐</div>
+        <div><div class="ic-title">Office Hours</div><div class="ic-sub">When you can visit or call us</div></div>
+      </div>
+      <div class="hours-grid">
+        <div class="hour-row"><span class="hr-day">Monday – Friday</span><div style="display:flex;align-items:center;gap:.6rem"><span class="hr-time">9:00 AM – 6:00 PM</span><span class="hr-badge open">Open</span></div></div>
+        <div class="hour-row"><span class="hr-day">Saturday</span><div style="display:flex;align-items:center;gap:.6rem"><span class="hr-time">9:00 AM – 4:00 PM</span><span class="hr-badge open">Open</span></div></div>
+        <div class="hour-row"><span class="hr-day">Sunday</span><div style="display:flex;align-items:center;gap:.6rem"><span class="hr-time">Closed</span><span class="hr-badge closed">Closed</span></div></div>
+        <div class="hour-row"><span class="hr-day">Public Holidays</span><div style="display:flex;align-items:center;gap:.6rem"><span class="hr-time">Closed</span><span class="hr-badge closed">Closed</span></div></div>
+      </div>
+      <p style="font-size:.78rem;color:var(--muted);margin-top:1rem;line-height:1.6">📌 For urgent enquiries outside office hours, send us a WhatsApp message and we'll reply the next working day.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- BOTTOM CTA -->
+<div class="bottom-cta reveal">
+  <div class="cta-left">
+    <h3>Ready to Start Your Career?</h3>
+    <p>Call us today or visit our campus in Kottakkal for a free counselling session.</p>
+  </div>
+  <div class="cta-btns">
+    <a href="tel:+917025900048" class="btn-white">📞 Call +91 70259 00048</a>
+    <a href="https://wa.me/917025900048" target="_blank" class="btn-outline-w">💬 WhatsApp Us</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo">Be<span>Campus</span> Academy</div>
+  <p>2nd Floor, Near Almas Hospital, Kottakkal, Kerala 676503</p>
+  <div class="foot-links">
+    <a href="./index.html">Website</a>
+    <a href="mailto:info@becampus.org">Email</a>
+    <a href="tel:+917025900048">+91 70259 00048</a>
+  </div>
+  <p style="width:100%;text-align:center;font-size:.73rem;color:var(--muted2);margin-top:.5rem">© 2026 Be Campus Academy, Kottakkal, Malappuram, Kerala. All rights reserved.</p>
+</footer>
+
+<!-- FLOATING ACTIONS -->
+<div style="position:fixed;bottom:2rem;right:1.8rem;z-index:9000;display:flex;flex-direction:column;gap:.8rem;align-items:flex-end">
+  <a href="https://wa.me/917025900048" target="_blank" style="width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;font-size:1.4rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s" onmouseover="this.style.transform='scale(1.12)'" onmouseout="this.style.transform='scale(1)'" title="WhatsApp">💬</a>
+  <a href="tel:+917025900048" style="width:52px;height:52px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:1.4rem;text-decoration:none;box-shadow:0 4px 20px rgba(232,0,45,.4);transition:transform .2s" onmouseover="this.style.transform='scale(1.12)'" onmouseout="this.style.transform='scale(1)'" title="Call Now">📞</a>
+</div>
+
+<script>
+// CURSOR
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)})();
+
+// REVEAL
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('vis');obs.unobserve(el.target)}})},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// FORM
+function submitForm(){
+  const n=document.getElementById('f-fname').value.trim();
+  const p=document.getElementById('f-phone').value.trim();
+  const c=document.getElementById('f-course').value;
+  if(!n||!p||!c){alert('Please fill in your name, phone number, and select a course.');return;}
+  document.getElementById('formContent').style.display='none';
+  document.getElementById('formSuccess').style.display='block';
+}
+</script>
+</body>
+</html>
