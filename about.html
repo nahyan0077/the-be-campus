@@ -28,7 +28,7 @@
       "@id": "https://becampus.org/about.html#organization",
       "name": "Be Campus Academy",
       "url": "https://becampus.org",
-      "logo": "https://becampus.org/becampus_logo.png",
+      "logo": "https://becampus.org/assets/becampus_logo.png",
       "description": "Best AI-integrated training institute in Kottakkal and Malappuram, Kerala",
       "address": {
         "@type": "PostalAddress",
@@ -80,7 +80,9 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;padding:0 var(--page-gutter);gap:2rem;background:rgba(13,13,13,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.nav-logo-text{font-family:var(--font-display);font-size:1.2rem;font-weight:800;color:white;text-decoration:none}
+.nav-logo{display:flex;align-items:center;justify-content:center;gap:.75rem;text-decoration:none;height:72px;flex-shrink:0}
+.nav-logo img{height:clamp(64px,14vw,84px);object-fit:contain;display:block;margin:0;max-width:280px;width:auto}
+.nav-logo-text{font-family:var(--font-display);font-size:clamp(1rem,2.8vw,1.4rem);font-weight:800;color:white;text-decoration:none;display:none}
 .nav-logo-text span{color:var(--red)}
 .nav-links{display:flex;gap:2rem;list-style:none;margin-left:auto}
 .nav-links a{font-size:.85rem;font-weight:500;text-decoration:none;color:rgba(255,255,255,.65);transition:color .2s;position:relative}
@@ -273,7 +275,7 @@ footer > div:first-child,
 .modal-sub{font-size:.87rem;color:var(--muted);margin-bottom:2rem}
 .form-group{margin-bottom:1.2rem}
 .form-group label{display:block;font-size:.75rem;font-weight:600;letter-spacing:.05em;color:rgba(255,255,255,.65);margin-bottom:.4rem;text-transform:uppercase}
-.form-group input,.form-group select,.form-group textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:12px;padding:.8rem 1rem;color:white;font-family:var(--font-body);font-size:.9rem;outline:none;transition:border-color .2s}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:rgba(255,255,255,.05);border:1.5px solid var(--border);border-radius:12px;padding:.8rem 1rem;color:white;font-family:var(--font-body);font-size:.9rem;outline:none;transition:border-color .25s,box-shadow .25s}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(232,0,45,.5)}
 .form-group select option{background:#1c1c1c}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
@@ -329,6 +331,19 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:4rem
   .form-row{grid-template-columns:1fr}
   .cubez-stats{grid-template-columns:1fr 1fr}
 }
+@media(max-width:480px){
+  .nav-logo img{height:clamp(56px,12vw,68px)}
+  .nav-cta{display:none}
+  .page-hero h1{font-size:clamp(1.8rem,5vw,3rem)}
+  .page-hero .sub{font-size:0.9rem}
+  .mv-card{padding:1.8rem}
+  .section{padding:4rem var(--page-gutter)}
+  .story-wrap{gap:2rem}
+  .team-grid{grid-template-columns:1fr}
+  .team-avatar{height:150px;font-size:4rem}
+  .cta-section{padding:2.5rem 1.5rem;margin:3rem var(--page-gutter)}
+  .cta-section h2{font-size:clamp(1.6rem,4vw,2.5rem)}
+}
 </style>
 </head>
 <body>
@@ -378,7 +393,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:4rem
 <!-- NAV -->
 <nav>
   <a href="./index.html" class="nav-logo" aria-label="Be Campus Academy Home">
-    <img src="/mnt/user-data/uploads/becampus_logo.png" alt="Be Campus Academy" width="200" height="56" style="filter:brightness(1.8) contrast(1.2)" onerror="this.onerror=null;this.src='https://learnly-static.vercel.app/logo.png'"/>
+    <img src="assets/becampus_logo.png" alt="Be Campus Academy" width="240" height="68" onerror="this.onerror=null;this.src='https://learnly-static.vercel.app/logo.png'" loading="lazy"/>
   </a>
   <ul class="nav-links">
     <li><a href="./index.html">Home</a></li>
@@ -709,7 +724,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:4rem
 <footer>
   <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border)">
     <div>
-      <img src="/mnt/user-data/uploads/becampus_logo.png" alt="Be Campus Academy" width="160" height="44" onerror="this.onerror=null;this.src='https://learnly-static.vercel.app/logo.png'"/>
+      <img src="assets/becampus_logo.png" alt="Be Campus Academy" width="200" height="56" onerror="this.onerror=null;this.src='https://learnly-static.vercel.app/logo.png'"/>
       <p style="font-size:.82rem;color:var(--muted);max-width:320px">Kottakkal & Malappuram's #1 AI-integrated training institute. 100% placement assistance across all programs.</p>
     </div>
     <div style="display:flex;gap:1rem;flex-wrap:wrap">

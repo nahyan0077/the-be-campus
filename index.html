@@ -28,7 +28,7 @@
       "@id": "https://becampus.org/#organization",
       "name": "Be Campus Academy",
       "url": "https://becampus.org",
-      "logo": "https://becampus.org/becampus_logo.png",
+      "logo": "https://becampus.org/assets/becampus_logo.png",
       "description": "Kottakkal's #1 AI-integrated training institute offering professional diploma courses.",
       "address": {
         "@type": "PostalAddress",
@@ -173,20 +173,24 @@ nav.scrolled{
   border-bottom:1px solid var(--border);
 }
 .nav-logo{
-  display:inline-flex;
+  display:flex;
   align-items:center;
+  justify-content:center;
   gap:.75rem;
   text-decoration:none;
   min-width:0;
+  height:72px;
+  flex-shrink:0;
 }
-.nav-logo img{height:56px;object-fit:contain;display:block;filter:brightness(1.8) contrast(1.2)}
+.nav-logo img{height:clamp(64px,14vw,84px);object-fit:contain;display:block;margin:0;max-width:280px;width:auto}
 .nav-logo-text{
   font-family:var(--font-display);
-  font-size:1.15rem;
+  font-size:clamp(1rem,2.8vw,1.4rem);
   font-weight:800;
   color:var(--white);
   letter-spacing:-.02em;
   white-space:nowrap;
+  display:none !important;
 }
 .nav-logo-text span{color:var(--red)}
 .nav-links{display:flex;gap:2.2rem;list-style:none;margin-left:auto}
@@ -204,6 +208,8 @@ nav.scrolled{
 }
 .nav-links a:hover{color:var(--white)}
 .nav-links a:hover::after{width:100%}
+.nav-links a.active{color:var(--white)}
+.nav-links a.active::after{width:100%}
 .nav-toggle{
   display:none;
   margin-left:auto;
@@ -801,7 +807,7 @@ footer{
   gap:3rem;padding-bottom:3rem;
   border-bottom:1px solid var(--border);
 }
-.footer-brand img{height:34px;margin-bottom:1.4rem;filter:brightness(5)}
+.footer-brand img{height:34px;margin-bottom:1.4rem}
 .footer-brand p{font-size:.87rem;color:var(--muted);line-height:1.75;max-width:280px}
 .footer-col h5{
   font-size:.72rem;font-weight:700;
@@ -880,6 +886,28 @@ footer{
   .mobile-menu{display:block}
   .footer-top{grid-template-columns:1fr}
 }
+@media(max-width:480px){
+  .nav-logo img{height:clamp(56px,12vw,68px)}
+  .nav-links{gap:1rem}
+  .nav-cta{display:none}
+  .hero{grid-template-columns:1fr;padding-top:calc(var(--nav-h) + 2.5rem);padding-bottom:2rem;min-height:auto;gap:2rem}
+  .hero-content{max-width:100%}
+  .hero-img-wrap{justify-content:center;width:min(100%,760px);margin-inline:auto}
+  .hero h1{font-size:clamp(1.8rem,5vw,2.8rem)}
+  .hero-sub{font-size:0.95rem}
+  .hero-actions{gap:0.75rem}
+  .hero-actions a{padding:0.75rem 1.5rem;font-size:0.9rem}
+  .hero-stats{width:100%;flex-direction:column}
+  .hstat{padding:1rem 1.5rem;border-right:none;border-bottom:1px solid var(--border)}
+  .hstat:last-child{border-bottom:none}
+  .hstat-num{font-size:1.5rem}
+  .hstat-lbl{font-size:0.65rem}
+  .btn-red,.btn-ghost,.btn-white,.btn-outline-white{padding:0.75rem 1.5rem;font-size:0.85rem}
+  .school-card{padding:1.8rem}
+  .section{padding:4rem var(--page-gutter)}
+  .cta-section{padding:2.5rem 1.5rem;margin:0 var(--page-gutter) 3rem}
+  .cta-section::after{font-size:8rem;bottom:-2rem}
+}
 </style>
 </head>
 <body>
@@ -890,10 +918,10 @@ footer{
 <!-- ── NAV ── -->
 <nav id="navbar" role="navigation" aria-label="Main">
   <a href="./index.html" class="nav-logo" aria-label="Be Campus Academy Home">
-    <img src="/mnt/user-data/uploads/becampus_logo.png" alt="Be Campus Academy" width="200" height="56" onerror="this.onerror=null;this.src='https://learnly-static.vercel.app/logo.png'"/>
+    <img src="assets/becampus_logo.png" alt="Be Campus Academy" width="240" height="68" onerror="this.onerror=null;this.src='https://learnly-static.vercel.app/logo.png'" loading="lazy"/>
   </a>
   <ul class="nav-links">
-    <li><a href="./index.html">Home</a></li>
+    <li><a href="./index.html" class="active">Home</a></li>
     <li><a href="./about.html">About Us</a></li>
     <li><a href="./courses.html">Programs</a></li>
     <li><a href="./blog.html">Blog</a></li>
@@ -979,6 +1007,7 @@ footer{
   <div class="schools-grid">
 
     <article class="school-card reveal reveal-delay-1" itemscope itemtype="https://schema.org/Course">
+      <meta itemprop="provider" content="Be Campus Academy"/>
       <div class="sc-icon">📈</div>
       <div class="sc-badge">🔥 Most Popular</div>
       <h3 itemprop="name">Marketing School</h3>
@@ -990,6 +1019,7 @@ footer{
     </article>
 
     <article class="school-card reveal reveal-delay-2" itemscope itemtype="https://schema.org/Course">
+      <meta itemprop="provider" content="Be Campus Academy"/>
       <div class="sc-icon">🎨</div>
       <div class="sc-badge">✦ Creative</div>
       <h3 itemprop="name">Design School</h3>
@@ -1001,6 +1031,7 @@ footer{
     </article>
 
     <article class="school-card reveal reveal-delay-3" itemscope itemtype="https://schema.org/Course">
+      <meta itemprop="provider" content="Be Campus Academy"/>
       <div class="sc-icon">💻</div>
       <div class="sc-badge">⚡ High Demand</div>
       <h3 itemprop="name">Tech School</h3>
@@ -1180,7 +1211,7 @@ footer{
 <footer role="contentinfo">
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="/mnt/user-data/uploads/becampus_logo.png" alt="Be Campus Academy" width="160" height="44" loading="lazy" onerror="this.src='https://learnly-static.vercel.app/logo.png'"/>
+      <img src="assets/becampus_logo.png" alt="Be Campus Academy" width="200" height="56" loading="lazy" onerror="this.src='https://learnly-static.vercel.app/logo.png'"/>
       <p>Be Campus Academy is Kottakkal's leading training institute, offering career-focused professional diploma courses aligned with today's industry requirements.</p>
     </div>
     <div class="footer-col">

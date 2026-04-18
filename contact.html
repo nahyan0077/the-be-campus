@@ -33,7 +33,8 @@
       "@type": "LocalBusiness",
       "@id": "https://becampus.org/#localbusiness",
       "name": "Be Campus Academy Kottakkal",
-      "image": "https://becampus.org/og-image.jpg",
+      "image": "https://becampus.org/assets/becampus_logo.png",
+      "logo": "https://becampus.org/assets/becampus_logo.png",
       "telePhone": "+91-70259-00048",
       "address": {
         "@type": "PostalAddress",
@@ -89,8 +90,9 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;padding:0 var(--page-gutter);gap:2rem;background:rgba(13,13,13,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.nav-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none}
-.nav-logo-text{font-family:var(--font-display);font-size:1.2rem;font-weight:800;color:white}
+.nav-logo{display:flex;align-items:center;justify-content:center;gap:.75rem;text-decoration:none;height:72px;flex-shrink:0}
+.nav-logo img{height:clamp(64px,14vw,84px);object-fit:contain;display:block;margin:0;max-width:280px;width:auto}
+.nav-logo-text{font-family:var(--font-display);font-size:clamp(1rem,2.8vw,1.4rem);font-weight:800;color:white;display:none}
 .nav-logo-text span{color:var(--red)}
 .nav-links{display:flex;gap:2rem;list-style:none;margin-left:auto}
 .nav-links a{font-size:.85rem;font-weight:500;text-decoration:none;color:rgba(255,255,255,.65);letter-spacing:.02em;transition:color .2s;position:relative}
@@ -146,13 +148,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display
 .form-group{margin-bottom:1.2rem}
 .form-group label{display:block;font-size:.73rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.45rem}
 .form-group input,.form-group select,.form-group textarea{
-  width:100%;background:rgba(255,255,255,.04);border:1px solid var(--border);
+  width:100%;background:rgba(255,255,255,.04);border:1.5px solid var(--border);
   border-radius:12px;padding:.85rem 1.1rem;color:white;
   font-family:var(--font-body);font-size:.9rem;outline:none;
-  transition:border-color .25s,background .25s
+  transition:border-color .25s,background .25s,box-shadow .25s
 }
 .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,.22)}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(232,0,45,.55);background:rgba(232,0,45,.04)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(232,0,45,.8);background:rgba(232,0,45,.04);box-shadow:0 0 0 3px rgba(232,0,45,.15)}
 .form-group select option{background:#1c1c1c;color:white}
 .form-group textarea{resize:vertical;min-height:110px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
@@ -291,6 +293,22 @@ footer p{font-size:.8rem;color:var(--muted)}
   footer{flex-direction:column;align-items:flex-start}
   .bottom-cta::after{display:none}
 }
+@media(max-width:480px){
+  .nav-logo img{height:clamp(56px,12vw,68px)}
+  .nav-cta{display:none}
+  .contact-hero{padding:calc(var(--nav-h) + 2.5rem) var(--page-gutter) 3rem}
+  .contact-hero h1{font-size:clamp(1.8rem,5vw,2.8rem)}
+  .contact-hero p{font-size:0.9rem}
+  .quick-strip{gap:0.75rem;padding:0 var(--page-gutter) 3rem}
+  .qs-card{min-width:180px;padding:1rem 1.2rem}
+  .contact-main{padding:0 var(--page-gutter) 4rem}
+  .form-card{padding:2rem}
+  .form-submit{padding:0.85rem 1.5rem}
+  .bottom-cta{padding:2.5rem 1.5rem;margin:0 var(--page-gutter) 3rem}
+  .cta-left h3{font-size:clamp(1.4rem,4vw,2rem)}
+  .cta-btns{flex-direction:column;gap:0.75rem}
+  .btn-white,.btn-outline-w{width:100%;justify-content:center}
+}
 </style>
 </head>
 <body>
@@ -301,7 +319,7 @@ footer p{font-size:.8rem;color:var(--muted)}
 <!-- NAV -->
 <nav>
   <a href="./index.html" class="nav-logo">
-    <img src="/mnt/user-data/uploads/becampus_logo.png" alt="Be Campus Academy" width="200" height="56" style="filter:brightness(1.8) contrast(1.2)" onerror="this.onerror=null;this.src='https://learnly-static.vercel.app/logo.png'"/>
+    <img src="assets/becampus_logo.png" alt="Be Campus Academy" width="240" height="68" onerror="this.onerror=null;this.src='https://learnly-static.vercel.app/logo.png'" loading="lazy"/>
   </a>
   <ul class="nav-links">
     <li><a href="./index.html">Home</a></li>
@@ -549,7 +567,7 @@ footer p{font-size:.8rem;color:var(--muted)}
 
 <!-- FOOTER -->
 <footer>
-  <img src="/mnt/user-data/uploads/becampus_logo.png" alt="Be Campus Academy" width="160" height="44" onerror="this.onerror=null;this.src='https://learnly-static.vercel.app/logo.png'"/>
+  <img src="assets/becampus_logo.png" alt="Be Campus Academy" width="200" height="56" onerror="this.onerror=null;this.src='https://learnly-static.vercel.app/logo.png'" loading="lazy"/>
   <p>2nd Floor, Bismilla Tower, Near Almas Hospital, Kottakkal, Kerala 676503</p>
   <div class="foot-links">
     <a href="./index.html">Website</a>

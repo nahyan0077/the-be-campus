@@ -31,7 +31,8 @@
       "publisher": {
         "@type": "EducationalOrganization",
         "name": "Be Campus Academy",
-        "url": "https://becampus.org"
+        "url": "https://becampus.org",
+        "logo": "https://becampus.org/assets/becampus_logo.png"
       }
     },
     {
@@ -70,7 +71,9 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;padding:0 var(--page-gutter);gap:2rem;background:rgba(13,13,13,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.nav-logo-text{font-family:var(--font-display);font-size:1.2rem;font-weight:800;color:white;text-decoration:none}
+.nav-logo{display:flex;align-items:center;justify-content:center;gap:.75rem;text-decoration:none;height:72px;flex-shrink:0}
+.nav-logo img{height:clamp(64px,14vw,84px);object-fit:contain;display:block;margin:0;max-width:280px;width:auto}
+.nav-logo-text{font-family:var(--font-display);font-size:clamp(1rem,2.8vw,1.4rem);font-weight:800;color:white;text-decoration:none;display:none}
 .nav-logo-text span{color:var(--red)}
 .nav-links{display:flex;gap:2rem;list-style:none;margin-left:auto}
 .nav-links a{font-size:.85rem;font-weight:500;text-decoration:none;color:rgba(255,255,255,.6);transition:color .2s;position:relative}
@@ -110,7 +113,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display
 .hero-search{display:flex;gap:.7rem;max-width:460px;margin-bottom:2.25rem}
 .hero-search input{flex:1;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:100px;padding:.8rem 1.4rem;color:white;font-family:var(--font-body);font-size:.88rem;outline:none;transition:border-color .2s}
 .hero-search input::placeholder{color:var(--muted)}
-.hero-search input:focus{border-color:rgba(232,0,45,.5)}
+.hero-search input:focus{border-color:rgba(232,0,45,.8);box-shadow:0 0 0 3px rgba(232,0,45,.15)}
 .hero-search button{background:var(--red);color:white;border:none;border-radius:100px;padding:.8rem 1.6rem;font-size:.85rem;font-weight:600;cursor:pointer;transition:transform .2s}
 .hero-search button:hover{transform:scale(1.05)}
 
@@ -353,6 +356,20 @@ footer > div{
   .form-row{grid-template-columns:1fr}
   .article-hero{padding:4rem 4vw 2.5rem}
 }
+@media(max-width:480px){
+  .nav-logo img{height:clamp(56px,12vw,68px)}
+  .nav-cta{display:none}
+  .page-hero{padding:calc(var(--nav-h) + 2.5rem) var(--page-gutter) 2.5rem}
+  .page-hero h1{font-size:clamp(1.8rem,5vw,2.8rem)}
+  .page-hero .sub{font-size:0.9rem}
+  .blog-layout{padding:2.5rem var(--page-gutter) 4rem;grid-template-columns:1fr}
+  .blog-grid{grid-template-columns:1fr}
+  .hero-search{width:100%}
+  .trending-bar{padding:0.75rem var(--page-gutter);gap:0.5rem}
+  .blog-card{padding:1.2rem}
+  .modal{padding:2rem}
+  .form-group label{font-size:0.65rem}
+}
 </style>
 </head>
 <body>
@@ -400,7 +417,7 @@ footer > div{
 <!-- NAV -->
 <nav>
   <a href="./index.html" class="nav-logo" aria-label="Be Campus Academy Home">
-    <img src="/mnt/user-data/uploads/becampus_logo.png" alt="Be Campus Academy" width="200" height="56" style="filter:brightness(1.8) contrast(1.2)" onerror="this.onerror=null;this.src='https://learnly-static.vercel.app/logo.png'"/>
+    <img src="assets/becampus_logo.png" alt="Be Campus Academy" width="240" height="68" onerror="this.onerror=null;this.src='https://learnly-static.vercel.app/logo.png'" loading="lazy"/>
   </a>
   <ul class="nav-links">
     <li><a href="./index.html">Home</a></li>
@@ -665,7 +682,7 @@ footer > div{
 <footer>
   <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)">
     <div>
-      <img src="/mnt/user-data/uploads/becampus_logo.png" alt="Be Campus Academy" width="160" height="44" onerror="this.onerror=null;this.src='https://learnly-static.vercel.app/logo.png'"/>
+      <img src="assets/becampus_logo.png" alt="Be Campus Academy" width="200" height="56" onerror="this.onerror=null;this.src='https://learnly-static.vercel.app/logo.png'"/>
       <p style="font-size:.8rem;color:var(--muted)">Kottakkal & Malappuram's #1 AI-integrated training institute.</p>
     </div>
     <div style="display:flex;gap:.8rem;flex-wrap:wrap">
