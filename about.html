@@ -7,17 +7,17 @@
 <meta name="description" content="Learn about Be Campus – Kottakkal & Malappuram's #1 AI-integrated training institute. Our story, mission, vision, team, and the Be Cubez agency that gives students real-world experience."/>
 <meta name="keywords" content="about Be Campus, best training institute Kottakkal, top institute Malappuram, AI integrated learning Kerala, Be Cubez agency, digital marketing institute Kerala"/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://becampus.org/about.html"/>
+<meta property="og:url" content="https://www.becampus.org/about.html"/>
 <meta property="og:title" content="About Us | Be Campus — Story & Mission"/>
 <meta property="og:description" content="Discover how Be Campus became Kottakkal's leading AI-integrated training institute. Our mission is to transform careers through professional education."/>
-<meta property="og:image" content="https://becampus.org/og-about.jpg"/>
+<meta property="og:image" content="https://www.becampus.org/og-about.jpg"/>
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="About Be Campus | Transforming Kerala"/>
 <meta name="twitter:description" content="Kottakkal's most trusted career training institute — born to build world-class professionals."/>
-<meta name="twitter:image" content="https://becampus.org/og-about.jpg"/>
+<meta name="twitter:image" content="https://www.becampus.org/og-about.jpg"/>
 
-<link rel="canonical" href="https://becampus.org/about.html"/>
+<link rel="canonical" href="https://www.becampus.org/about.html"/>
 <link rel="icon" type="image/png" href="assets/favicon.png"/>
 
 <script type="application/ld+json">
@@ -26,10 +26,10 @@
   "@graph": [
     {
       "@type": "EducationalOrganization",
-      "@id": "https://becampus.org/about.html#organization",
+      "@id": "https://www.becampus.org/about.html#organization",
       "name": "Be Campus",
-      "url": "https://becampus.org",
-      "logo": "https://becampus.org/assets/becampus_logo.png",
+      "url": "https://www.becampus.org",
+      "logo": "https://www.becampus.org/assets/becampus_logo.png",
       "description": "Best AI-integrated training institute in Kottakkal and Malappuram, Kerala",
       "address": {
         "@type": "PostalAddress",
@@ -42,17 +42,17 @@
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://becampus.org/about.html#breadcrumb",
+      "@id": "https://www.becampus.org/about.html#breadcrumb",
       "itemListElement": [{
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://becampus.org/"
+        "item": "https://www.becampus.org/"
       },{
         "@type": "ListItem",
         "position": 2,
         "name": "About Us",
-        "item": "https://becampus.org/about.html"
+        "item": "https://www.becampus.org/about.html"
       }]
     }
   ]
@@ -779,11 +779,23 @@ function openModal(){document.getElementById('enquiryModal').classList.add('acti
 function closeModal(){document.getElementById('enquiryModal').classList.remove('active')}
 document.getElementById('enquiryModal').addEventListener('click',function(e){if(e.target===this)closeModal()});
 function submitForm(){
-  const n=document.getElementById('f-fname').value.trim(),p=document.getElementById('f-phone').value.trim(),c=document.getElementById('f-course').value;
+  const n=document.getElementById('f-fname').value.trim();
+  const p=document.getElementById('f-phone').value.trim();
+  const c=document.getElementById('f-course').value;
   if(!n||!p||!c){alert('Please fill in your name, phone, and course.');return;}
+  
+  // Format WhatsApp enquiry dispatch
+  const msg = encodeURIComponent(`*New Admission Enquiry — Be Campus*\nName: ${n}\nPhone: ${p}\nCourse: ${c}`);
+  window.open(`https://wa.me/917025900048?text=${msg}`, '_blank');
+  
   document.getElementById('formContent').style.display='none';
   document.getElementById('formSuccess').style.display='block';
 }
 </script>
+<!-- FLOATING ACTIONS -->
+<div class="mobile-float-actions" style="position:fixed;bottom:2rem;right:1.8rem;z-index:9000;display:flex;flex-direction:column;gap:.8rem;align-items:flex-end">
+  <a href="https://wa.me/917025900048?text=Hi%20Be%20Campus%2C%20I%20want%20to%20know%20more%20about%20your%20courses" target="_blank" rel="noopener noreferrer" style="width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;font-size:1.4rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s" onmouseover="this.style.transform='scale(1.12)'" onmouseout="this.style.transform='scale(1)'" title="Chat on WhatsApp">💬</a>
+  <a href="tel:+917025900048" style="width:52px;height:52px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:1.4rem;text-decoration:none;box-shadow:0 4px 20px rgba(232,0,45,.4);transition:transform .2s" onmouseover="this.style.transform='scale(1.12)'" onmouseout="this.style.transform='scale(1)'" title="Call Admissions">📞</a>
+</div>
 </body>
 </html>
