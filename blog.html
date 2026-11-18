@@ -7,17 +7,17 @@
 <meta name="description" content="Explore Be Campus Academy's blog — latest digital marketing trends, graphic design tips, HR career guides, accounting insights, and real student success stories from Kottakkal & Malappuram, Kerala."/>
 <meta name="keywords" content="career blog Kottakkal, digital marketing tips Kerala, graphic design trends Malappuram, accounting career guide, HR management insights, Be Campus Academy blog"/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://becampus.org/blog.html"/>
+<meta property="og:url" content="https://www.becampus.org/blog.html"/>
 <meta property="og:title" content="Career Blog | Be Campus Academy Kottakkal"/>
 <meta property="og:description" content="Stay ahead with career tips, industry trends, and success stories from Kerala's leading AI-integrated training institute."/>
-<meta property="og:image" content="https://becampus.org/og-blog.jpg"/>
+<meta property="og:image" content="https://www.becampus.org/og-blog.jpg"/>
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Be Campus Blog — Expert Career Insights"/>
 <meta name="twitter:description" content="Expert advice on Digital Marketing, Design, and HR from the professionals at Be Campus Academy."/>
-<meta name="twitter:image" content="https://becampus.org/og-blog.jpg"/>
+<meta name="twitter:image" content="https://www.becampus.org/og-blog.jpg"/>
 
-<link rel="canonical" href="https://becampus.org/blog.html"/>
+<link rel="canonical" href="https://www.becampus.org/blog.html"/>
 <link rel="icon" type="image/png" href="assets/favicon.png"/>
 
 <script type="application/ld+json">
@@ -26,29 +26,29 @@
   "@graph": [
     {
       "@type": "Blog",
-      "@id": "https://becampus.org/blog.html#blog",
+      "@id": "https://www.becampus.org/blog.html#blog",
       "name": "Be Campus Career Blog",
       "description": "Insights, guides, and student stories from Kottakkal's top training institute.",
       "publisher": {
         "@type": "EducationalOrganization",
         "name": "Be Campus Academy",
-        "url": "https://becampus.org",
-        "logo": "https://becampus.org/assets/becampus_logo.png"
+        "url": "https://www.becampus.org",
+        "logo": "https://www.becampus.org/assets/becampus_logo.png"
       }
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://becampus.org/blog.html#breadcrumb",
+      "@id": "https://www.becampus.org/blog.html#breadcrumb",
       "itemListElement": [{
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://becampus.org/"
+        "item": "https://www.becampus.org/"
       },{
         "@type": "ListItem",
         "position": 2,
         "name": "Blog",
-        "item": "https://becampus.org/blog.html"
+        "item": "https://www.becampus.org/blog.html"
       }]
     }
   ]
@@ -372,6 +372,9 @@ footer > div{
   .form-group label{font-size:0.65rem}
 }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
@@ -750,8 +753,15 @@ function openModal(){document.getElementById('enquiryModal').classList.add('acti
 function closeModal(){document.getElementById('enquiryModal').classList.remove('active')}
 document.getElementById('enquiryModal').addEventListener('click',function(e){if(e.target===this)closeModal()});
 function submitForm(){
-  const n=document.getElementById('f-fname').value.trim(),p=document.getElementById('f-phone').value.trim(),c=document.getElementById('f-course').value;
+  const n=document.getElementById('f-fname').value.trim();
+  const p=document.getElementById('f-phone').value.trim();
+  const c=document.getElementById('f-course').value;
   if(!n||!p||!c){alert('Please fill in your name, phone, and course.');return;}
+  
+  // Format WhatsApp enquiry dispatch
+  const msg = encodeURIComponent(`*New Career Counselling Enquiry — Be Campus*\nName: ${n}\nPhone: ${p}\nCourse: ${c}`);
+  window.open(`https://wa.me/917025900048?text=${msg}`, '_blank');
+  
   document.getElementById('formContent').style.display='none';
   document.getElementById('formSuccess').style.display='block';
 }
@@ -1373,13 +1383,17 @@ const ARTICLES={
 };
 
 // ── OPEN ARTICLE ──
-function openArticle(id){
+function openArticle(id, push=true){
   const a=ARTICLES[id];
   if(!a)return;
   document.getElementById('blogListView').style.display='none';
   const av=document.getElementById('articleView');
   av.style.display='block';
   window.scrollTo({top:0,behavior:'smooth'});
+
+  if(push && window.history && window.history.pushState){
+    history.pushState({article:id}, a.title, '#'+id);
+  }
 
   document.getElementById('artEmoji').textContent=a.emoji;
   document.getElementById('artGlow').style.background=`radial-gradient(ellipse,${a.glow},transparent 70%)`;
@@ -1403,12 +1417,14 @@ function openArticle(id){
   const tagsDiv=document.createElement('div');
   tagsDiv.className='article-tags';
   a.tags.forEach(t=>{const s=document.createElement('span');s.className='article-tag';s.textContent=t;tagsDiv.appendChild(s);});
-  // share
+  
+  // SHARE WITH DEEP LINK
   const shareDiv=document.createElement('div');
   shareDiv.className='article-share';
+  const articleUrl = window.location.origin + window.location.pathname + '#' + id;
   shareDiv.innerHTML=`<span class="share-label">Share:</span>
-    <a href="https://wa.me/?text=${encodeURIComponent(a.title+' – Be Campus Academy Blog')}" target="_blank" class="share-btn">💬 WhatsApp</a>
-    <span class="share-btn" onclick="navigator.clipboard&&navigator.clipboard.writeText(window.location.href).then(()=>alert('Link copied!'))">🔗 Copy Link</span>
+    <a href="https://wa.me/?text=${encodeURIComponent(a.title + ' — Read full guide: ' + articleUrl)}" target="_blank" rel="noopener noreferrer" class="share-btn">💬 WhatsApp</a>
+    <span class="share-btn" onclick="navigator.clipboard&&navigator.clipboard.writeText('${articleUrl}').then(()=>alert('Article link copied to clipboard!'))">🔗 Copy Link</span>
     <a href="#" class="share-btn" onclick="openModal();return false;">🎓 Enquire Now</a>`;
   body.appendChild(tagsDiv);
   body.appendChild(shareDiv);
@@ -1418,7 +1434,7 @@ function openArticle(id){
   tocList.innerHTML='';
   a.toc.forEach((item,i)=>{
     const li=document.createElement('li');
-    li.innerHTML=`<a href="#"><span class="toc-num">${String(i+1).padStart(2,'0')}</span>${item}</a>`;
+    li.innerHTML=`<a href="#toc-${i}"><span class="toc-num">${String(i+1).padStart(2,'0')}</span>${item}</a>`;
     tocList.appendChild(li);
   });
 
@@ -1439,12 +1455,41 @@ function openArticle(id){
   rb.innerHTML=`<div class="related-bottom-title">More Articles You'll Enjoy</div><div class="related-grid">${a.related.slice(0,3).map(rid=>{const r=ARTICLES[rid];if(!r)return'';return`<div class="blog-card" style="cursor:pointer" onclick="openArticle('${rid}')"><div class="bc-visual" style="background:linear-gradient(135deg,#1a0008,#0d0d0d)">${r.emoji}</div><div class="bc-body"><div class="bc-meta"><span class="bc-cat ${r.catClass}">${r.catLabel}</span><span class="bc-date">${r.date}</span></div><div class="bc-title">${r.title}</div><div class="bc-footer"><span class="bc-link">Read →</span></div></div></div>`;}).join('')}</div>`;
 }
 
-function goBack(){
+function goBack(push=true){
   document.getElementById('articleView').style.display='none';
   document.getElementById('blogListView').style.display='block';
   document.getElementById('readingProgress').style.width='0%';
   window.scrollTo({top:0,behavior:'smooth'});
+  if(push && window.history && window.history.pushState){
+    history.pushState(null, '', window.location.pathname);
+  }
 }
+
+// HASH ROUTING & BACK BUTTON LISTENER
+window.addEventListener('popstate', (e)=>{
+  if(e.state && e.state.article){
+    openArticle(e.state.article, false);
+  } else if(window.location.hash){
+    const id = window.location.hash.substring(1);
+    if(ARTICLES[id]) openArticle(id, false);
+    else goBack(false);
+  } else {
+    goBack(false);
+  }
+});
+
+// INITIAL CHECK FOR DEEP LINK
+window.addEventListener('DOMContentLoaded', ()=>{
+  if(window.location.hash){
+    const id = window.location.hash.substring(1);
+    if(ARTICLES[id]) openArticle(id, false);
+  }
+});
 </script>
+<!-- FLOATING ACTIONS -->
+<div class="mobile-float-actions" style="position:fixed;bottom:2rem;right:1.8rem;z-index:9000;display:flex;flex-direction:column;gap:.8rem;align-items:flex-end">
+  <a href="https://wa.me/917025900048?text=Hi%20Be%20Campus%2C%20I%20want%20to%20know%20more%20about%20your%20courses" target="_blank" rel="noopener noreferrer" style="width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;font-size:1.4rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s" onmouseover="this.style.transform='scale(1.12)'" onmouseout="this.style.transform='scale(1)'" title="Chat on WhatsApp">💬</a>
+  <a href="tel:+917025900048" style="width:52px;height:52px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:1.4rem;text-decoration:none;box-shadow:0 4px 20px rgba(232,0,45,.4);transition:transform .2s" onmouseover="this.style.transform='scale(1.12)'" onmouseout="this.style.transform='scale(1)'" title="Call Admissions">📞</a>
+</div>
 </body>
 </html>
