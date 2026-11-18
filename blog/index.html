@@ -77,14 +77,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display
 .nav-logo-text{font-family:var(--font-display);font-size:clamp(1rem,2.8vw,1.4rem);font-weight:800;color:white;text-decoration:none;display:none}
 .nav-logo-text span{color:var(--red)}
 .nav-links{display:flex;gap:2rem;list-style:none;margin-left:auto}
-.nav-links a{font-size:.85rem;font-weight:500;text-decoration:none;color:rgba(255,255,255,.6);transition:color .2s;position:relative}
+.nav-links a{font-size:.86rem;font-weight:500;text-decoration:none;color:rgba(255,255,255,.65);letter-spacing:.02em;transition:color .2s;position:relative}
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--red);transition:width .3s}
 .nav-links a:hover,.nav-links a.active{color:white}
 .nav-links a:hover::after,.nav-links a.active::after{width:100%}
 .nav-toggle{display:none;margin-left:auto;width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--white);align-items:center;justify-content:center;cursor:pointer;transition:background .2s,border-color .2s}
 .nav-toggle:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2)}
 .nav-toggle svg{width:20px;height:20px}
-.nav-cta{background:var(--red);color:white;padding:.55rem 1.4rem;border-radius:100px;font-size:.82rem;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.nav-cta{margin-left:.75rem;background:var(--red);color:white;padding:.55rem 1.45rem;border-radius:100px;font-size:.84rem;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s;white-space:nowrap}
 .nav-cta:hover{transform:scale(1.05);box-shadow:0 0 24px var(--red-glow)}
 .mobile-menu{position:fixed;top:var(--nav-h);left:0;right:0;z-index:999;background:rgba(13,13,13,.98);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:0 var(--page-gutter);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-16px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease}
 .mobile-menu.active{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
@@ -420,15 +420,15 @@ footer > div{
 
 <!-- NAV -->
 <nav>
-  <a href="./index.html" class="nav-logo" aria-label="Be Campus Academy Home">
-    <img src="assets/becampus_logo.png" alt="Be Campus Academy" width="240" height="68" onerror="this.onerror=null;this.src='https://learnly-static.vercel.app/logo.png'" loading="lazy"/>
+  <a href="/" class="nav-logo" aria-label="Be Campus Academy Home">
+    <img src="/assets/becampus_logo.png" alt="Be Campus Academy" width="240" height="68" onerror="this.onerror=null;this.src='https://learnly-static.vercel.app/logo.png'" loading="lazy"/>
   </a>
   <ul class="nav-links">
-    <li><a href="./index.html">Home</a></li>
-    <li><a href="./about.html">About Us</a></li>
-    <li><a href="./courses.html">Courses</a></li>
-    <li><a href="./blog.html" class="active">Blog</a></li>
-    <li><a href="./contact.html">Contact</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about.html">About Us</a></li>
+    <li><a href="/courses.html">Courses</a></li>
+    <li><a href="/blog.html" class="active">Blog</a></li>
+    <li><a href="/contact.html">Contact</a></li>
   </ul>
   <a href="#" class="nav-cta" onclick="openModal();return false;">Enquire Now</a>
   <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -439,11 +439,11 @@ footer > div{
 </nav>
 <div class="mobile-menu" id="mobile-menu">
   <div class="mobile-menu-inner">
-    <a href="./index.html">Home</a>
-    <a href="./about.html">About Us</a>
-    <a href="./courses.html">Courses</a>
-    <a href="./blog.html" class="active">Blog</a>
-    <a href="./contact.html">Contact</a>
+    <a href="/">Home</a>
+    <a href="/about.html">About Us</a>
+    <a href="/courses.html">Courses</a>
+    <a href="/blog.html" class="active">Blog</a>
+    <a href="/contact.html">Contact</a>
     <a href="#" class="mobile-menu-cta" onclick="openModal();return false;">Enquire Now</a>
   </div>
 </div>
